@@ -1,0 +1,1708 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Atom.Core.Accounts</name>
+    </assembly>
+    <members>
+        <member name="T:Atom.Core.Accounts.AccountHelpers">
+            <summary>
+            Helper methods related to accounts
+            </summary>
+        </member>
+        <member name="M:Atom.Core.Accounts.AccountHelpers.DeserializeJTWToken``1(System.String)">
+            <summary>
+            Deserializes the specified <paramref name="token"/> to a model of the specified <typeparamref name="T"/>
+            </summary>
+            <typeparam name="T">The type of the model</typeparam>
+            <param name="token">The token</param>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Core.Accounts.AccountHelpers.ParseBase64WithoutPadding(System.String)">
+            <summary>
+            Parses the specified <paramref name="base64"/> string
+            </summary>
+            <param name="base64">The base64 string</param>
+            <returns></returns>
+        </member>
+        <member name="T:Atom.Core.Accounts.AccountsClient">
+            <summary>
+            The default implementation of the <see cref="T:Atom.Core.Accounts.IAccountsClient"/>
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Accounts.AccountsClient.MetaData">
+            <summary>
+            Meta data used by the client
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Accounts.AccountsClient.Credentials">
+            <summary>
+            The credentials of the logged in user.
+            NOTE: If there isn't a logged in user then this is set to <see cref="!:null"/>!
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Accounts.AccountsClient.HasUser">
+            <summary>
+            A flag indicating whether there is a logged in user or not
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Accounts.AccountsClient.Token">
+            <summary>
+            Gets the token if any
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Accounts.AccountsClient.UserId">
+            <summary>
+            Gets the user id if any
+            </summary>
+        </member>
+        <member name="M:Atom.Core.Accounts.AccountsClient.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Atom.Core.Accounts.AccountsClient.RegisterAsync(Atom.Web.Accounts.RegisterUserRequestModel)">
+            <summary>
+            Registers a user
+            </summary>
+            <param name="model">The model</param>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Core.Accounts.AccountsClient.LogInAsync(Atom.Web.Accounts.LogInRequestModel)">
+            <summary>
+            Log ins a user
+            </summary>
+            <param name="model">The model</param>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Core.Accounts.AccountsClient.RefreshAsync(Atom.Core.Accounts.CredentialsDataModel)">
+            <summary>
+            Re-logins the user with the specified <paramref name="credentials"/>
+            </summary>
+            <param name="credentials">The credentials</param>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Core.Accounts.AccountsClient.GetAccountsAsync(Atom.Web.StandardAPIArgs)">
+            <summary>
+            Gets the users using the specified <paramref name="args"/>
+            </summary>
+            <param name="args">The args</param>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Core.Accounts.AccountsClient.GetAccountAsync">
+            <summary>
+            Gets the information of the logged in user
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Core.Accounts.AccountsClient.LogOutAsync">
+            <summary>
+            Logs the current user out
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Core.Accounts.AccountsClient.Clear">
+            <summary>
+            Clears the client of any credentials
+            </summary>
+        </member>
+        <member name="M:Atom.Core.Accounts.AccountsClient.UpdatePasswordAsync(Atom.Web.Accounts.PasswordRequestModel)">
+            <summary>
+            Updates the password of the logged in user
+            </summary>
+            <param name="model">The model</param>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Core.Accounts.AccountsClient.ForgotPasswordAsync(Atom.Web.Accounts.ForgotPasswordRequestModel)">
+            <summary>
+            Generates and sends a reset password token to the user
+            </summary>
+            <param name="model">The model</param>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Core.Accounts.AccountsClient.ResetPasswordAsync(Atom.Web.Accounts.ResetPasswordRequestModel)">
+            <summary>
+            Resets the password of a user
+            </summary>
+            <param name="model">The model</param>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Core.Accounts.AccountsClient.UpdateAsync(Atom.Web.Accounts.UserRequestModel)">
+            <summary>
+            Uses the specified <paramref name="model"/> to update the information of the logged in user
+            </summary>
+            <param name="model">The model</param>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Core.Accounts.AccountsClient.SetAccountPrimaryImageAsync(Microsoft.AspNetCore.Http.IFormFile)">
+            <summary>
+            Sets the specified <paramref name="image"/> as the profile image of the logged in user
+            </summary>
+            <param name="image">The image</param>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Core.Accounts.AccountsClient.SendVerificationEmailAsync">
+            <summary>
+            Sends a verification email to the logged in user's email
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Core.Accounts.AccountsClient.VerifyUserEmailAsync(System.String)">
+            <summary>
+            Uses the specified <paramref name="token"/> to verify the email of the logged in user
+            </summary>
+            <param name="token">The verification token</param>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Core.Accounts.AccountsClient.SendPhoneNumberVerificationCodeAsync">
+            <summary>
+            Sends a verification code to the logged in user's phone
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Core.Accounts.AccountsClient.VerifyPhoneNumberAsync(System.String)">
+            <summary>
+            Uses the specified <paramref name="code"/> to verify the phone number of the logged in user
+            </summary>
+            <param name="code">The verification code</param>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Core.Accounts.AccountsClient.GetNotificationsAsync(Atom.Web.Accounts.NotificationsAPIArgs)">
+            <summary>
+            Gets the notifications
+            </summary>
+            <param name="args">The args</param>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Core.Accounts.AccountsClient.GetNotificationsInformationAsync(Atom.Web.Accounts.HeaderNotificationsAPIArgs)">
+            <summary>
+            Gets information related to notifications
+            </summary>
+            <param name="args">The args</param>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Core.Accounts.AccountsClient.SetSeenNotificationsAsync">
+            <summary>
+            Updates the status of all the notifications to "seen"
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Core.Accounts.AccountsClient.GetPaymentMethodsAsync(Atom.Core.Accounts.PaymentMethodsAPIArgs)">
+            <summary>
+            Gets the payment methods
+            </summary>
+            <param name="args">The args</param>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Core.Accounts.AccountsClient.GetPaymentMethodAsync(System.String)">
+            <summary>
+            Gets the payment method with the specified <paramref name="paymentMethodId"/>
+            </summary>
+            <param name="paymentMethodId">The payment method id</param>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Core.Accounts.AccountsClient.GetCompaniesAsync(Atom.Web.Accounts.CompaniesAPIArgs)">
+            <summary>
+            Gets the companies using the specified <paramref name="args"/>
+            </summary>
+            <param name="args">The args</param>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Core.Accounts.AccountsClient.GetCompanyAsync(System.String)">
+            <summary>
+            Gets the company with the specified <paramref name="companyId"/>
+            </summary>
+            <param name="companyId">The company id</param>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Core.Accounts.AccountsClient.UpdateCompanyAsync(System.String,Atom.Web.Accounts.UpdateCompanyRequestModel)">
+            <summary>
+            Updates the company with the specified <paramref name="companyId"/>
+            </summary>
+            <param name="companyId">The company id</param>
+            <param name="model">The model</param>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Core.Accounts.AccountsClient.GetCompanyChargesAsync(System.String,Atom.Web.Accounts.ChargesAPIArgs)">
+            <summary>
+            Gets the company charges of the company with the specified <paramref name="companyId"/>
+            </summary>
+            <param name="companyId">The company id</param>
+            <param name="args">The args</param>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Core.Accounts.AccountsClient.GetCompanyChargeAsync(System.String,System.String)">
+            <summary>
+            Gets the company charge with the specified <paramref name="companyChargeId"/> of
+            the company with the specified <paramref name="companyId"/>
+            </summary>
+            <param name="companyId">The company id</param>
+            <param name="companyChargeId">The company charge id</param>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Core.Accounts.AccountsClient.AddCompanyPaymentAsync(System.String,Atom.Web.Accounts.PaymentRequestModel)">
+            <summary>
+            Adds a company payment to the company with the specified <paramref name="companyId"/>
+            </summary>
+            <param name="companyId">The company id</param>
+            <param name="model">The model</param>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Core.Accounts.AccountsClient.GetCompanyPaymentsAsync(System.String,Atom.Core.Accounts.PaymentsAPIArgs)">
+            <summary>
+            Gets the company payments of the company with the specified <paramref name="companyId"/>
+            </summary>
+            <param name="companyId">The company id</param>
+            <param name="args">The args</param>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Core.Accounts.AccountsClient.GetCompanyPaymentAsync(System.String,System.String)">
+            <summary>
+            Gets the company payment with the specified <paramref name="companyPaymentId"/>
+            of the company with the specified <paramref name="companyId"/>
+            </summary>
+            <param name="companyId">The company id</param>
+            <param name="companyPaymentId">The company payment id</param>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Core.Accounts.AccountsClient.UpdateCompanyPaymentAsync(System.String,System.String,Atom.Web.Accounts.PaymentRequestModel)">
+            <summary>
+            Updates the payment with the specified <paramref name="companyPaymentId"/> of the company
+            with the specified <paramref name="companyId"/>
+            </summary>
+            <param name="companyId">The company id</param>
+            <param name="companyPaymentId">The company payment id</param>
+            <param name="model">The model</param>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Core.Accounts.AccountsClient.DeleteCompanyPaymentAsync(System.String,System.String)">
+            <summary>
+            Deletes the payment with the specified <paramref name="companyPaymentId"/> from the company
+            with the specified <paramref name="companyId"/>
+            </summary>
+            <param name="companyId">The company id</param>
+            <param name="companyPaymentId">The company payment id</param>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Core.Accounts.AccountsClient.AddCompanyImageAsync(System.String,Atom.Web.Abstractions.ImageRequestModel,Microsoft.AspNetCore.Http.IFormFile)">
+            <summary>
+            Adds the specified <paramref name="image"/> to the company with the specified <paramref name="companyId"/>
+            </summary>
+            <param name="companyId">The company id</param>
+            <param name="model">The model</param>
+            <param name="image">The image</param>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Core.Accounts.AccountsClient.UpdateCompanyImageAsync(System.String,System.String,Atom.Web.Abstractions.ImageRequestModel)">
+            <summary>
+            Update the image with the specified <paramref name="companyImageId"/> of the company with the specified <paramref name="companyId"/>
+            </summary>
+            <param name="companyId">The company id</param>
+            <param name="companyImageId">The company image id</param>
+            <param name="model">The model</param>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Core.Accounts.AccountsClient.DeleteCompanyImageAsync(System.String,System.String)">
+            <summary>
+            Deletes the image with the specified <paramref name="companyImageId"/> from the company with the specified <paramref name="companyId"/>
+            </summary>
+            <param name="companyId">The company id</param>
+            <param name="companyImageId">The company image id</param>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Core.Accounts.AccountsClient.SetCompanyPrimaryImageAsync(System.String,Microsoft.AspNetCore.Http.IFormFile)">
+            <summary>
+            Sets the specified <paramref name="image"/> as the primary image of the company with the specified <paramref name="companyId"/>
+            </summary>
+            <param name="companyId">The company id</param>
+            <param name="image">The image</param>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Core.Accounts.AccountsClient.GetApplicationsAsync">
+            <summary>
+            Gets all the applications
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Core.Accounts.AccountsClient.GetApplicationAsync(System.String)">
+            <summary>
+            Gets the application with the specified <paramref name="applicationId"/>
+            </summary>
+            <param name="applicationId">The application id</param>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Core.Accounts.AccountsClient.GetApplicationVersionAssetsAsync(System.String,System.String)">
+            <summary>
+            Gets the assets of the application version with the specified <paramref name="applicationVersionId"/>
+            </summary>
+            <param name="applicationId">The application id</param>
+            <param name="applicationVersionId">The application version id</param>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Core.Accounts.AccountsClient.DownloadApplicationVersionAssetAsync(System.String,System.String,System.String)">
+            <summary>
+            Downloads the asset with the specified <paramref name="fileName"/> from the application version with the specified <paramref name="applicationVersionId"/>.
+            </summary>
+            <param name="applicationId">The application id</param>
+            <param name="applicationVersionId">The application version id</param>
+            <param name="fileName">The file name</param>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Core.Accounts.AccountsClient.DownloadApplicationVersionAssetToFileAsync(System.String,System.String,System.String,System.String)">
+            <summary>
+            Downloads the asset with the specified <paramref name="fileName"/> from the application version with the specified <paramref name="applicationVersionId"/> and
+            saves it at the directory at the specified <paramref name="directoryPath"/> using the specified <paramref name="fileName"/>
+            </summary>
+            <param name="applicationId">The application id</param>
+            <param name="applicationVersionId">The application version id</param>
+            <param name="directoryPath">The directory that will be used for storing the file</param>
+            <param name="fileName">The file name</param>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Core.Accounts.AccountsClient.GetApplicationVersionLanguagePacksAsync(System.String,System.String,System.String)">
+            <summary>
+            Gets the language packs of the application version wit the specified <paramref name="applicationVersionId"/>
+            </summary>
+            <param name="applicationId">The application id</param>
+            <param name="applicationVersionId">The application version id</param>
+            <param name="language">Limit the result set using a <see cref="P:Atom.Core.LanguageDataModel.Shortcode"/></param>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Core.Accounts.AccountsClient.DownloadApplicationVersionLanguagePackAsync(System.String,System.String,System.String)">
+            <summary>
+            Downloads the language pack of the application version with the specified <paramref name="applicationVersionId"/>
+            with the specified <paramref name="fileName"/>
+            </summary>
+            <param name="applicationId">The application id</param>
+            <param name="applicationVersionId">The application version id</param>
+            <param name="fileName">The file name</param>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Core.Accounts.AccountsClient.GetLogInAPIRoute">
+            <summary>
+            Gets the log in API route.
+            Ex.: <see cref="F:Atom.Web.Accounts.AccountAPIRoutes.LogInRoute"/>
+            </summary>
+        </member>
+        <member name="M:Atom.Core.Accounts.AccountsClient.GetRegisterAPIRoute">
+            <summary>
+            Gets the register API route.
+            Ex.: <see cref="F:Atom.Web.Accounts.AccountAPIRoutes.RegisterRoute"/>
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Core.Accounts.AccountsClient.GetRefreshAPIRoute">
+            <summary>
+            Gets the log in API route.
+            Ex.: <see cref="F:Atom.Web.Accounts.AccountAPIRoutes.RefreshRoute"/>
+            </summary>
+        </member>
+        <member name="M:Atom.Core.Accounts.AccountsClient.OnLoggedIn(Atom.Web.Accounts.AuthorizedUserResponseModel)">
+            <summary>
+            Handles the log in of the specified <paramref name="user"/>
+            </summary>
+            <param name="user">The user</param>
+        </member>
+        <member name="M:Atom.Core.Accounts.AccountsClient.OnLoggedOut(Atom.Core.Accounts.CredentialsDataModel)">
+            <summary>
+            Handles the log out of the user with the specified <paramref name="credentials"/>
+            </summary>
+            <param name="credentials">The credentials</param>
+        </member>
+        <member name="E:Atom.Core.Accounts.AccountsClient.LoggedIn">
+            <summary>
+            Event that fires every time a user logs in
+            </summary>
+        </member>
+        <member name="E:Atom.Core.Accounts.AccountsClient.CredentialsUpdated">
+            <summary>
+            Event that fires every time the credentials get updated
+            </summary>
+        </member>
+        <member name="E:Atom.Core.Accounts.AccountsClient.LoggedOut">
+            <summary>
+            Event that fires every time a user logs out
+            </summary>
+        </member>
+        <member name="T:Atom.Core.Accounts.PaymentMethodsAPIArgs">
+            <summary>
+            Arguments used for API GET requests related to payment methods
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Accounts.PaymentMethodsAPIArgs.IsActive">
+            <summary>
+            A flag indicating whether the payment method is active or not
+            </summary>
+        </member>
+        <member name="M:Atom.Core.Accounts.PaymentMethodsAPIArgs.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="T:Atom.Core.Accounts.PaymentsAPIArgs">
+            <summary>
+            Arguments used for API GET requests related to payments
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Accounts.PaymentsAPIArgs.Statuses">
+            <summary>
+            Limit result set to specific statuses.
+            </summary>
+        </member>
+        <member name="M:Atom.Core.Accounts.PaymentsAPIArgs.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="T:Atom.Core.Accounts.DefaultCredentialsDataStorage">
+            <summary>
+            Stores and retrieves information about the client application 
+            such as login credentials, messages, settings and so on
+            in an SQLite database
+            </summary>
+        </member>
+        <member name="F:Atom.Core.Accounts.DefaultCredentialsDataStorage.mDbContext">
+            <summary>
+            The data base context for the credentials data store
+            </summary>
+        </member>
+        <member name="M:Atom.Core.Accounts.DefaultCredentialsDataStorage.#ctor(Atom.Core.Accounts.DefaultCredentialsDbContext)">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Atom.Core.Accounts.DefaultCredentialsDataStorage.EnsureDataStorageAsync">
+            <summary>
+            Makes sure that the data storage exists.
+            Returns true if the database is created, false if it already existed.
+            Note: This method doesn't update the data storage based on the changes of the data models!
+                  If the data storage exists no action is taken, otherwise the data storage is getting created.  
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Core.Accounts.DefaultCredentialsDataStorage.ClearDataStorageAsync">
+            <summary>
+            Clears the data storage
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Core.Accounts.DefaultCredentialsDataStorage.HasCredentialsAsync">
+            <summary>
+            Determines if the current user has logged in credentials
+            </summary>
+        </member>
+        <member name="M:Atom.Core.Accounts.DefaultCredentialsDataStorage.GetCredentialsAsync">
+            <summary>
+            Gets the stored login credentials for this client
+            </summary>
+            <returns>Returns the login credentials if they exist, or null if none exist</returns>
+        </member>
+        <member name="M:Atom.Core.Accounts.DefaultCredentialsDataStorage.SaveCredentialsAsync(Atom.Core.Accounts.CredentialsDataModel)">
+            <summary>
+            Saves the specified <paramref name="credentials"/>
+            </summary>
+            <param name="credentials">The credentials</param>
+            <returns></returns>
+        </member>
+        <member name="T:Atom.Core.Accounts.DefaultCredentialsDbContext">
+            <summary>
+            The database context for the credentials data store
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Accounts.DefaultCredentialsDbContext.Credentials">
+            <summary>
+            The client credentials
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Accounts.DefaultCredentialsDbContext.CredentialsMetaData">
+            <summary>
+            The credentials meta data
+            </summary>
+        </member>
+        <member name="M:Atom.Core.Accounts.DefaultCredentialsDbContext.#ctor(Microsoft.EntityFrameworkCore.DbContextOptions{Atom.Core.Accounts.DefaultCredentialsDbContext})">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Atom.Core.Accounts.DefaultCredentialsDbContext.OnModelCreating(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <summary>
+            Configures the database model and relationships
+            </summary>
+            <param name="modelBuilder">The model builder</param>
+        </member>
+        <member name="T:Atom.Core.Accounts.CoreAccountsDataModelExtensions">
+            <summary>
+            Extension methods related to data models 
+            </summary>
+        </member>
+        <member name="F:Atom.Core.Accounts.CoreAccountsDataModelExtensions.ChargeOriginApplicationContractColor">
+            <summary>
+            The color that represents the <see cref="F:Atom.Web.Accounts.ChargeOrigin.ApplicationContract"/>
+            </summary>
+        </member>
+        <member name="F:Atom.Core.Accounts.CoreAccountsDataModelExtensions.ChargeOriginApplicationSubContractColor">
+            <summary>
+            The color that represents the <see cref="F:Atom.Web.Accounts.ChargeOrigin.ApplicationSubContract"/>
+            </summary>
+        </member>
+        <member name="F:Atom.Core.Accounts.CoreAccountsDataModelExtensions.ChargeOriginPlugInContractColor">
+            <summary>
+            The color that represents the <see cref="F:Atom.Web.Accounts.ChargeOrigin.PlugInContract"/>
+            </summary>
+        </member>
+        <member name="F:Atom.Core.Accounts.CoreAccountsDataModelExtensions.ChargeOriginPlugInSubContractColor">
+            <summary>
+            The color that represents the <see cref="F:Atom.Web.Accounts.ChargeOrigin.PlugInSubContract"/>
+            </summary>
+        </member>
+        <member name="F:Atom.Core.Accounts.CoreAccountsDataModelExtensions.ChargeOriginSellerContractColor">
+            <summary>
+            The color that represents the <see cref="F:Atom.Web.Accounts.ChargeOrigin.SellerContract"/>
+            </summary>
+        </member>
+        <member name="F:Atom.Core.Accounts.CoreAccountsDataModelExtensions.ChargeOriginOtherColor">
+            <summary>
+            The color that represents the <see cref="F:Atom.Web.Accounts.ChargeOrigin.Other"/>
+            </summary>
+        </member>
+        <member name="M:Atom.Core.Accounts.CoreAccountsDataModelExtensions.ToLocalizedString(Atom.Web.Accounts.ChargeOrigin)">
+            <summary>
+            Returns a localized string that represents the specified <paramref name="chargeOrigin"/>
+            </summary>
+        </member>
+        <member name="M:Atom.Core.Accounts.CoreAccountsDataModelExtensions.ToColorHex(Atom.Web.Accounts.ChargeOrigin)">
+            <summary>
+            Returns the hex color value that represents the specified <paramref name="chargeOrigin"/>
+            </summary>
+        </member>
+        <member name="T:Atom.Core.Accounts.CoreAccountsDataModelHelpers">
+            <summary>
+            Helper methods related to accounts
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Accounts.CoreAccountsDataModelHelpers.LogInRequestModelMapper">
+            <summary>
+            Maps the properties of the <see cref="T:Atom.Web.Accounts.LogInRequestModel"/> to custom values
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Accounts.CoreAccountsDataModelHelpers.RegisterUserRequestModelMapper">
+            <summary>
+            Maps the properties of the <see cref="T:Atom.Web.Accounts.RegisterUserRequestModel"/> to custom values
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Accounts.CoreAccountsDataModelHelpers.PasswordRequestModelMapper">
+            <summary>
+            Maps the properties of the <see cref="T:Atom.Web.Accounts.PasswordRequestModel"/> to custom values
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Accounts.CoreAccountsDataModelHelpers.UserRequestModelMapper">
+            <summary>
+            Maps the properties of the <see cref="T:Atom.Web.Accounts.UserRequestModel"/> to custom values
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Accounts.CoreAccountsDataModelHelpers.CredentialsDataModelMapper">
+            <summary>
+            Maps the properties of the <see cref="T:Atom.Core.Accounts.CredentialsDataModel"/> to custom values
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Accounts.CoreAccountsDataModelHelpers.EmbeddedUserResponseModelMapper">
+            <summary>
+            Maps the properties of the <see cref="T:Atom.Web.Accounts.EmbeddedUserResponseModel"/> to custom values
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Accounts.CoreAccountsDataModelHelpers.DefaultEmbeddedUserResponseModelProperties">
+            <summary>
+            Gets the default properties of the <see cref="T:Atom.Web.Accounts.EmbeddedUserResponseModel"/>.
+            NOTE: The values of these properties are the most commonly used values of the model!
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Accounts.CoreAccountsDataModelHelpers.SearchableUserResponseModelMapper">
+            <summary>
+            Maps the properties of the <see cref="T:Atom.Web.Accounts.SearchableUserResponseModel"/> to custom values
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Accounts.CoreAccountsDataModelHelpers.DefaultSearchableUserResponseModelProperties">
+            <summary>
+            Gets the default properties of the <see cref="T:Atom.Web.Accounts.SearchableUserResponseModel"/>.
+            NOTE: The values of these properties are the most commonly used values of the model!
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Accounts.CoreAccountsDataModelHelpers.UserResponseModelMapper">
+            <summary>
+            Maps the properties of the <see cref="T:Atom.Web.Accounts.UserResponseModel"/> to custom values
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Accounts.CoreAccountsDataModelHelpers.UserResponseModelTranslator">
+            <summary>
+            Gets the <see cref="T:Atom.Core.Translator`1"/> required for translating the 
+            values of a <see cref="T:Atom.Web.Accounts.UserResponseModel"/>
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Accounts.CoreAccountsDataModelHelpers.DefaultUserResponseModelProperties">
+            <summary>
+            Gets the default properties of the <see cref="T:Atom.Web.Accounts.UserResponseModel"/>.
+            NOTE: The values of these properties are the most commonly used values of the model!
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Accounts.CoreAccountsDataModelHelpers.ShippingDataModelMapper">
+            <summary>
+            Maps the properties of the <see cref="T:Atom.Web.Accounts.ShippingDataModel"/> to custom values
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Accounts.CoreAccountsDataModelHelpers.BillingDataModelMapper">
+            <summary>
+            Maps the properties of the <see cref="T:Atom.Web.Accounts.BillingDataModel"/> to custom values
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Accounts.CoreAccountsDataModelHelpers.TaxDataModelMapper">
+            <summary>
+            Maps the properties of the <see cref="T:Atom.Web.Accounts.TaxDataModel"/> to custom values
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Accounts.CoreAccountsDataModelHelpers.TaxDataModelTranslator">
+            <summary>
+            Gets the <see cref="T:Atom.Core.Translator`1"/> required for translating the 
+            values of a <see cref="T:Atom.Web.Accounts.TaxDataModel"/>
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Accounts.CoreAccountsDataModelHelpers.DefaultTaxDataModelProperties">
+            <summary>
+            Gets the default properties of the <see cref="T:Atom.Web.Accounts.TaxDataModel"/>.
+            NOTE: The values of these properties are the most commonly used values of the model!
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Accounts.CoreAccountsDataModelHelpers.UpdateCompanyRequestModelMapper">
+            <summary>
+            Maps the properties of the <see cref="T:Atom.Web.Accounts.UpdateCompanyRequestModel"/> to custom values
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Accounts.CoreAccountsDataModelHelpers.CreateCompanyRequestModelMapper">
+            <summary>
+            Maps the properties of the <see cref="T:Atom.Web.Accounts.CreateCompanyRequestModel"/> to custom values
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Accounts.CoreAccountsDataModelHelpers.EmbeddedCompanyResponseModelMapper">
+            <summary>
+            Maps the properties of the <see cref="T:Atom.Web.Accounts.EmbeddedCompanyResponseModel"/> to custom values
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Accounts.CoreAccountsDataModelHelpers.SearchableCompanyResponseModelMapper">
+            <summary>
+            Maps the properties of the <see cref="T:Atom.Web.Accounts.SearchableCompanyResponseModel"/> to custom values
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Accounts.CoreAccountsDataModelHelpers.DefaultSearchableCompanyResponseModelProperties">
+            <summary>
+            Gets the default properties of the <see cref="T:Atom.Web.Accounts.SearchableCompanyResponseModel"/>.
+            NOTE: The values of these properties are the most commonly used values of the model!
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Accounts.CoreAccountsDataModelHelpers.CompanyResponseModelMapper">
+            <summary>
+            Maps the properties of the <see cref="T:Atom.Web.Accounts.CompanyResponseModel"/> to custom values
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Accounts.CoreAccountsDataModelHelpers.CompanyResponseModelTranslator">
+            <summary>
+            Gets the <see cref="T:Atom.Core.Translator`1"/> required for translating the 
+            values of a <see cref="T:Atom.Web.Accounts.CompanyResponseModel"/>
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Accounts.CoreAccountsDataModelHelpers.DefaultCompanyResponseModelProperties">
+            <summary>
+            Gets the default properties of the <see cref="T:Atom.Web.Accounts.CompanyResponseModel"/>.
+            NOTE: The values of these properties are the most commonly used values of the model!
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Accounts.CoreAccountsDataModelHelpers.UpdateApplicationRequestModelMapper">
+            <summary>
+            Maps the properties of the <see cref="T:Atom.Web.Accounts.UpdateApplicationRequestModel"/> to custom values
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Accounts.CoreAccountsDataModelHelpers.CreateApplicationRequestModelMapper">
+            <summary>
+            Maps the properties of the <see cref="T:Atom.Web.Accounts.CreateApplicationRequestModel"/> to custom values
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Accounts.CoreAccountsDataModelHelpers.ApplicationVersionRequestModelMapper">
+            <summary>
+            Maps the properties of the <see cref="T:Atom.Web.Accounts.ApplicationVersionRequestModel"/> to custom values
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Accounts.CoreAccountsDataModelHelpers.ApplicationResponseModelMapper">
+            <summary>
+            Maps the properties of the <see cref="T:Atom.Web.Accounts.ApplicationResponseModel"/> to custom values
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Accounts.CoreAccountsDataModelHelpers.ApplicationResponseModelTranslator">
+            <summary>
+            Gets the <see cref="T:Atom.Core.Translator`1"/> for a <see cref="T:Atom.Web.Accounts.ApplicationResponseModel"/>
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:Atom.Core.Accounts.CoreAccountsDataModelHelpers.DefaultApplicationResponseModelProperties">
+            <summary>
+            Gets the default properties of the <see cref="T:Atom.Web.Accounts.ApplicationResponseModel"/>.
+            NOTE: The values of these properties are the most commonly used values of the model!
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Accounts.CoreAccountsDataModelHelpers.EmbeddedApplicationResponseModelMapper">
+            <summary>
+            Maps the properties of the <see cref="T:Atom.Web.Accounts.EmbeddedApplicationResponseModel"/> to custom values
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Accounts.CoreAccountsDataModelHelpers.DefaultEmbeddedApplicationResponseModelProperties">
+            <summary>
+            Gets the default properties of the <see cref="T:Atom.Web.Accounts.EmbeddedApplicationResponseModel"/>.
+            NOTE: The values of these properties are the most commonly used values of the model!
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Accounts.CoreAccountsDataModelHelpers.ApplicationVersionResponseModelMapper">
+            <summary>
+            Maps the properties of the <see cref="T:Atom.Web.Accounts.ApplicationVersionResponseModel"/> to custom values
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Accounts.CoreAccountsDataModelHelpers.ApplicationVersionResponseModelTranslator">
+            <summary>
+            Gets the <see cref="T:Atom.Core.Translator`1"/> for a <see cref="T:Atom.Web.Accounts.ApplicationVersionResponseModel"/>
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:Atom.Core.Accounts.CoreAccountsDataModelHelpers.DefaultApplicationVersionResponseModelProperties">
+            <summary>
+            Gets the default properties of the <see cref="T:Atom.Web.Accounts.ApplicationVersionResponseModel"/>.
+            NOTE: The values of these properties are the most commonly used values of the model!
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Accounts.CoreAccountsDataModelHelpers.CompanyRegisterUserRequestModelMapper">
+            <summary>
+            Maps the properties of the <see cref="T:Atom.Web.Accounts.CompanyRegisterUserRequestModel"/> to custom values
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Accounts.CoreAccountsDataModelHelpers.CreateSellerCommissionRequestModelMapper">
+            <summary>
+            Maps the properties of the <see cref="T:Atom.Web.Accounts.CreateSellerCommissionRequestModel"/> to custom values
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Accounts.CoreAccountsDataModelHelpers.UpdateSellerCommissionRequestModelMapper">
+            <summary>
+            Maps the properties of the <see cref="T:Atom.Web.Accounts.UpdateSellerCommissionRequestModel"/> to custom values
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Accounts.CoreAccountsDataModelHelpers.SellerCommissionResponseModelMapper">
+            <summary>
+            Maps the properties of the <see cref="T:Atom.Web.Accounts.SellerCommissionResponseModel"/> to custom values
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Accounts.CoreAccountsDataModelHelpers.SellerCommissionResponseModelTranslator">
+            <summary>
+            Gets the <see cref="T:Atom.Core.Translator`1"/> required for translating the 
+            values of a <see cref="T:Atom.Web.Accounts.SellerCommissionResponseModel"/>
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Accounts.CoreAccountsDataModelHelpers.DefaultSellerCommissionResponseModelProperties">
+            <summary>
+            Gets the default properties of the <see cref="T:Atom.Web.Accounts.SellerCommissionResponseModel"/>.
+            NOTE: The values of these properties are the most commonly used values of the model!
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Accounts.CoreAccountsDataModelHelpers.SellerResponseModelMapper">
+            <summary>
+            Maps the properties of the <see cref="T:Atom.Web.Accounts.SellerResponseModel"/> to custom values
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Accounts.CoreAccountsDataModelHelpers.SellerResponseModelTranslator">
+            <summary>
+            Gets the <see cref="T:Atom.Core.Translator`1"/> required for translating the 
+            values of a <see cref="T:Atom.Web.Accounts.SellerResponseModel"/>
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Accounts.CoreAccountsDataModelHelpers.DefaultSellerResponseModelProperties">
+            <summary>
+            Gets the default properties of the <see cref="T:Atom.Web.Accounts.SellerResponseModel"/>.
+            NOTE: The values of these properties are the most commonly used values of the model!
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Accounts.CoreAccountsDataModelHelpers.EmbeddedSellerResponseModelMapper">
+            <summary>
+            Maps the properties of the <see cref="T:Atom.Web.Accounts.EmbeddedSellerResponseModel"/> to custom values
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Accounts.CoreAccountsDataModelHelpers.DefaultEmbeddedSellerResponseModelProperties">
+            <summary>
+            Gets the default properties of the <see cref="T:Atom.Web.Accounts.EmbeddedSellerResponseModel"/>.
+            NOTE: The values of these properties are the most commonly used values of the model!
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Accounts.CoreAccountsDataModelHelpers.UpdateSellerRequestModelMapper">
+            <summary>
+            Maps the properties of the <see cref="T:Atom.Web.Accounts.UpdateSellerRequestModel"/> to custom values
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Accounts.CoreAccountsDataModelHelpers.CreateSellerRequestModelMapper">
+            <summary>
+            Maps the properties of the <see cref="T:Atom.Web.Accounts.CreateSellerRequestModel"/> to custom values
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Accounts.CoreAccountsDataModelHelpers.CreateSellerApplicationContractRequestModelMapper">
+            <summary>
+            Maps the properties of the <see cref="T:Atom.Web.Accounts.CreateSellerApplicationContractRequestModel"/> to custom values
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Accounts.CoreAccountsDataModelHelpers.UpdateSellerApplicationContractRequestModelMapper">
+            <summary>
+            Maps the properties of the <see cref="T:Atom.Web.Accounts.UpdateSellerApplicationContractRequestModel"/> to custom values
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Accounts.CoreAccountsDataModelHelpers.SellerApplicationContractResponseModelMapper">
+            <summary>
+            Maps the properties of the <see cref="T:Atom.Web.Accounts.SellerApplicationContractResponseModel"/> to custom values
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Accounts.CoreAccountsDataModelHelpers.SellerApplicationContractResponseModelTranslator">
+            <summary>
+            Gets the <see cref="T:Atom.Core.Translator`1"/> required for translating the 
+            values of a <see cref="T:Atom.Web.Accounts.SellerApplicationContractResponseModel"/>
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Accounts.CoreAccountsDataModelHelpers.DefaultSellerApplicationContractResponseModelProperties">
+            <summary>
+            Gets the default properties of the <see cref="T:Atom.Web.Accounts.SellerApplicationContractResponseModel"/>.
+            NOTE: The values of these properties are the most commonly used values of the model!
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Accounts.CoreAccountsDataModelHelpers.EmbeddedSellerApplicationContractResponseModelMapper">
+            <summary>
+            Maps the properties of the <see cref="T:Atom.Web.Accounts.EmbeddedSellerApplicationContractResponseModel"/> to custom values
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Accounts.CoreAccountsDataModelHelpers.EmbeddedSellerApplicationContractResponseModelTranslator">
+            <summary>
+            Gets the <see cref="T:Atom.Core.Translator`1"/> required for translating the 
+            values of a <see cref="T:Atom.Web.Accounts.EmbeddedSellerApplicationContractResponseModel"/>
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Accounts.CoreAccountsDataModelHelpers.DefaultEmbeddedSellerApplicationContractResponseModelProperties">
+            <summary>
+            Gets the default properties of the <see cref="T:Atom.Web.Accounts.EmbeddedSellerApplicationContractResponseModel"/>.
+            NOTE: The values of these properties are the most commonly used values of the model!
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Accounts.CoreAccountsDataModelHelpers.SubContractRequestModelMapper">
+            <summary>
+            Maps the properties of the <see cref="T:Atom.Web.Accounts.SubContractRequestModel"/> to custom values
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Accounts.CoreAccountsDataModelHelpers.SubContractResponseModelMapper">
+            <summary>
+            Maps the properties of the <see cref="T:Atom.Web.Accounts.SubContractResponseModel"/> to custom values
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Accounts.CoreAccountsDataModelHelpers.SubContractResponseModelTranslator">
+            <summary>
+            Gets the <see cref="T:Atom.Core.Translator`1"/> required for translating the 
+            values of a <see cref="T:Atom.Web.Accounts.SubContractResponseModel"/>
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Accounts.CoreAccountsDataModelHelpers.DefaultSubContractResponseModelProperties">
+            <summary>
+            Gets the default properties of the <see cref="T:Atom.Web.Accounts.SubContractResponseModel"/>.
+            NOTE: The values of these properties are the most commonly used values of the model!
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Accounts.CoreAccountsDataModelHelpers.EmbeddedSubContractResponseModelMapper">
+            <summary>
+            Maps the properties of the <see cref="T:Atom.Web.Accounts.EmbeddedSubContractResponseModel"/> to custom values
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Accounts.CoreAccountsDataModelHelpers.EmbeddedSubContractResponseModelTranslator">
+            <summary>
+            Gets the <see cref="T:Atom.Core.Translator`1"/> required for translating the 
+            values of a <see cref="T:Atom.Web.Accounts.EmbeddedSubContractResponseModel"/>
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Accounts.CoreAccountsDataModelHelpers.DefaultEmbeddedSubContractResponseModelProperties">
+            <summary>
+            Gets the default properties of the <see cref="T:Atom.Web.Accounts.EmbeddedSubContractResponseModel"/>.
+            NOTE: The values of these properties are the most commonly used values of the model!
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Accounts.CoreAccountsDataModelHelpers.SellerContractRequestModelMapper">
+            <summary>
+            Maps the properties of the <see cref="T:Atom.Web.Accounts.SellerContractRequestModel"/> to custom values
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Accounts.CoreAccountsDataModelHelpers.SellerContractResponseModelMapper">
+            <summary>
+            Maps the properties of the <see cref="T:Atom.Web.Accounts.SellerContractResponseModel"/> to custom values
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Accounts.CoreAccountsDataModelHelpers.SellerContractResponseModelTranslator">
+            <summary>
+            Gets the <see cref="T:Atom.Core.Translator`1"/> required for translating the 
+            values of a <see cref="T:Atom.Web.Accounts.SellerContractResponseModel"/>
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Accounts.CoreAccountsDataModelHelpers.DefaultSellerContractResponseModelProperties">
+            <summary>
+            Gets the default properties of the <see cref="T:Atom.Web.Accounts.SellerContractResponseModel"/>.
+            NOTE: The values of these properties are the most commonly used values of the model!
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Accounts.CoreAccountsDataModelHelpers.EmbeddedSellerContractResponseModelMapper">
+            <summary>
+            Maps the properties of the <see cref="T:Atom.Web.Accounts.EmbeddedSellerContractResponseModel"/> to custom values
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Accounts.CoreAccountsDataModelHelpers.EmbeddedSellerContractResponseModelTranslator">
+            <summary>
+            Gets the <see cref="T:Atom.Core.Translator`1"/> required for translating the 
+            values of a <see cref="T:Atom.Web.Accounts.EmbeddedSellerContractResponseModel"/>
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Accounts.CoreAccountsDataModelHelpers.DefaultEmbeddedSellerContractResponseModelProperties">
+            <summary>
+            Gets the default properties of the <see cref="T:Atom.Web.Accounts.EmbeddedSellerContractResponseModel"/>.
+            NOTE: The values of these properties are the most commonly used values of the model!
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Accounts.CoreAccountsDataModelHelpers.PaymentRequestModelMapper">
+            <summary>
+            Maps the properties of the <see cref="T:Atom.Web.Accounts.PaymentRequestModel"/> to custom values
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Accounts.CoreAccountsDataModelHelpers.PaymentResponseModelMapper">
+            <summary>
+            Maps the properties of the <see cref="T:Atom.Web.Accounts.PaymentResponseModel"/> to custom values
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Accounts.CoreAccountsDataModelHelpers.PaymentResponseModelTranslator">
+            <summary>
+            Gets the <see cref="T:Atom.Core.Translator`1"/> required for translating the 
+            values of a <see cref="T:Atom.Web.Accounts.PaymentResponseModel"/>
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Accounts.CoreAccountsDataModelHelpers.DefaultPaymentResponseModelProperties">
+            <summary>
+            Gets the default properties of the <see cref="T:Atom.Web.Accounts.PaymentResponseModel"/>.
+            NOTE: The values of these properties are the most commonly used values of the model!
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Accounts.CoreAccountsDataModelHelpers.SellerDeptResponseModelMapper">
+            <summary>
+            Maps the properties of the <see cref="T:Atom.Web.Accounts.SellerDeptResponseModel"/> to custom values
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Accounts.CoreAccountsDataModelHelpers.SellerDeptResponseModelTranslator">
+            <summary>
+            Gets the <see cref="T:Atom.Core.Translator`1"/> required for translating the 
+            values of a <see cref="T:Atom.Web.Accounts.SellerDeptResponseModel"/>
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Accounts.CoreAccountsDataModelHelpers.DefaultSellerDeptResponseModelProperties">
+            <summary>
+            Gets the default properties of the <see cref="T:Atom.Web.Accounts.SellerDeptResponseModel"/>.
+            NOTE: The values of these properties are the most commonly used values of the model!
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Accounts.CoreAccountsDataModelHelpers.ChargeResponseModelMapper">
+            <summary>
+            Maps the properties of the <see cref="T:Atom.Web.Accounts.ChargeResponseModel"/> to custom values
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Accounts.CoreAccountsDataModelHelpers.ChargeResponseModelTranslator">
+            <summary>
+            Gets the <see cref="T:Atom.Core.Translator`1"/> required for translating the 
+            values of a <see cref="T:Atom.Web.Accounts.ChargeResponseModel"/>
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Accounts.CoreAccountsDataModelHelpers.DefaultChargeResponseModelProperties">
+            <summary>
+            Gets the default properties of the <see cref="T:Atom.Web.Accounts.ChargeResponseModel"/>.
+            NOTE: The values of these properties are the most commonly used values of the model!
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Accounts.CoreAccountsDataModelHelpers.PaymentMethodRequestModelMapper">
+            <summary>
+            Maps the properties of the <see cref="T:Atom.Web.Accounts.PaymentMethodRequestModel"/> to custom values
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Accounts.CoreAccountsDataModelHelpers.PaymentMethodResponseModelMapper">
+            <summary>
+            Maps the properties of the <see cref="T:Atom.Web.Accounts.PaymentMethodResponseModel"/> to custom values
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Accounts.CoreAccountsDataModelHelpers.PaymentMethodResponseModelTranslator">
+            <summary>
+            Gets the <see cref="T:Atom.Core.Translator`1"/> required for translating the 
+            values of a <see cref="T:Atom.Web.Accounts.PaymentMethodResponseModel"/>
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Accounts.CoreAccountsDataModelHelpers.DefaultPaymentMethodResponseModelProperties">
+            <summary>
+            Gets the default properties of the <see cref="T:Atom.Web.Accounts.PaymentMethodResponseModel"/>.
+            NOTE: The values of these properties are the most commonly used values of the model!
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Accounts.CoreAccountsDataModelHelpers.EmbeddedPaymentMethodResponseModelMapper">
+            <summary>
+            Maps the properties of the <see cref="T:Atom.Web.Accounts.EmbeddedPaymentMethodResponseModel"/> to custom values
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Accounts.CoreAccountsDataModelHelpers.EmbeddedPaymentMethodResponseModelTranslator">
+            <summary>
+            Gets the <see cref="T:Atom.Core.Translator`1"/> required for translating the 
+            values of a <see cref="T:Atom.Web.Accounts.EmbeddedPaymentMethodResponseModel"/>
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Accounts.CoreAccountsDataModelHelpers.DefaultEmbeddedPaymentMethodResponseModelProperties">
+            <summary>
+            Gets the default properties of the <see cref="T:Atom.Web.Accounts.EmbeddedPaymentMethodResponseModel"/>.
+            NOTE: The values of these properties are the most commonly used values of the model!
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Accounts.CoreAccountsDataModelHelpers.CompanyUserResponseModelMapper">
+            <summary>
+            Maps the properties of the <see cref="T:Atom.Web.Accounts.CompanyUserResponseModel"/> to custom values
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Accounts.CoreAccountsDataModelHelpers.CompanyUserResponseModelTranslator">
+            <summary>
+            Gets the <see cref="T:Atom.Core.Translator`1"/> required for translating the 
+            values of a <see cref="T:Atom.Web.Accounts.CompanyUserResponseModel"/>
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Accounts.CoreAccountsDataModelHelpers.DefaultCompanyUserResponseModelProperties">
+            <summary>
+            Gets the default properties of the <see cref="T:Atom.Web.Accounts.CompanyUserResponseModel"/>.
+            NOTE: The values of these properties are the most commonly used values of the model!
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Accounts.CoreAccountsDataModelHelpers.EmbeddedCompanyUserResponseModelMapper">
+            <summary>
+            Maps the properties of the <see cref="T:Atom.Web.Accounts.EmbeddedCompanyUserResponseModel"/> to custom values
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Accounts.CoreAccountsDataModelHelpers.DefaultEmbeddedCompanyUserResponseModelProperties">
+            <summary>
+            Gets the default properties of the <see cref="T:Atom.Web.Accounts.EmbeddedCompanyUserResponseModel"/>.
+            NOTE: The values of these properties are the most commonly used values of the model!
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Accounts.CoreAccountsDataModelHelpers.NotificationResponseModelMapper">
+            <summary>
+            Maps the properties of the <see cref="T:Atom.Web.Accounts.NotificationResponseModel"/> to custom values
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Accounts.CoreAccountsDataModelHelpers.NotificationResponseModelTranslator">
+            <summary>
+            Gets the <see cref="T:Atom.Core.Translator`1"/> required for translating the 
+            values of a <see cref="T:Atom.Web.Accounts.NotificationResponseModel"/>
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Accounts.CoreAccountsDataModelHelpers.DefaultNotificationResponseModelProperties">
+            <summary>
+            Gets the default properties of the <see cref="T:Atom.Web.Accounts.NotificationResponseModel"/>.
+            NOTE: The values of these properties are the most commonly used values of the model!
+            </summary>
+        </member>
+        <member name="T:Atom.Core.Accounts.CredentialsDataModel">
+            <summary>
+            Represents a saved user.
+            NOTE: This class is sealed. Any additional information should be stored as a key pair value in the <see cref="P:Atom.Core.Accounts.CredentialsDataModel.MetaData"/> property!
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Accounts.CredentialsDataModel.Id">
+            <summary>
+            The user's id
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Accounts.CredentialsDataModel.Username">
+            <summary>
+            The user's username
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Accounts.CredentialsDataModel.FirstName">
+            <summary>
+            The user's first name
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Accounts.CredentialsDataModel.LastName">
+            <summary>
+            The user's last name
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Accounts.CredentialsDataModel.SmallImageUrl">
+            <summary>
+            The small image url
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Accounts.CredentialsDataModel.ImageUrl">
+            <summary>
+            The image url
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Accounts.CredentialsDataModel.LargeImageUrl">
+            <summary>
+            The large image url
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Accounts.CredentialsDataModel.EmailConfirmed">
+            <summary>
+            A flag indicating whether the user has confirmed its email address
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Accounts.CredentialsDataModel.Email">
+            <summary>
+            The user's email
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Accounts.CredentialsDataModel.PhoneNumberConfirmed">
+            <summary>
+            A flag indicating whether the user has confirmed its phone number
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Accounts.CredentialsDataModel.PhoneNumber">
+            <summary>
+            The user's phone number
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Accounts.CredentialsDataModel.Token">
+            <summary>
+            The authentication token used to stay authenticated through future requests.
+            NOTE: The Token is only provided when called from the login methods!
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:Atom.Core.Accounts.CredentialsDataModel.MetaData">
+            <summary>
+            The meta data
+            </summary>
+        </member>
+        <member name="M:Atom.Core.Accounts.CredentialsDataModel.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Atom.Core.Accounts.CredentialsDataModel.ToString">
+            <summary>
+            Returns a string that represents the current object
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Core.Accounts.CredentialsDataModel.FromAuthorizedUserResponseModel(Atom.Web.Accounts.AuthorizedUserResponseModel)">
+            <summary>
+            Creates and returns a <see cref="T:Atom.Core.Accounts.CredentialsDataModel"/> from the specified <paramref name="model"/>
+            </summary>
+            <param name="model">The model</param>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Core.Accounts.CredentialsDataModel.Update(Atom.Web.Accounts.UserResponseModel)">
+            <summary>
+            Updates the values of the current <see cref="T:Atom.Core.Accounts.CredentialsDataModel"/> using the values of the specified <paramref name="model"/>
+            </summary>
+            <param name="model">The model</param>
+        </member>
+        <member name="T:Atom.Core.Accounts.CredentialsMetaDataModel">
+            <summary>
+            A <see cref="T:Atom.Core.MetaDataModel"/> used by the <see cref="T:Atom.Core.Accounts.CredentialsDataModel"/>
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Accounts.CredentialsMetaDataModel.CredentialsId">
+            <summary>
+            The <see cref="P:Atom.Web.Abstractions.BaseResponseModel.Id"/> of the related <see cref="T:Atom.Core.Accounts.CredentialsDataModel"/>
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Accounts.CredentialsMetaDataModel.Credentials">
+            <summary>
+            The related credentials retrieved using the <see cref="P:Atom.Core.Accounts.CredentialsMetaDataModel.CredentialsId"/>
+            </summary>
+        </member>
+        <member name="M:Atom.Core.Accounts.CredentialsMetaDataModel.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="T:Atom.Core.Accounts.ApplicationPage">
+            <summary>
+            All the available application pages
+            </summary>
+        </member>
+        <member name="F:Atom.Core.Accounts.ApplicationPage.LogIn">
+            <summary>
+            The log in page
+            </summary>
+        </member>
+        <member name="F:Atom.Core.Accounts.ApplicationPage.Register">
+            <summary>
+            The register page
+            </summary>
+        </member>
+        <member name="F:Atom.Core.Accounts.ApplicationPage.Appication">
+            <summary>
+            The application page available only after login in
+            </summary>
+        </member>
+        <member name="T:Atom.Core.Accounts.CoreAccountsDI">
+            <summary>
+            The default accounts services that should be available everywhere in the application
+            </summary>
+        </member>
+        <member name="F:Atom.Core.Accounts.CoreAccountsDI.mHub">
+            <summary>
+            The member f the <see cref="P:Atom.Core.Accounts.CoreAccountsDI.Hub"/> property
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Accounts.CoreAccountsDI.GetCredentialsDataStorage">
+            <summary>
+            Gets the credentials data storage that contains only the checking functionality of the complete one
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Accounts.CoreAccountsDI.ApplicationPagesManager">
+            <summary>
+            Gets the application pages manager
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Accounts.CoreAccountsDI.Client">
+            <summary>
+            Gets the account client
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Accounts.CoreAccountsDI.Hub">
+            <summary>
+            The accounts hub
+            </summary>
+        </member>
+        <member name="E:Atom.Core.Accounts.CoreAccountsDI.HubChanged">
+            <summary>
+            Fires when the <see cref="P:Atom.Core.Accounts.CoreAccountsDI.Hub"/> property changes
+            </summary>
+        </member>
+        <member name="T:Atom.Core.Accounts.IAccountsClient">
+            <summary>
+            Provides abstractions for a client that manipulates accounts
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Accounts.IAccountsClient.MetaData">
+            <summary>
+            Meta data used by the client
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Accounts.IAccountsClient.Credentials">
+            <summary>
+            The credentials of the logged in user.
+            NOTE: If there isn't a logged in user then this is set to <see cref="!:null"/>!
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Accounts.IAccountsClient.HasUser">
+            <summary>
+            A flag indicating whether there is a logged in user or not
+            </summary>
+        </member>
+        <member name="M:Atom.Core.Accounts.IAccountsClient.RegisterAsync(Atom.Web.Accounts.RegisterUserRequestModel)">
+            <summary>
+            Registers a user
+            </summary>
+            <param name="model">The model</param>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Core.Accounts.IAccountsClient.LogInAsync(Atom.Web.Accounts.LogInRequestModel)">
+            <summary>
+            Log ins a user
+            </summary>
+            <param name="model">The model</param>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Core.Accounts.IAccountsClient.RefreshAsync(Atom.Core.Accounts.CredentialsDataModel)">
+            <summary>
+            Re-logins the user with the specified <paramref name="credentials"/>
+            </summary>
+            <param name="credentials">The credentials</param>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Core.Accounts.IAccountsClient.LogOutAsync">
+            <summary>
+            Logs the current user out
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Core.Accounts.IAccountsClient.Clear">
+            <summary>
+            Clears the client of any credentials
+            </summary>
+        </member>
+        <member name="M:Atom.Core.Accounts.IAccountsClient.GetAccountsAsync(Atom.Web.StandardAPIArgs)">
+            <summary>
+            Gets the users using the specified <paramref name="args"/>
+            </summary>
+            <param name="args">The args</param>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Core.Accounts.IAccountsClient.GetAccountAsync">
+            <summary>
+            Gets the information of the logged in user
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Core.Accounts.IAccountsClient.UpdatePasswordAsync(Atom.Web.Accounts.PasswordRequestModel)">
+            <summary>
+            Updates the password of the logged in user
+            </summary>
+            <param name="model">The model</param>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Core.Accounts.IAccountsClient.ForgotPasswordAsync(Atom.Web.Accounts.ForgotPasswordRequestModel)">
+            <summary>
+            Generates and sends a reset password token to the user
+            </summary>
+            <param name="model">The model</param>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Core.Accounts.IAccountsClient.ResetPasswordAsync(Atom.Web.Accounts.ResetPasswordRequestModel)">
+            <summary>
+            Resets the password of a user
+            </summary>
+            <param name="model">The model</param>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Core.Accounts.IAccountsClient.UpdateAsync(Atom.Web.Accounts.UserRequestModel)">
+            <summary>
+            Uses the specified <paramref name="model"/> to update the information of the logged in user
+            </summary>
+            <param name="model">The model</param>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Core.Accounts.IAccountsClient.SetAccountPrimaryImageAsync(Microsoft.AspNetCore.Http.IFormFile)">
+            <summary>
+            Sets the specified <paramref name="image"/> as the profile image of the logged in user
+            </summary>
+            <param name="image">The image</param>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Core.Accounts.IAccountsClient.SendVerificationEmailAsync">
+            <summary>
+            Sends a verification email to the logged in user's email
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Core.Accounts.IAccountsClient.VerifyUserEmailAsync(System.String)">
+            <summary>
+            Uses the specified <paramref name="token"/> to verify the email of the logged in user
+            </summary>
+            <param name="token">The verification token</param>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Core.Accounts.IAccountsClient.SendPhoneNumberVerificationCodeAsync">
+            <summary>
+            Sends a verification code to the logged in user's phone
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Core.Accounts.IAccountsClient.VerifyPhoneNumberAsync(System.String)">
+            <summary>
+            Uses the specified <paramref name="code"/> to verify the phone number of the logged in user
+            </summary>
+            <param name="code">The verification code</param>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Core.Accounts.IAccountsClient.GetNotificationsAsync(Atom.Web.Accounts.NotificationsAPIArgs)">
+            <summary>
+            Gets the notifications
+            </summary>
+            <param name="args">The args</param>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Core.Accounts.IAccountsClient.GetNotificationsInformationAsync(Atom.Web.Accounts.HeaderNotificationsAPIArgs)">
+            <summary>
+            Gets information related to notifications
+            </summary>
+            <param name="args">The args</param>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Core.Accounts.IAccountsClient.SetSeenNotificationsAsync">
+            <summary>
+            Updates the status of all the notifications to "seen"
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Core.Accounts.IAccountsClient.GetPaymentMethodsAsync(Atom.Core.Accounts.PaymentMethodsAPIArgs)">
+            <summary>
+            Gets the payment methods
+            </summary>
+            <param name="args">The args</param>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Core.Accounts.IAccountsClient.GetPaymentMethodAsync(System.String)">
+            <summary>
+            Gets the payment method with the specified <paramref name="paymentMethodId"/>
+            </summary>
+            <param name="paymentMethodId">The payment method id</param>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Core.Accounts.IAccountsClient.GetCompaniesAsync(Atom.Web.Accounts.CompaniesAPIArgs)">
+            <summary>
+            Gets the companies using the specified <paramref name="args"/>
+            </summary>
+            <param name="args">The args</param>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Core.Accounts.IAccountsClient.GetCompanyAsync(System.String)">
+            <summary>
+            Gets the company with the specified <paramref name="companyId"/>
+            </summary>
+            <param name="companyId">The company id</param>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Core.Accounts.IAccountsClient.UpdateCompanyAsync(System.String,Atom.Web.Accounts.UpdateCompanyRequestModel)">
+            <summary>
+            Updates the company with the specified <paramref name="companyId"/>
+            </summary>
+            <param name="companyId">The company id</param>
+            <param name="model">The model</param>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Core.Accounts.IAccountsClient.GetCompanyChargesAsync(System.String,Atom.Web.Accounts.ChargesAPIArgs)">
+            <summary>
+            Gets the company charges of the company with the specified <paramref name="companyId"/>
+            </summary>
+            <param name="companyId">The company id</param>
+            <param name="args">The args</param>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Core.Accounts.IAccountsClient.GetCompanyChargeAsync(System.String,System.String)">
+            <summary>
+            Gets the company charge with the specified <paramref name="companyChargeId"/> of
+            the company with the specified <paramref name="companyId"/>
+            </summary>
+            <param name="companyId">The company id</param>
+            <param name="companyChargeId">The company charge id</param>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Core.Accounts.IAccountsClient.AddCompanyPaymentAsync(System.String,Atom.Web.Accounts.PaymentRequestModel)">
+            <summary>
+            Adds a company payment to the company with the specified <paramref name="companyId"/>
+            </summary>
+            <param name="companyId">The company id</param>
+            <param name="model">The model</param>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Core.Accounts.IAccountsClient.GetCompanyPaymentsAsync(System.String,Atom.Core.Accounts.PaymentsAPIArgs)">
+            <summary>
+            Gets the company payments of the company with the specified <paramref name="companyId"/>
+            </summary>
+            <param name="companyId">The company id</param>
+            <param name="args">The args</param>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Core.Accounts.IAccountsClient.GetCompanyPaymentAsync(System.String,System.String)">
+            <summary>
+            Gets the company payment with the specified <paramref name="companyPaymentId"/>
+            of the company with the specified <paramref name="companyId"/>
+            </summary>
+            <param name="companyId">The company id</param>
+            <param name="companyPaymentId">The company payment id</param>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Core.Accounts.IAccountsClient.UpdateCompanyPaymentAsync(System.String,System.String,Atom.Web.Accounts.PaymentRequestModel)">
+            <summary>
+            Updates the payment with the specified <paramref name="companyPaymentId"/> of the company
+            with the specified <paramref name="companyId"/>
+            </summary>
+            <param name="companyId">The company id</param>
+            <param name="companyPaymentId">The company payment id</param>
+            <param name="model">The model</param>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Core.Accounts.IAccountsClient.DeleteCompanyPaymentAsync(System.String,System.String)">
+            <summary>
+            Deletes the payment with the specified <paramref name="companyPaymentId"/> from the company
+            with the specified <paramref name="companyId"/>
+            </summary>
+            <param name="companyId">The company id</param>
+            <param name="companyPaymentId">The company payment id</param>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Core.Accounts.IAccountsClient.AddCompanyImageAsync(System.String,Atom.Web.Abstractions.ImageRequestModel,Microsoft.AspNetCore.Http.IFormFile)">
+            <summary>
+            Adds the specified <paramref name="image"/> to the company with the specified <paramref name="companyId"/>
+            </summary>
+            <param name="companyId">The company id</param>
+            <param name="model">The model</param>
+            <param name="image">The image</param>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Core.Accounts.IAccountsClient.UpdateCompanyImageAsync(System.String,System.String,Atom.Web.Abstractions.ImageRequestModel)">
+            <summary>
+            Update the image with the specified <paramref name="companyImageId"/> of the company with the specified <paramref name="companyId"/>
+            </summary>
+            <param name="companyId">The company id</param>
+            <param name="companyImageId">The company image id</param>
+            <param name="model">The model</param>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Core.Accounts.IAccountsClient.DeleteCompanyImageAsync(System.String,System.String)">
+            <summary>
+            Deletes the image with the specified <paramref name="companyImageId"/> from the company with the specified <paramref name="companyId"/>
+            </summary>
+            <param name="companyId">The company id</param>
+            <param name="companyImageId">The company image id</param>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Core.Accounts.IAccountsClient.SetCompanyPrimaryImageAsync(System.String,Microsoft.AspNetCore.Http.IFormFile)">
+            <summary>
+            Sets the specified <paramref name="image"/> as the primary image of the company with the specified <paramref name="companyId"/>
+            </summary>
+            <param name="companyId">The company id</param>
+            <param name="image">The image</param>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Core.Accounts.IAccountsClient.GetApplicationsAsync">
+            <summary>
+            Gets all the applications
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Core.Accounts.IAccountsClient.GetApplicationAsync(System.String)">
+            <summary>
+            Gets the application with the specified <paramref name="applicationId"/>
+            </summary>
+            <param name="applicationId">The application id</param>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Core.Accounts.IAccountsClient.GetApplicationVersionAssetsAsync(System.String,System.String)">
+            <summary>
+            Gets the assets of the application version with the specified <paramref name="applicationVersionId"/>
+            </summary>
+            <param name="applicationId">The application id</param>
+            <param name="applicationVersionId">The application version id</param>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Core.Accounts.IAccountsClient.DownloadApplicationVersionAssetAsync(System.String,System.String,System.String)">
+            <summary>
+            Downloads the asset with the specified <paramref name="fileName"/> from the application version with the specified <paramref name="applicationVersionId"/>.
+            </summary>
+            <param name="applicationId">The application id</param>
+            <param name="applicationVersionId">The application version id</param>
+            <param name="fileName">The file name</param>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Core.Accounts.IAccountsClient.DownloadApplicationVersionAssetToFileAsync(System.String,System.String,System.String,System.String)">
+            <summary>
+            Downloads the asset with the specified <paramref name="fileName"/> from the application version with the specified <paramref name="applicationVersionId"/> and
+            saves it at the directory at the specified <paramref name="directoryPath"/> using the specified <paramref name="fileName"/>
+            </summary>
+            <param name="applicationId">The application id</param>
+            <param name="applicationVersionId">The application version id</param>
+            <param name="directoryPath">The directory that will be used for storing the file</param>
+            <param name="fileName">The file name</param>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Core.Accounts.IAccountsClient.GetApplicationVersionLanguagePacksAsync(System.String,System.String,System.String)">
+            <summary>
+            Gets the language packs of the application version wit the specified <paramref name="applicationVersionId"/>
+            </summary>
+            <param name="applicationId">The application id</param>
+            <param name="applicationVersionId">The application version id</param>
+            <param name="language">Limit the result set using a <see cref="P:Atom.Core.LanguageDataModel.Shortcode"/></param>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Core.Accounts.IAccountsClient.DownloadApplicationVersionLanguagePackAsync(System.String,System.String,System.String)">
+            <summary>
+            Downloads the language pack of the application version with the specified <paramref name="applicationVersionId"/>
+            with the specified <paramref name="fileName"/>
+            </summary>
+            <param name="applicationId">The application id</param>
+            <param name="applicationVersionId">The application version id</param>
+            <param name="fileName">The file name</param>
+            <returns></returns>
+        </member>
+        <member name="E:Atom.Core.Accounts.IAccountsClient.LoggedIn">
+            <summary>
+            Event that fires every time a user logs in
+            </summary>
+        </member>
+        <member name="E:Atom.Core.Accounts.IAccountsClient.CredentialsUpdated">
+            <summary>
+            Event that fires every time the credentials get updated
+            </summary>
+        </member>
+        <member name="E:Atom.Core.Accounts.IAccountsClient.LoggedOut">
+            <summary>
+            Event that fires every time a user logs out
+            </summary>
+        </member>
+        <member name="T:Atom.Core.Accounts.IAccountsHub">
+            <summary>
+            Provides abstractions for an accounts hub
+            </summary>
+        </member>
+        <member name="E:Atom.Core.Accounts.IAccountsHub.NotificationReceived">
+            <summary>
+            Fires every time a notification is received
+            </summary>
+        </member>
+        <member name="E:Atom.Core.Accounts.IAccountsHub.DisconnectRequestReceived">
+            <summary>
+            Fires every time a disconnect request is received
+            </summary>
+        </member>
+        <member name="T:Atom.Core.Accounts.IApplicationPagesManager">
+            <summary>
+            Provides abstractions for the applications pages manager
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Accounts.IApplicationPagesManager.CurrentPage">
+            <summary>
+            The current application page
+            </summary>
+        </member>
+        <member name="T:Atom.Core.Accounts.ICredentialsDataStorage">
+            <summary>
+            Provides abstractions for a data storage that store locally the users credentials
+            for automatically signing him in.
+            </summary>
+        </member>
+        <member name="M:Atom.Core.Accounts.ICredentialsDataStorage.HasCredentialsAsync">
+            <summary>
+            Determines if there is a user with stored credentials
+            </summary>
+        </member>
+        <member name="M:Atom.Core.Accounts.ICredentialsDataStorage.GetCredentialsAsync">
+            <summary>
+            Gets the already stored log in credentials.
+            To ensure that credentials exist use the <see cref="M:Atom.Core.Accounts.ICredentialsDataStorage.HasCredentialsAsync"/> method!
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Core.Accounts.ICredentialsDataStorage.SaveCredentialsAsync(Atom.Core.Accounts.CredentialsDataModel)">
+            <summary>
+            Saves the specified <paramref name="credentials"/>
+            </summary>
+            <param name="credentials">The credentials</param>
+            <returns></returns>
+        </member>
+        <member name="T:Atom.Core.Accounts.FrameworkConstructionExtensions">
+            <summary>
+            Extension methods for the <see cref="T:Atom.Core.FrameworkConstruction"/>
+            </summary>
+        </member>
+        <member name="M:Atom.Core.Accounts.FrameworkConstructionExtensions.AddDefaultCredentialsLocalDataStorage(Atom.Core.FrameworkConstruction,System.String)">
+            <summary>
+            Adds a local SQLite database that can be used as a local data storage
+            </summary>
+            <param name="construction">The framework construction</param>
+            <param name="connectionString">
+            The SQLite connection string.
+            NOTE: The SQLite connection string is of the following format: DataSource={fileName}.db!
+            Ex.: DataSource=UserCredentials.db!
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Core.Accounts.FrameworkConstructionExtensions.AddDefaultAccountsClient(Atom.Core.FrameworkConstruction)">
+            <summary>
+            Adds the default accounts client
+            </summary>
+            <param name="construntion">The framework construction</param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

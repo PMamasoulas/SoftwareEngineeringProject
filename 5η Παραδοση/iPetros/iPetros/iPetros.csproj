@@ -1,0 +1,100 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <StartupObject>iPetros.EntryPoint</StartupObject>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="9.0.0" />
+    <PackageReference Include="Fody" Version="4.2.1">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="PropertyChanged.Fody" Version="2.6.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Http" Version="2.2.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Http.Features" Version="3.1.2" />
+    <PackageReference Include="Microsoft.AspNetCore.StaticFiles" Version="2.2.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="3.1.2" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.EnvironmentVariables" Version="3.1.2" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="3.1.2" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="3.1.2" />
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="3.1.2" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Configuration" Version="3.1.2" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="3.1.2" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="3.1.2" />
+    <PackageReference Include="System.Collections" Version="4.3.0" />
+    <PackageReference Include="System.Reflection.Emit" Version="4.7.0" />
+    <PackageReference Include="System.Runtime" Version="4.3.1" />
+    <PackageReference Include="OpenCvSharp4.runtime.win" Version="4.5.1.20210123" />
+    <PackageReference Include="PropertyChanged.Fody" Version="2.6.1" />
+    <PackageReference Include="Serilog" Version="2.10.0" />
+    <PackageReference Include="Serilog.Extensions.Logging" Version="3.0.1" />
+    <PackageReference Include="Serilog.Sinks.File" Version="4.1.0" />
+    <PackageReference Include="SharpVectors" Version="1.7.1" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
+
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="3.1.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.2" />
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="3.1.2" />
+    <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="3.1.1" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <Reference Include="Atom.CodeGeneration">
+      <HintPath>..\Atom.CodeGeneration.dll</HintPath>
+    </Reference>
+    <Reference Include="Atom.Core">
+      <HintPath>..\Atom.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Atom.Core.Abstractions">
+      <HintPath>..\Atom.Core.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Atom.Core.Accounts">
+      <HintPath>..\Atom.Core.Accounts.dll</HintPath>
+    </Reference>
+    <Reference Include="Atom.Core.Controls">
+      <HintPath>..\Atom.Core.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="Atom.Core.Controls.Calendar">
+      <HintPath>..\Atom.Core.Controls.Calendar.dll</HintPath>
+    </Reference>
+    <Reference Include="Atom.Personalization">
+      <HintPath>..\Atom.Personalization.dll</HintPath>
+    </Reference>
+    <Reference Include="Atom.Relational">
+      <HintPath>..\Atom.Relational.dll</HintPath>
+    </Reference>
+    <Reference Include="Atom.Web">
+      <HintPath>..\Atom.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="Atom.Web.Abstractions">
+      <HintPath>..\Atom.Web.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Atom.Web.Accounts">
+      <HintPath>..\Atom.Web.Accounts.dll</HintPath>
+    </Reference>
+    <Reference Include="Atom.Windows">
+      <HintPath>..\Atom.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="Atom.Windows.Controls">
+      <HintPath>..\Atom.Windows.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="Atom.Windows.Controls.Abstractions">
+      <HintPath>..\Atom.Windows.Controls.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Atom.Windows.Controls.Accounts">
+      <HintPath>..\Atom.Windows.Controls.Accounts.dll</HintPath>
+    </Reference>
+    <Reference Include="Atom.Windows.Controls.Calendar">
+      <HintPath>..\Atom.Windows.Controls.Calendar.dll</HintPath>
+    </Reference>
+    <Reference Include="Atom.Windows.Controls.TabControl">
+      <HintPath>..\Atom.Windows.Controls.TabControl.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,2867 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Atom.Web.Accounts</name>
+    </assembly>
+    <members>
+        <member name="T:Atom.Web.Accounts.AccountAPIRoutes">
+            <summary>
+            The accounts related API routes
+            </summary>
+        </member>
+        <member name="T:Atom.Web.Accounts.ApplicationVersionRequestModel">
+            <summary>
+            Request model used for creating and updating application versions
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.ApplicationVersionRequestModel.Type">
+            <summary>
+            The type of the version
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.ApplicationVersionRequestModel.Version">
+            <summary>
+            The version
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.ApplicationVersionRequestModel.SupportedCountries">
+            <summary>
+            The countries that the application is supported at
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.ApplicationVersionRequestModel.Authors">
+            <summary>
+            The authors of the application version
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.ApplicationVersionRequestModel.ExecutableFileName">
+            <summary>
+            The file name of the executable.
+            NOTE: That's usually the installer file!
+            </summary>
+        </member>
+        <member name="M:Atom.Web.Accounts.ApplicationVersionRequestModel.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Atom.Web.Accounts.ApplicationVersionRequestModel.ToString">
+            <summary>
+            Returns a string that represents the current object
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Atom.Web.Accounts.CreateApplicationRequestModel">
+            <summary>
+            Request model used for creating applications
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.CreateApplicationRequestModel.Name">
+            <summary>
+            The name of the application
+            </summary>
+        </member>
+        <member name="M:Atom.Web.Accounts.CreateApplicationRequestModel.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Atom.Web.Accounts.CreateApplicationRequestModel.ToString">
+            <summary>
+            Returns a string that represents the current object
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Atom.Web.Accounts.UpdateApplicationRequestModel">
+            <summary>
+            Request model used for updating applications
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.UpdateApplicationRequestModel.Description">
+            <summary>
+            The description
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.UpdateApplicationRequestModel.Color">
+            <summary>
+            The color
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.UpdateApplicationRequestModel.Site">
+            <summary>
+            The site
+            </summary>
+        </member>
+        <member name="M:Atom.Web.Accounts.UpdateApplicationRequestModel.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="T:Atom.Web.Accounts.CreateCompanyRequestModel">
+            <summary>
+            Request model used for creating a company
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.CreateCompanyRequestModel.Application">
+            <summary>
+            The application that the company is created for.
+            NOTE: The available options are retrieved from <see cref="T:Atom.Core.ApplicationConstants"/>!
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.CreateCompanyRequestModel.ApplicationVersionId">
+            <summary>
+            The id of the application version
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.CreateCompanyRequestModel.IsDemo">
+            <summary>
+            A flag indicating whether this is a demo company or not.
+            NOTE: If this is set to <see cref="!:true"/> then the <see cref="P:Atom.Web.Accounts.CreateCompanyRequestModel.ContractId"/>
+                  is ignored!
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.CreateCompanyRequestModel.DemoDateEnd">
+            <summary>
+            The date the demo expires
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.CreateCompanyRequestModel.ContractId">
+            <summary>
+            The contract id
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.CreateCompanyRequestModel.Tax">
+            <summary>
+            The tax information
+            </summary>
+        </member>
+        <member name="M:Atom.Web.Accounts.CreateCompanyRequestModel.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="T:Atom.Web.Accounts.UpdateCompanyRequestModel">
+            <summary>
+            Request model used for updating a company
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.UpdateCompanyRequestModel.Name">
+            <summary>
+            The name
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.UpdateCompanyRequestModel.PhoneNumber">
+            <summary>
+            The phone number
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.UpdateCompanyRequestModel.Email">
+            <summary>
+            The email
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.UpdateCompanyRequestModel.Shipping">
+            <summary>
+            The shipping
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.UpdateCompanyRequestModel.Billing">
+            <summary>
+            The billing
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.UpdateCompanyRequestModel.Language">
+            <summary>
+            The language shortcode.
+            NOTE: This is the <see cref="P:Atom.Core.LanguageDataModel.Shortcode"/>!
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.UpdateCompanyRequestModel.Owners">
+            <summary>
+            The owners 
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:Atom.Web.Accounts.UpdateCompanyRequestModel.MetaData">
+            <summary>
+            The meta data
+            </summary>
+        </member>
+        <member name="M:Atom.Web.Accounts.UpdateCompanyRequestModel.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Atom.Web.Accounts.UpdateCompanyRequestModel.ToString">
+            <summary>
+            Returns a string that represents the current object
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Atom.Web.Accounts.DeptRequestModel">
+            <summary>
+            Request model used for updating depts
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.DeptRequestModel.Amount">
+            <summary>
+            The amount
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.DeptRequestModel.PendingAmount">
+            <summary>
+            The amount of payments that haven't yet been confirmed
+            </summary>
+        </member>
+        <member name="M:Atom.Web.Accounts.DeptRequestModel.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="T:Atom.Web.Accounts.PaymentMethodRequestModel">
+            <summary>
+            Request model used for creating and updating payment methods
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.PaymentMethodRequestModel.Name">
+            <summary>
+            The name
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.PaymentMethodRequestModel.Description">
+            <summary>
+            The description
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.PaymentMethodRequestModel.Color">
+            <summary>
+            The color
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.PaymentMethodRequestModel.Commission">
+            <summary>
+            The commission.
+            NOTE: That's a value from 0 to 100!
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.PaymentMethodRequestModel.IsActive">
+            <summary>
+            A flag indicating whether the payment method is active or not
+            </summary>
+        </member>
+        <member name="M:Atom.Web.Accounts.PaymentMethodRequestModel.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="T:Atom.Web.Accounts.PaymentRequestModel">
+            <summary>
+            Request model used for creating and updating payments
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.PaymentRequestModel.Note">
+            <summary>
+            The note
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.PaymentRequestModel.Amount">
+            <summary>
+            The amount
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.PaymentRequestModel.PaymentMethodId">
+            <summary>
+            The payment method id
+            </summary>
+        </member>
+        <member name="M:Atom.Web.Accounts.PaymentRequestModel.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="T:Atom.Web.Accounts.ReviewRequestModel">
+            <summary>
+            Request model used for creating and updating reviews
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.ReviewRequestModel.Message">
+            <summary>
+            The message
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.ReviewRequestModel.Rate">
+            <summary>
+            The rate.
+            NOTE: The min value is 0 and the max value is 5!
+            </summary>
+        </member>
+        <member name="M:Atom.Web.Accounts.ReviewRequestModel.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="T:Atom.Web.Accounts.CreateSellerApplicationContractRequestModel">
+            <summary>
+            Request model used for creating a seller application contract
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.CreateSellerApplicationContractRequestModel.Application">
+            <summary>
+            The application that the user can resell.
+            NOTE: The available options are retrieved from <see cref="T:Atom.Core.ApplicationConstants"/>!
+            </summary>
+        </member>
+        <member name="M:Atom.Web.Accounts.CreateSellerApplicationContractRequestModel.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="T:Atom.Web.Accounts.CreateSellerCommissionRequestModel">
+            <summary>
+            Request model used for creating seller commissions
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.CreateSellerCommissionRequestModel.SellerId">
+            <summary>
+            The id of the seller
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.CreateSellerCommissionRequestModel.Commission">
+            <summary>
+            The commission the seller gets.
+            NOTE: That's a value between 0 and 100!
+            </summary>
+        </member>
+        <member name="M:Atom.Web.Accounts.CreateSellerCommissionRequestModel.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="T:Atom.Web.Accounts.CreateSellerRequestModel">
+            <summary>
+            Request model user for creating a seller
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.CreateSellerRequestModel.UserId">
+            <summary>
+            The id of the user who will be registered as a seller
+            </summary>
+        </member>
+        <member name="M:Atom.Web.Accounts.CreateSellerRequestModel.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="T:Atom.Web.Accounts.SellerContractRequestModel">
+            <summary>
+            Request model used for creating and updating seller contracts
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.SellerContractRequestModel.Name">
+            <summary>
+            The name
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.SellerContractRequestModel.Description">
+            <summary>
+            The description
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.SellerContractRequestModel.Color">
+            <summary>
+            The color
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.SellerContractRequestModel.PricingOption">
+            <summary>
+            The pricing option
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.SellerContractRequestModel.Price">
+            <summary>
+            The price
+            </summary>
+        </member>
+        <member name="M:Atom.Web.Accounts.SellerContractRequestModel.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="T:Atom.Web.Accounts.UpdateSellerApplicationContractRequestModel">
+            <summary>
+            Request model used for updating a seller application contract
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.UpdateSellerApplicationContractRequestModel.Name">
+            <summary>
+            The name
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.UpdateSellerApplicationContractRequestModel.Description">
+            <summary>
+            The description
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.UpdateSellerApplicationContractRequestModel.Color">
+            <summary>
+            The color
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.UpdateSellerApplicationContractRequestModel.IsActive">
+            <summary>
+            A flag indicating whether the selling of this application is active or not
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.UpdateSellerApplicationContractRequestModel.PricingOption">
+            <summary>
+            The pricing option
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.UpdateSellerApplicationContractRequestModel.Price">
+            <summary>
+            The price
+            </summary>
+        </member>
+        <member name="M:Atom.Web.Accounts.UpdateSellerApplicationContractRequestModel.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="T:Atom.Web.Accounts.UpdateSellerCommissionRequestModel">
+            <summary>
+            Request model used for updating a seller cut
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.UpdateSellerCommissionRequestModel.Commission">
+            <summary>
+            The commission the seller gets.
+            NOTE: That's a value between 0 and 100!
+            </summary>
+        </member>
+        <member name="M:Atom.Web.Accounts.UpdateSellerCommissionRequestModel.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="T:Atom.Web.Accounts.UpdateSellerRequestModel">
+            <summary>
+            Request model used for updating a seller
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.UpdateSellerRequestModel.CanCreateSellers">
+            <summary>
+            A flag indicating whether the user can create Sellers or not
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.UpdateSellerRequestModel.CanCreateDemos">
+            <summary>
+            A flag indicating whether the seller can create demos or not
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.UpdateSellerRequestModel.DemosLimit">
+            <summary>
+            A flag indicating whether there is a demos limit or not
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.UpdateSellerRequestModel.DemosRemaining">
+            <summary>
+            The demos that remain to the seller
+            </summary>
+        </member>
+        <member name="M:Atom.Web.Accounts.UpdateSellerRequestModel.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="T:Atom.Web.Accounts.SubContractRequestModel">
+            <summary>
+            Request model used for creating and updating sub contracts
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.SubContractRequestModel.Name">
+            <summary>
+            The name
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.SubContractRequestModel.Description">
+            <summary>
+            The description
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.SubContractRequestModel.Color">
+            <summary>
+            The color
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.SubContractRequestModel.PricingOption">
+            <summary>
+            The pricing option
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.SubContractRequestModel.Price">
+            <summary>
+            The price
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.SubContractRequestModel.YearsActivationOffset">
+            <summary>
+            The time span in years, after the registration, that the contract
+            should get activated
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.SubContractRequestModel.MonthsActivationOffset">
+            <summary>
+            The time span in months, after the registration, that the contract
+            should get activated
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.SubContractRequestModel.DaysActivationOffset">
+            <summary>
+            The time span in days, after the registration, that the contract
+            should get activated
+            </summary>
+        </member>
+        <member name="M:Atom.Web.Accounts.SubContractRequestModel.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="T:Atom.Web.Accounts.BaseRegisterUserRequestModel">
+            <summary>
+            The base for all the register user request models
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.BaseRegisterUserRequestModel.Username">
+            <summary>
+            The username
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.BaseRegisterUserRequestModel.FirstName">
+            <summary>
+            The first name
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.BaseRegisterUserRequestModel.LastName">
+            <summary>
+            The last name
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.BaseRegisterUserRequestModel.Sex">
+            <summary>
+            The sex
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.BaseRegisterUserRequestModel.Email">
+            <summary>
+            The email
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.BaseRegisterUserRequestModel.PhoneNumber">
+            <summary>
+            The phone number
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.BaseRegisterUserRequestModel.Shipping">
+            <summary>
+            The shipping information
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.BaseRegisterUserRequestModel.Billing">
+            <summary>
+            The billing information
+            </summary>
+        </member>
+        <member name="M:Atom.Web.Accounts.BaseRegisterUserRequestModel.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="T:Atom.Web.Accounts.CompanyRegisterUserRequestModel">
+            <summary>
+            Request model used when a company registers a user
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.CompanyRegisterUserRequestModel.IsLocallyStored">
+            <summary>
+            A flag indicating whether data related to personal information of the user
+            like the email and the phone number are locally stored
+            </summary>
+        </member>
+        <member name="M:Atom.Web.Accounts.CompanyRegisterUserRequestModel.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="T:Atom.Web.Accounts.ForgotPasswordRequestModel">
+            <summary>
+            Request model used for performing a forgot password operation 
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.ForgotPasswordRequestModel.Username">
+            <summary>
+            The username
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.ForgotPasswordRequestModel.Email">
+            <summary>
+            A flag indicating whether the verification code should get sent to the
+            email of the phone number
+            </summary>
+        </member>
+        <member name="M:Atom.Web.Accounts.ForgotPasswordRequestModel.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="T:Atom.Web.Accounts.LogInRequestModel">
+            <summary>
+            Request model used for logging a user in
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.LogInRequestModel.Username">
+            <summary>
+            The user's username or email
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.LogInRequestModel.Password">
+            <summary>
+            The user's password
+            </summary>
+        </member>
+        <member name="M:Atom.Web.Accounts.LogInRequestModel.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Atom.Web.Accounts.LogInRequestModel.#ctor(System.String,System.String)">
+            <summary>
+            Standard constructor
+            </summary>
+            <param name="userNameOrEmail">The user's username or email</param>
+            <param name="password">The user's password</param>
+        </member>
+        <member name="T:Atom.Web.Accounts.PasswordRequestModel">
+            <summary>
+            Request model used for updating a password
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.PasswordRequestModel.CurrentPassword">
+            <summary>
+            The current password
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.PasswordRequestModel.NewPassword">
+            <summary>
+            The new password
+            </summary>
+        </member>
+        <member name="M:Atom.Web.Accounts.PasswordRequestModel.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="T:Atom.Web.Accounts.RegisterUserRequestModel">
+            <summary>
+            Request model used for registering a user
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.RegisterUserRequestModel.Password">
+            <summary>
+            The users password
+            </summary>
+        </member>
+        <member name="M:Atom.Web.Accounts.RegisterUserRequestModel.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="T:Atom.Web.Accounts.ResetPasswordRequestModel">
+            <summary>
+            Request model used for reseting a password
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.ResetPasswordRequestModel.Username">
+            <summary>
+            The user name
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.ResetPasswordRequestModel.Token">
+            <summary>
+            The verification token
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.ResetPasswordRequestModel.NewPassword">
+            <summary>
+            The new password
+            </summary>
+        </member>
+        <member name="M:Atom.Web.Accounts.ResetPasswordRequestModel.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="T:Atom.Web.Accounts.UserRequestModel">
+            <summary>
+            Request model used for updating a user
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.UserRequestModel.FirstName">
+            <summary>
+            The users first name
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.UserRequestModel.LastName">
+            <summary>
+            The users last name
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.UserRequestModel.Email">
+            <summary>
+            The users email
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.UserRequestModel.PhoneNumber">
+            <summary>
+            The phone number
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.UserRequestModel.Shipping">
+            <summary>
+            The shipping information
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.UserRequestModel.Billing">
+            <summary>
+            The billing information
+            </summary>
+        </member>
+        <member name="M:Atom.Web.Accounts.UserRequestModel.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Atom.Web.Accounts.UserRequestModel.ToString">
+            <summary>
+            Returns a string that represents the current object
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Atom.Web.Accounts.ApplicationResponseModel">
+            <summary>
+            Represents an application
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.ApplicationResponseModel.SmallImageUrl">
+            <summary>
+            The small image url
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.ApplicationResponseModel.ImageUrl">
+            <summary>
+            The image url
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.ApplicationResponseModel.LargeImageUrl">
+            <summary>
+            The large image url
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.ApplicationResponseModel.Description">
+            <summary>
+            The description
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.ApplicationResponseModel.Color">
+            <summary>
+            The color
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.ApplicationResponseModel.Site">
+            <summary>
+            The site
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.ApplicationResponseModel.CreatedBy">
+            <summary>
+            The user that created the application
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.ApplicationResponseModel.Versions">
+            <summary>
+            The versions
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.ApplicationResponseModel.Images">
+            <summary>
+            The images
+            </summary>
+        </member>
+        <member name="M:Atom.Web.Accounts.ApplicationResponseModel.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="T:Atom.Web.Accounts.EmbeddedApplicationResponseModel">
+            <summary>
+            A minimal version of the <see cref="T:Atom.Web.Accounts.ApplicationResponseModel"/> that contains the fields that are 
+            more frequently used when embedding
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.EmbeddedApplicationResponseModel.SmallImageUrl">
+            <summary>
+            The small image url
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.EmbeddedApplicationResponseModel.ImageUrl">
+            <summary>
+            The image url
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.EmbeddedApplicationResponseModel.LargeImageUrl">
+            <summary>
+            The large image url
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.EmbeddedApplicationResponseModel.Name">
+            <summary>
+            The name
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.EmbeddedApplicationResponseModel.Color">
+            <summary>
+            The color
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.EmbeddedApplicationResponseModel.Site">
+            <summary>
+            The site
+            </summary>
+        </member>
+        <member name="M:Atom.Web.Accounts.EmbeddedApplicationResponseModel.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Atom.Web.Accounts.EmbeddedApplicationResponseModel.ToString">
+            <summary>
+            Returns a string that represents the current model
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Atom.Web.Accounts.ApplicationVersionResponseModel">
+            <summary>
+            Represents an application version
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.ApplicationVersionResponseModel.Type">
+            <summary>
+            The type of the version
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.ApplicationVersionResponseModel.Version">
+            <summary>
+            The version
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.ApplicationVersionResponseModel.CreatedBy">
+            <summary>
+            The user that created the application version
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.ApplicationVersionResponseModel.SupportedCountries">
+            <summary>
+            The countries that the application is supported at
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.ApplicationVersionResponseModel.Languages">
+            <summary>
+            The supported languages of the application version
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.ApplicationVersionResponseModel.Authors">
+            <summary>
+            The authors of the application version
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.ApplicationVersionResponseModel.ExecutableFileName">
+            <summary>
+            The file name of the executable.
+            NOTE: That's usually the installer file!
+            </summary>
+        </member>
+        <member name="M:Atom.Web.Accounts.ApplicationVersionResponseModel.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Atom.Web.Accounts.ApplicationVersionResponseModel.ToString">
+            <summary>
+            Returns a string that represents the current object
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Web.Accounts.ApplicationVersionResponseModel.ToRequestModel">
+            <summary>
+            Creates and returns a <see cref="T:Atom.Web.Accounts.ApplicationVersionRequestModel"/> from the current <see cref="T:Atom.Web.Accounts.ApplicationVersionResponseModel"/>
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Web.Accounts.ApplicationVersionResponseModel.ToEmbeddedResponseModel">
+            <summary>
+            Creates and returns a <see cref="T:Atom.Web.Accounts.EmbeddedApplicationVersionResponseModel"/> from the current <see cref="T:Atom.Web.Accounts.ApplicationVersionResponseModel"/>
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Atom.Web.Accounts.EmbeddedApplicationVersionResponseModel">
+            <summary>
+            A minimal version of the <see cref="T:Atom.Web.Accounts.ApplicationVersionResponseModel"/> that contains the fields that are 
+            more frequently used when embedding
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.EmbeddedApplicationVersionResponseModel.Type">
+            <summary>
+            The version type
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.EmbeddedApplicationVersionResponseModel.Version">
+            <summary>
+            The version
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.EmbeddedApplicationVersionResponseModel.ExecutableFileName">
+            <summary>
+            The file name of the executable.
+            NOTE: That's usually the installer file!
+            </summary>
+        </member>
+        <member name="M:Atom.Web.Accounts.EmbeddedApplicationVersionResponseModel.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Atom.Web.Accounts.EmbeddedApplicationVersionResponseModel.ToString">
+            <summary>
+            Returns a string that represents the current object
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Web.Accounts.EmbeddedApplicationVersionResponseModel.CompareTo(System.Object)">
+            <summary>
+            Compares the current object to the specified <paramref name="obj"/>
+            </summary>
+            <param name="obj">The object to be compared to</param>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Web.Accounts.EmbeddedApplicationVersionResponseModel.CompareTo(Atom.Web.Accounts.EmbeddedApplicationVersionResponseModel)">
+            <summary>
+            Compares the current object to the specified <paramref name="other"/>
+            </summary>
+            <param name="other">The object to be compared to</param>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Web.Accounts.EmbeddedApplicationVersionResponseModel.Equals(Atom.Web.Accounts.EmbeddedApplicationVersionResponseModel)">
+            <summary>
+            Indicates whether the current object is equal to another object of the same type.
+            </summary>
+            <param name="other">An object to compare with this object.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Atom.Web.Accounts.ChargeResponseModel">
+            <summary>
+            Represents a charge
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.ChargeResponseModel.Parent">
+            <summary>
+            The id of the parent
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.ChargeResponseModel.NetAmount">
+            <summary>
+            The net amount
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.ChargeResponseModel.TaxAmount">
+            <summary>
+            The tax amount
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.ChargeResponseModel.Amount">
+            <summary>
+            The price
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.ChargeResponseModel.Message">
+            <summary>
+            The message
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.ChargeResponseModel.WasScheduled">
+            <summary>
+            A flag indicating whether this was a scheduled charge or not
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.ChargeResponseModel.Origin">
+            <summary>
+            The charge origin
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.ChargeResponseModel.ContractId">
+            <summary>
+            The id of the contract that created the charge if any
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.ChargeResponseModel.CreatedBy">
+            <summary>
+            The user that created the charge
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.ChargeResponseModel.IsCancelled">
+            <summary>
+            A flag indicating whether the charge is cancelled or not
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.ChargeResponseModel.CancelledBy">
+            <summary>
+            The user that cancelled the charge
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.ChargeResponseModel.DateCancelled">
+            <summary>
+            The date the charge was cancelled
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.ChargeResponseModel.Note">
+            <summary>
+            The note
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.ChargeResponseModel.MetaData">
+            <summary>
+            The meta data
+            </summary>
+        </member>
+        <member name="M:Atom.Web.Accounts.ChargeResponseModel.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Atom.Web.Accounts.ChargeResponseModel.ToString">
+            <summary>
+            Returns a string that represents the current object
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Atom.Web.Accounts.CompanyResponseModel">
+            <summary>
+            Represents a company
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.CompanyResponseModel.SmallImageUrl">
+            <summary>
+            The small image url
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.CompanyResponseModel.ImageUrl">
+            <summary>
+            The image url
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.CompanyResponseModel.LargeImageUrl">
+            <summary>
+            The large image url
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.CompanyResponseModel.Application">
+            <summary>
+            The application
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.CompanyResponseModel.PhoneNumber">
+            <summary>
+            The phone number
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.CompanyResponseModel.Email">
+            <summary>
+            The email
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.CompanyResponseModel.Seller">
+            <summary>
+            The seller
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.CompanyResponseModel.Version">
+            <summary>
+            The version
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.CompanyResponseModel.IsActive">
+            <summary>
+            A flag indicating whether the company is active or not.
+            NOTE: If this is set to <see cref="!:false"/>, then the company is suspended and doesn't
+                  have access to the application!
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.CompanyResponseModel.IsDemo">
+            <summary>
+            A flag indicating whether this is a demo company or not
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.CompanyResponseModel.DemoDateEnd">
+            <summary>
+            The date the demo expires
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.CompanyResponseModel.CreatedBy">
+            <summary>
+            The user that created the company
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.CompanyResponseModel.Shipping">
+            <summary>
+            The shipping
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.CompanyResponseModel.Billing">
+            <summary>
+            The billing
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.CompanyResponseModel.Tax">
+            <summary>
+            The tax information.
+            NOTE: The tax information may be <see cref="!:null"/>!
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.CompanyResponseModel.Language">
+            <summary>
+            The language
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.CompanyResponseModel.Contract">
+            <summary>
+            The contract
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.CompanyResponseModel.NextContract">
+            <summary>
+            The next contract that will get set at the next charge
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.CompanyResponseModel.NextContractDateSet">
+            <summary>
+            The date the next context was set
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.CompanyResponseModel.NextContractCreatedBy">
+            <summary>
+            The user that created the next pricing option
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.CompanyResponseModel.SellerContracts">
+            <summary>
+            The contracts specifically added to the company by the seller
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.CompanyResponseModel.LastCharge">
+            <summary>
+            The date of the last charge.
+            NOTE: The date of the charge is defined by the <see cref="P:Atom.Web.Accounts.CompanyResponseModel.Contract"/>!
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.CompanyResponseModel.TotalOwed">
+            <summary>
+            The amount that the company owes
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.CompanyResponseModel.PendingAmount">
+            <summary>
+            The pending amount
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.CompanyResponseModel.PaymentDueDate">
+            <summary>
+            The payment due date
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.CompanyResponseModel.Owners">
+            <summary>
+            The owners of the company
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.CompanyResponseModel.Images">
+            <summary>
+            The images
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.CompanyResponseModel.MetaData">
+            <summary>
+            The meta data
+            </summary>
+        </member>
+        <member name="M:Atom.Web.Accounts.CompanyResponseModel.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="T:Atom.Web.Accounts.EmbeddedCompanyResponseModel">
+            <summary>
+            A minimal version of the <see cref="T:Atom.Web.Accounts.CompanyResponseModel"/> that contains the fields that are 
+            more frequently used when embedding
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.EmbeddedCompanyResponseModel.SmallImageUrl">
+            <summary>
+            The small image url
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.EmbeddedCompanyResponseModel.ImageUrl">
+            <summary>
+            The image url
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.EmbeddedCompanyResponseModel.LargeImageUrl">
+            <summary>
+            The large image url
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.EmbeddedCompanyResponseModel.Name">
+            <summary>
+            The name
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.EmbeddedCompanyResponseModel.Application">
+            <summary>
+            The application that the company is created for.
+            NOTE: The available options are retrieved from <see cref="T:Atom.Core.ApplicationConstants"/>!
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.EmbeddedCompanyResponseModel.PhoneNumber">
+            <summary>
+            The phone number
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.EmbeddedCompanyResponseModel.Email">
+            <summary>
+            The email
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.EmbeddedCompanyResponseModel.Shipping">
+            <summary>
+            The shipping
+            </summary>
+        </member>
+        <member name="M:Atom.Web.Accounts.EmbeddedCompanyResponseModel.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Atom.Web.Accounts.EmbeddedCompanyResponseModel.ToString">
+            <summary>
+            Returns a string that represents the current object
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Atom.Web.Accounts.SearchableCompanyResponseModel">
+            <summary>
+            A minimal version of the <see cref="T:Atom.Web.Accounts.CompanyResponseModel"/> used for global searches
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.SearchableCompanyResponseModel.SmallImageUrl">
+            <summary>
+            The small image url
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.SearchableCompanyResponseModel.ImageUrl">
+            <summary>
+            The image url
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.SearchableCompanyResponseModel.LargeImageUrl">
+            <summary>
+            The large image url
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.SearchableCompanyResponseModel.Name">
+            <summary>
+            The name
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.SearchableCompanyResponseModel.Application">
+            <summary>
+            The application that the company is created for.
+            NOTE: The available options are retrieved from <see cref="T:Atom.Core.ApplicationConstants"/>!
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.SearchableCompanyResponseModel.PhoneNumber">
+            <summary>
+            The phone number
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.SearchableCompanyResponseModel.Email">
+            <summary>
+            The email
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.SearchableCompanyResponseModel.Shipping">
+            <summary>
+            The shipping
+            </summary>
+        </member>
+        <member name="M:Atom.Web.Accounts.SearchableCompanyResponseModel.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Atom.Web.Accounts.SearchableCompanyResponseModel.ToString">
+            <summary>
+            Returns a string that represents the current object
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Atom.Web.Accounts.NotificationResponseModel">
+            <summary>
+            Represents a notification
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.NotificationResponseModel.UserId">
+            <summary>
+            The id of the related user
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.NotificationResponseModel.Parent">
+            <summary>
+            The id of the parent if any.
+            Ex.: CompanyId, PlugInId etc.
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.NotificationResponseModel.Key">
+            <summary>
+            The notification key
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.NotificationResponseModel.Title">
+            <summary>
+            The title
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.NotificationResponseModel.Color">
+            <summary>
+            The color
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.NotificationResponseModel.Message">
+            <summary>
+            The message of the notification
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.NotificationResponseModel.ImageSource">
+            <summary>
+            The image source.
+            NOTE: The image source may be <see cref="!:null"/>!
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.NotificationResponseModel.Seen">
+            <summary>
+            A glad indicating whether the user has seen the notification or not
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.NotificationResponseModel.CreatedBy">
+            <summary>
+            The user that created the notification
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.NotificationResponseModel.MetaData">
+            <summary>
+            The meta data
+            </summary>
+        </member>
+        <member name="M:Atom.Web.Accounts.NotificationResponseModel.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Atom.Web.Accounts.NotificationResponseModel.ToString">
+            <summary>
+            Returns a string that represents the current object
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Atom.Web.Accounts.PaymentMethodResponseModel">
+            <summary>
+            Represents a payment method
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.PaymentMethodResponseModel.Description">
+            <summary>
+            The description
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.PaymentMethodResponseModel.Color">
+            <summary>
+            The color
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.PaymentMethodResponseModel.Commission">
+            <summary>
+            The commission.
+            NOTE: That's a value from 0 to 100!
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.PaymentMethodResponseModel.IsActive">
+            <summary>
+            A flag indicating whether the payment method is active or not
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.PaymentMethodResponseModel.CreatedBy">
+            <summary>
+            The user that created the payment method
+            </summary>
+        </member>
+        <member name="M:Atom.Web.Accounts.PaymentMethodResponseModel.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="T:Atom.Web.Accounts.EmbeddedPaymentMethodResponseModel">
+            <summary>
+            A minimal version of the <see cref="T:Atom.Web.Accounts.PaymentMethodResponseModel"/> that contains the fields that are 
+            more frequently used when embedding
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.EmbeddedPaymentMethodResponseModel.Name">
+            <summary>
+            The name
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.EmbeddedPaymentMethodResponseModel.Color">
+            <summary>
+            The color
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.EmbeddedPaymentMethodResponseModel.CommissionAmount">
+            <summary>
+            The commission amount
+            </summary>
+        </member>
+        <member name="M:Atom.Web.Accounts.EmbeddedPaymentMethodResponseModel.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Atom.Web.Accounts.EmbeddedPaymentMethodResponseModel.ToString">
+            <summary>
+            Returns a string that represents the current object
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Atom.Web.Accounts.PaymentResponseModel">
+            <summary>
+            Represents a payment
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.PaymentResponseModel.Sender">
+            <summary>
+            The id of the sender of the payment
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.PaymentResponseModel.Receiver">
+            <summary>
+            The id of the receiver of the payment
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.PaymentResponseModel.Note">
+            <summary>
+            The note
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.PaymentResponseModel.Amount">
+            <summary>
+            The amount
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.PaymentResponseModel.CreatedBy">
+            <summary>
+            The user that created the payment
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.PaymentResponseModel.PaymentMethod">
+            <summary>
+            The payment method
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.PaymentResponseModel.Status">
+            <summary>
+            The status
+            </summary>
+        </member>
+        <member name="M:Atom.Web.Accounts.PaymentResponseModel.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="T:Atom.Web.Accounts.ReviewResponseModel">
+            <summary>
+            Represents a review
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.ReviewResponseModel.Parent">
+            <summary>
+            The parent the review refers to
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.ReviewResponseModel.Message">
+            <summary>
+            The message
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.ReviewResponseModel.CreatedBy">
+            <summary>
+            The user that created the review
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.ReviewResponseModel.Rate">
+            <summary>
+            The rate.
+            NOTE: The min value is 0 and the max value is 5!
+            </summary>
+        </member>
+        <member name="M:Atom.Web.Accounts.ReviewResponseModel.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Atom.Web.Accounts.ReviewResponseModel.ToString">
+            <summary>
+            Returns a string that represents the current object
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Atom.Web.Accounts.SellerDeptResponseModel">
+            <summary>
+            Represents a seller dept
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.SellerDeptResponseModel.Receiver">
+            <summary>
+            The receiver.
+            The seller that has to receive the amount
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.SellerDeptResponseModel.Sender">
+            <summary>
+            The sender.
+            The seller that owes the amount to the receiver.
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.SellerDeptResponseModel.Amount">
+            <summary>
+            The amount
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.SellerDeptResponseModel.PendingAmount">
+            <summary>
+            The amount of payments that haven't yet been confirmed
+            </summary>
+        </member>
+        <member name="M:Atom.Web.Accounts.SellerDeptResponseModel.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Atom.Web.Accounts.SellerDeptResponseModel.ToString">
+            <summary>
+            Returns a string that represents the current object
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Atom.Web.Accounts.SellerApplicationContractResponseModel">
+            <summary>
+            Represents a seller application contract
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.SellerApplicationContractResponseModel.Application">
+            <summary>
+            The application that the user can resell.
+            NOTE: The available options are retrieved from <see cref="T:Atom.Core.ApplicationConstants"/>!
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.SellerApplicationContractResponseModel.Color">
+            <summary>
+            The color
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.SellerApplicationContractResponseModel.Description">
+            <summary>
+            The description
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.SellerApplicationContractResponseModel.CreatedBy">
+            <summary>
+            The user that created the contract
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.SellerApplicationContractResponseModel.IsActive">
+            <summary>
+            A flag indicating whether the selling of this application is active or not
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.SellerApplicationContractResponseModel.PricingOption">
+            <summary>
+            The pricing option
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.SellerApplicationContractResponseModel.Price">
+            <summary>
+            The price
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.SellerApplicationContractResponseModel.SellerCommissions">
+            <summary>
+            The seller commissions
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.SellerApplicationContractResponseModel.SubContracts">
+            <summary>
+            The sub contracts
+            </summary>
+        </member>
+        <member name="M:Atom.Web.Accounts.SellerApplicationContractResponseModel.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Atom.Web.Accounts.SellerApplicationContractResponseModel.ToString">
+            <summary>
+            Returns a string that represents the current object
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Web.Accounts.SellerApplicationContractResponseModel.CreateStandardSellerApplicationContractDataModel(System.String)">
+            <summary>
+            Creates and returns a standard <see cref="T:Atom.Web.Accounts.SellerApplicationContractResponseModel"/> for the specified <paramref name="application"/>.
+            </summary>
+            <param name="application">
+            The application that the user can resell.
+            NOTE: The available options are retrieved from <see cref="T:Atom.Core.ApplicationConstants"/>!
+            </param>
+            <returns></returns>
+        </member>
+        <member name="T:Atom.Web.Accounts.EmbeddedSellerApplicationContractResponseModel">
+            <summary>
+            A minimal version of the <see cref="T:Atom.Web.Accounts.SellerApplicationContractResponseModel"/> that contains the fields that are 
+            more frequently used when embedding
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.EmbeddedSellerApplicationContractResponseModel.Name">
+            <summary>
+            The name
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.EmbeddedSellerApplicationContractResponseModel.Description">
+            <summary>
+            The description
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.EmbeddedSellerApplicationContractResponseModel.Color">
+            <summary>
+            The color
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.EmbeddedSellerApplicationContractResponseModel.PricingOption">
+            <summary>
+            The pricing option
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.EmbeddedSellerApplicationContractResponseModel.Price">
+            <summary>
+            The price
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.EmbeddedSellerApplicationContractResponseModel.DateRegistered">
+            <summary>
+            The date the sub contract was registered
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.EmbeddedSellerApplicationContractResponseModel.DateActivated">
+            <summary>
+            The name the contract got/will get activated
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.EmbeddedSellerApplicationContractResponseModel.LastExecutionDate">
+            <summary>
+            The date the contract charge was lastly executed
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.EmbeddedSellerApplicationContractResponseModel.DateDeactivated">
+            <summary>
+            The date the contract was deactivated
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.EmbeddedSellerApplicationContractResponseModel.CreatedBy">
+            <summary>
+            The user that created the contract
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.EmbeddedSellerApplicationContractResponseModel.SubContracts">
+            <summary>
+            The sub contracts
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.EmbeddedSellerApplicationContractResponseModel.SellerCommissions">
+            <summary>
+            The seller commissions
+            </summary>
+        </member>
+        <member name="M:Atom.Web.Accounts.EmbeddedSellerApplicationContractResponseModel.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Atom.Web.Accounts.EmbeddedSellerApplicationContractResponseModel.ToString">
+            <summary>
+            Returns a string that represents the current object
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Atom.Web.Accounts.SellerCommissionResponseModel">
+            <summary>
+            Represents a seller cut
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.SellerCommissionResponseModel.Seller">
+            <summary>
+            The seller
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.SellerCommissionResponseModel.Commission">
+            <summary>
+            The cut the seller gets.
+            NOTE: That's a value between 0 and 100!
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.SellerCommissionResponseModel.CreatedBy">
+            <summary>
+            The user that created the seller cut
+            </summary>
+        </member>
+        <member name="M:Atom.Web.Accounts.SellerCommissionResponseModel.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Atom.Web.Accounts.SellerCommissionResponseModel.ToString">
+            <summary>
+            Returns a string that represents the current object
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Atom.Web.Accounts.SellerContractResponseModel">
+            <summary>
+            Represents a seller contract
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.SellerContractResponseModel.Description">
+            <summary>
+            The description
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.SellerContractResponseModel.Color">
+            <summary>
+            The note
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.SellerContractResponseModel.PricingOption">
+            <summary>
+            The pricing option
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.SellerContractResponseModel.Price">
+            <summary>
+            The price
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.SellerContractResponseModel.CreatedBy">
+            <summary>
+            The user that created the entity
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.SellerContractResponseModel.SellerCommissions">
+            <summary>
+            The custom seller commissions
+            </summary>
+        </member>
+        <member name="M:Atom.Web.Accounts.SellerContractResponseModel.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="T:Atom.Web.Accounts.EmbeddedSellerContractResponseModel">
+            <summary>
+            A minimal version of the <see cref="T:Atom.Web.Accounts.SellerContractResponseModel"/> that contains the fields that are 
+            more frequently used when embedding
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.EmbeddedSellerContractResponseModel.Name">
+            <summary>
+            The name
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.EmbeddedSellerContractResponseModel.Description">
+            <summary>
+            The description
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.EmbeddedSellerContractResponseModel.Color">
+            <summary>
+            The color
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.EmbeddedSellerContractResponseModel.PricingOption">
+            <summary>
+            The pricing option
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.EmbeddedSellerContractResponseModel.Price">
+            <summary>
+            The price
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.EmbeddedSellerContractResponseModel.CreatedBy">
+            <summary>
+            The user that created the contract
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.EmbeddedSellerContractResponseModel.DateRegistered">
+            <summary>
+            The date the sub contract was registered
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.EmbeddedSellerContractResponseModel.DateActivated">
+            <summary>
+            The name the contract got/will get activated
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.EmbeddedSellerContractResponseModel.LastExecutionDate">
+            <summary>
+            The date the contract charge was lastly executed
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.EmbeddedSellerContractResponseModel.DateDeactivated">
+            <summary>
+            The date the contract was deactivated
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.EmbeddedSellerContractResponseModel.SellerCommissions">
+            <summary>
+            The custom seller commissions
+            </summary>
+        </member>
+        <member name="M:Atom.Web.Accounts.EmbeddedSellerContractResponseModel.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Atom.Web.Accounts.EmbeddedSellerContractResponseModel.ToString">
+            <summary>
+            Returns a string that represents the current object
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Atom.Web.Accounts.SellerResponseModel">
+            <summary>
+            Represents a seller
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.SellerResponseModel.SmallImageUrl">
+            <summary>
+            The small image url
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.SellerResponseModel.ImageUrl">
+            <summary>
+            The image url
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.SellerResponseModel.LargeImageUrl">
+            <summary>
+            The large image url
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.SellerResponseModel.UserId">
+            <summary>
+            The user id
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.SellerResponseModel.FirstName">
+            <summary>
+            The first name of the user
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.SellerResponseModel.LastName">
+            <summary>
+            The last name of the user
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.SellerResponseModel.Username">
+            <summary>
+            The unique user name of the user
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.SellerResponseModel.Parent">
+            <summary>
+            The parent seller
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.SellerResponseModel.CanCreateSellers">
+            <summary>
+            A flag indicating whether the user can create seller or not
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.SellerResponseModel.CanCreateDemos">
+            <summary>
+            A flag indicating whether the seller can create demos or not
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.SellerResponseModel.DemosLimit">
+            <summary>
+            A flag indicating whether there is a demos limit or not
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.SellerResponseModel.DemosRemaining">
+            <summary>
+            The demos that remain to the seller
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.SellerResponseModel.ApplicationContracts">
+            <summary>
+            The application contracts
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.SellerResponseModel.CreatedBy">
+            <summary>
+            The user that created this seller.
+            NOTE: This user is the owner of the seller!
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.SellerResponseModel.MetaData">
+            <summary>
+            The meta data
+            </summary>
+        </member>
+        <member name="M:Atom.Web.Accounts.SellerResponseModel.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="T:Atom.Web.Accounts.EmbeddedSellerResponseModel">
+            <summary>
+            A minimal version of the <see cref="T:Atom.Web.Accounts.SellerResponseModel"/> that contains the fields that are 
+            more frequently used when embedding
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.EmbeddedSellerResponseModel.SmallImageUrl">
+            <summary>
+            The small image url
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.EmbeddedSellerResponseModel.ImageUrl">
+            <summary>
+            The image url
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.EmbeddedSellerResponseModel.LargeImageUrl">
+            <summary>
+            The large image url
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.EmbeddedSellerResponseModel.UserId">
+            <summary>
+            The user id
+            </summary>
+        </member>
+        <member name="M:Atom.Web.Accounts.EmbeddedSellerResponseModel.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="T:Atom.Web.Accounts.SubContractResponseModel">
+            <summary>
+            Represents a sub contract.
+            NOTE: The sub contracts are used as additional contracts
+                  paired with other contracts!
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.SubContractResponseModel.Description">
+            <summary>
+            The description
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.SubContractResponseModel.Color">
+            <summary>
+            The color
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.SubContractResponseModel.PricingOption">
+            <summary>
+            The pricing option
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.SubContractResponseModel.Price">
+            <summary>
+            The price
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.SubContractResponseModel.YearsActivationOffset">
+            <summary>
+            The time span in years, after the registration, that the contract
+            should get activated
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.SubContractResponseModel.MonthsActivationOffset">
+            <summary>
+            The time span in months, after the registration, that the contract
+            should get activated
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.SubContractResponseModel.DaysActivationOffset">
+            <summary>
+            The time span in days, after the registration, that the contract
+            should get activated
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.SubContractResponseModel.CreatedBy">
+            <summary>
+            The user that created the sub contract
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.SubContractResponseModel.SellerCommissions">
+            <summary>
+            The custom seller commissions
+            </summary>
+        </member>
+        <member name="M:Atom.Web.Accounts.SubContractResponseModel.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="T:Atom.Web.Accounts.EmbeddedSubContractResponseModel">
+            <summary>
+            A minimal version of the <see cref="T:Atom.Web.Accounts.SubContractResponseModel"/> that contains the fields that are 
+            more frequently used when embedding
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.EmbeddedSubContractResponseModel.Name">
+            <summary>
+            The name
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.EmbeddedSubContractResponseModel.Description">
+            <summary>
+            The description
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.EmbeddedSubContractResponseModel.Color">
+            <summary>
+            The color
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.EmbeddedSubContractResponseModel.PricingOption">
+            <summary>
+            The pricing option
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.EmbeddedSubContractResponseModel.Price">
+            <summary>
+            The price
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.EmbeddedSubContractResponseModel.DateRegistered">
+            <summary>
+            The date the sub contract was registered
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.EmbeddedSubContractResponseModel.DateActivated">
+            <summary>
+            The name the contract got/will get activated
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.EmbeddedSubContractResponseModel.LastExecutionDate">
+            <summary>
+            The date the contract charge was lastly executed
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.EmbeddedSubContractResponseModel.DateDeactivated">
+            <summary>
+            The date the contract was deactivated
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.EmbeddedSubContractResponseModel.CreatedBy">
+            <summary>
+            The user that created the contract
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.EmbeddedSubContractResponseModel.SellerCommissions">
+            <summary>
+            The custom seller commissions
+            </summary>
+        </member>
+        <member name="M:Atom.Web.Accounts.EmbeddedSubContractResponseModel.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Atom.Web.Accounts.EmbeddedSubContractResponseModel.ToString">
+            <summary>
+            Returns a string that represents the current object
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Atom.Web.Accounts.AuthorizedUserResponseModel">
+            <summary>
+            Represents a user that has successfully logged in
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.AuthorizedUserResponseModel.Token">
+            <summary>
+            The authentication token used to stay authenticated through future requests.
+            NOTE: The Token is only provided when called from the login methods.
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="M:Atom.Web.Accounts.AuthorizedUserResponseModel.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Atom.Web.Accounts.AuthorizedUserResponseModel.#ctor(System.String)">
+            <summary>
+            Standard constructor
+            </summary>
+            <param name="token">The JTW token</param>
+        </member>
+        <member name="T:Atom.Web.Accounts.CompanyUserResponseModel">
+            <summary>
+            A <see cref="T:Atom.Web.Abstractions.DateResponseModel"/> that has the company related registered fields
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.CompanyUserResponseModel.UserId">
+            <summary>
+            The user id
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.CompanyUserResponseModel.SmallImageUrl">
+            <summary>
+            The small image url
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.CompanyUserResponseModel.ImageUrl">
+            <summary>
+            The image url
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.CompanyUserResponseModel.LargeImageUrl">
+            <summary>
+            The large image url
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.CompanyUserResponseModel.Username">
+            <summary>
+            The unique user name of the user
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.CompanyUserResponseModel.FirstName">
+            <summary>
+            The first name of the user
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.CompanyUserResponseModel.LastName">
+            <summary>
+            The last name of the user
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.CompanyUserResponseModel.Sex">
+            <summary>
+            The sex
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.CompanyUserResponseModel.PhoneNumber">
+            <summary>
+            The phone number
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.CompanyUserResponseModel.Email">
+            <summary>
+            The email
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.CompanyUserResponseModel.Shipping">
+            <summary>
+            The shipping information
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.CompanyUserResponseModel.Billing">
+            <summary>
+            The billing information
+            </summary>
+        </member>
+        <member name="M:Atom.Web.Accounts.CompanyUserResponseModel.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Atom.Web.Accounts.CompanyUserResponseModel.ToString">
+            <summary>
+            Returns a string that represents the current object
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Atom.Web.Accounts.EmbeddedCompanyUserResponseModel">
+            <summary>
+            A minimal version of the <see cref="T:Atom.Web.Accounts.CompanyUserResponseModel"/> that contains the fields that are 
+            more frequently used when embedding
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.EmbeddedCompanyUserResponseModel.UserId">
+            <summary>
+            The user id
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.EmbeddedCompanyUserResponseModel.SmallImageUrl">
+            <summary>
+            The small image url
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.EmbeddedCompanyUserResponseModel.ImageUrl">
+            <summary>
+            The image url
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.EmbeddedCompanyUserResponseModel.LargeImageUrl">
+            <summary>
+            The large image url
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.EmbeddedCompanyUserResponseModel.Username">
+            <summary>
+            The username
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.EmbeddedCompanyUserResponseModel.FirstName">
+            <summary>
+            The first name
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.EmbeddedCompanyUserResponseModel.LastName">
+            <summary>
+            The last name
+            </summary>
+        </member>
+        <member name="M:Atom.Web.Accounts.EmbeddedCompanyUserResponseModel.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Atom.Web.Accounts.EmbeddedCompanyUserResponseModel.ToString">
+            <summary>
+            Returns a string that represents the current object
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Atom.Web.Accounts.IUser">
+            <summary>
+            Provides abstractions for a user information model
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.IUser.SmallImageUrl">
+            <summary>
+            The small image url
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.IUser.ImageUrl">
+            <summary>
+            The image url
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.IUser.LargeImageUrl">
+            <summary>
+            The large image url
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.IUser.Username">
+            <summary>
+            The user's username
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.IUser.FirstName">
+            <summary>
+            The user's first name
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.IUser.LastName">
+            <summary>
+            The user's last name
+            </summary>
+        </member>
+        <member name="T:Atom.Web.Accounts.UserResponseModel">
+            <summary>
+            Represents a user
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.UserResponseModel.SmallImageUrl">
+            <summary>
+            The small image url
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.UserResponseModel.ImageUrl">
+            <summary>
+            The image url
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.UserResponseModel.LargeImageUrl">
+            <summary>
+            The large image url
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.UserResponseModel.Username">
+            <summary>
+            The user's username
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.UserResponseModel.Name">
+            <summary>
+            The name that's either the <see cref="P:Atom.Web.Accounts.UserResponseModel.Username"/> or the combination of the 
+            <see cref="P:Atom.Web.Accounts.UserResponseModel.FirstName"/> and <see cref="P:Atom.Web.Accounts.UserResponseModel.LastName"/> based on the <see cref="P:Atom.Web.Accounts.UserResponseModel.IsLocallyStored"/>
+            flag
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.UserResponseModel.FirstName">
+            <summary>
+            The user's first name
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.UserResponseModel.LastName">
+            <summary>
+            The user's last name
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.UserResponseModel.Sex">
+            <summary>
+            The sex
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.UserResponseModel.EmailConfirmed">
+            <summary>
+            A flag indicating whether the user has confirmed its email address
+            </summary>
+            <value>True if the email address has been confirmed, otherwise false.</value>
+        </member>
+        <member name="P:Atom.Web.Accounts.UserResponseModel.Email">
+            <summary>
+            The user's email
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.UserResponseModel.PhoneNumberConfirmed">
+            <summary>
+            A flag indicating whether the user has confirmed its phone number
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.UserResponseModel.PhoneNumber">
+            <summary>
+            The user's phone number
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.UserResponseModel.Shipping">
+            <summary>
+            The shipping information
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.UserResponseModel.Billing">
+            <summary>
+            The billing information
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.UserResponseModel.IsLocallyStored">
+            <summary>
+            A flag indicating whether data related to personal information of the user
+            like the email and the phone number are locally stored
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.UserResponseModel.DateCreated">
+            <summary>
+            The date the user was created
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.UserResponseModel.DateModified">
+            <summary>
+            The date the user was modified
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.UserResponseModel.MetaData">
+            <summary>
+            The meta data
+            </summary>
+        </member>
+        <member name="M:Atom.Web.Accounts.UserResponseModel.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Atom.Web.Accounts.UserResponseModel.ToString">
+            <summary>
+            Returns a string that represents the current object
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Web.Accounts.UserResponseModel.ToRequestModel">
+            <summary>
+            Creates and returns a <see cref="T:Atom.Web.Accounts.UserRequestModel"/> from the current <see cref="T:Atom.Web.Accounts.UserResponseModel"/>
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Atom.Web.Accounts.EmbeddedUserResponseModel">
+            <summary>
+            A minimal version of the <see cref="T:Atom.Web.Accounts.UserResponseModel"/> that contains the fields that are 
+            more frequently used when embedding
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.EmbeddedUserResponseModel.SmallImageUrl">
+            <summary>
+            The small image url
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.EmbeddedUserResponseModel.ImageUrl">
+            <summary>
+            The image url
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.EmbeddedUserResponseModel.LargeImageUrl">
+            <summary>
+            The large image url
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.EmbeddedUserResponseModel.Username">
+            <summary>
+            The user's username
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.EmbeddedUserResponseModel.FirstName">
+            <summary>
+            The user's first name
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.EmbeddedUserResponseModel.LastName">
+            <summary>
+            The user's last name
+            </summary>
+        </member>
+        <member name="M:Atom.Web.Accounts.EmbeddedUserResponseModel.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Atom.Web.Accounts.EmbeddedUserResponseModel.ToString">
+            <summary>
+            Returns a string that represents the current object
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Web.Accounts.EmbeddedUserResponseModel.CompareTo(System.Object)">
+            <summary>
+            Compares the current object to the specified <paramref name="obj"/>
+            </summary>
+            <param name="obj">The object to be compared to</param>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Web.Accounts.EmbeddedUserResponseModel.CompareTo(Atom.Web.Accounts.EmbeddedUserResponseModel)">
+            <summary>
+            Compares the current object to the specified <paramref name="other"/>
+            </summary>
+            <param name="other">The object to be compared to</param>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Web.Accounts.EmbeddedUserResponseModel.Equals(Atom.Web.Accounts.EmbeddedUserResponseModel)">
+            <summary>
+            Indicates whether the current object is equal to another object of the same type.
+            </summary>
+            <param name="other">An object to compare with this object.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Atom.Web.Accounts.SearchableUserResponseModel">
+            <summary>
+            A minimal version of the <see cref="T:Atom.Web.Accounts.UserResponseModel"/> used for global searches
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.SearchableUserResponseModel.SmallImageUrl">
+            <summary>
+            The small image url
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.SearchableUserResponseModel.ImageUrl">
+            <summary>
+            The image url
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.SearchableUserResponseModel.LargeImageUrl">
+            <summary>
+            The large image url
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.SearchableUserResponseModel.Username">
+            <summary>
+            The user's username
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.SearchableUserResponseModel.FirstName">
+            <summary>
+            The user's first name
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.SearchableUserResponseModel.LastName">
+            <summary>
+            The user's last name
+            </summary>
+        </member>
+        <member name="M:Atom.Web.Accounts.SearchableUserResponseModel.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Atom.Web.Accounts.SearchableUserResponseModel.ToString">
+            <summary>
+            Returns a string that represents the current object
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Web.Accounts.SearchableUserResponseModel.CompareTo(System.Object)">
+            <summary>
+            Compares the current object to the specified <paramref name="obj"/>
+            </summary>
+            <param name="obj">The object to be compared to</param>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Web.Accounts.SearchableUserResponseModel.CompareTo(Atom.Web.Accounts.EmbeddedUserResponseModel)">
+            <summary>
+            Compares the current object to the specified <paramref name="other"/>
+            </summary>
+            <param name="other">The object to be compared to</param>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Web.Accounts.SearchableUserResponseModel.Equals(Atom.Web.Accounts.EmbeddedUserResponseModel)">
+            <summary>
+            Indicates whether the current object is equal to another object of the same type.
+            </summary>
+            <param name="other">An object to compare with this object.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Atom.Web.Accounts.ChargesAPIArgs">
+            <summary>
+            Arguments used for API GET requests related to charges
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.ChargesAPIArgs.Origins">
+            <summary>
+            Limit result set to specific origins.
+            </summary>
+        </member>
+        <member name="M:Atom.Web.Accounts.ChargesAPIArgs.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="T:Atom.Web.Accounts.CompaniesAPIArgs">
+            <summary>
+            Arguments used for API GET requests related to companies
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.CompaniesAPIArgs.Applications">
+            <summary>
+            Limit the result to set to specific applications
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.CompaniesAPIArgs.IsActive">
+            <summary>
+            Limit the result set to active companies
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.CompaniesAPIArgs.IsDemo">
+            <summary>
+            Limit the result set to demo companies
+            </summary>
+        </member>
+        <member name="M:Atom.Web.Accounts.CompaniesAPIArgs.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="T:Atom.Web.Accounts.NotificationsAPIArgs">
+            <summary>
+            Arguments used for API GET requests related to notifications
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.NotificationsAPIArgs.Key">
+            <summary>
+            Limit results to those matching a key.
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.NotificationsAPIArgs.Seen">
+            <summary>
+            Limit results based on whether the user has seen them or not.
+            </summary>
+        </member>
+        <member name="M:Atom.Web.Accounts.NotificationsAPIArgs.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="T:Atom.Web.Accounts.HeaderNotificationsAPIArgs">
+            <summary>
+            Arguments used for API HEAD requests related to notifications
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.HeaderNotificationsAPIArgs.Key">
+            <summary>
+            Limit results to those matching a key.
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.HeaderNotificationsAPIArgs.Seen">
+            <summary>
+            Limit results based on whether the user has seen them or not.
+            </summary>
+        </member>
+        <member name="M:Atom.Web.Accounts.HeaderNotificationsAPIArgs.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="T:Atom.Web.Accounts.ContractResponseModel">
+            <summary>
+            Represents a contract
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.ContractResponseModel.Origin">
+            <summary>
+            The origin of the contract
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.ContractResponseModel.Name">
+            <summary>
+            The name
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.ContractResponseModel.Description">
+            <summary>
+            The description
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.ContractResponseModel.Color">
+            <summary>
+            The color
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.ContractResponseModel.PricingOption">
+            <summary>
+            The pricing option
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.ContractResponseModel.Price">
+            <summary>
+            The price
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.ContractResponseModel.DateRegistered">
+            <summary>
+            The date the sub contract was registered
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.ContractResponseModel.DateActivated">
+            <summary>
+            The name the contract got/will get activated
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.ContractResponseModel.DateDeactivated">
+            <summary>
+            The date the contract was deactivated
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.ContractResponseModel.CreatedBy">
+            <summary>
+            The user that created the contract
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.ContractResponseModel.SellerCommissions">
+            <summary>
+            The custom seller commissions
+            </summary>
+        </member>
+        <member name="M:Atom.Web.Accounts.ContractResponseModel.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Atom.Web.Accounts.ContractResponseModel.ToString">
+            <summary>
+            Returns a string that represents the current object
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Atom.Web.Accounts.BillingDataModel">
+            <summary>
+            Represent a billing information
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.BillingDataModel.Email">
+            <summary>
+            The email
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.BillingDataModel.Phone">
+            <summary>
+            The phone number
+            </summary>
+        </member>
+        <member name="M:Atom.Web.Accounts.BillingDataModel.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="T:Atom.Web.Accounts.ChargeOrigin">
+            <summary>
+            Provides enumeration over the charge origins
+            </summary>
+        </member>
+        <member name="T:Atom.Web.Accounts.ShippingDataModel">
+            <summary>
+            Represent a shipping information
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.ShippingDataModel.FirstName">
+            <summary>
+            The first name
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.ShippingDataModel.LastName">
+            <summary>
+            The last name
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.ShippingDataModel.Company">
+            <summary>
+            The company
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.ShippingDataModel.Country">
+            <summary>
+            The country
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.ShippingDataModel.State">
+            <summary>
+            ISO code or name of the state, province or district
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.ShippingDataModel.City">
+            <summary>
+            ISO code of the country
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.ShippingDataModel.Postcode">
+            <summary>
+            The post code
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.ShippingDataModel.Address1">
+            <summary>
+            The first address
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.ShippingDataModel.Address2">
+            <summary>
+            The second address
+            </summary>
+        </member>
+        <member name="M:Atom.Web.Accounts.ShippingDataModel.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Atom.Web.Accounts.ShippingDataModel.ToString">
+            <summary>
+            Returns a string that represents current object
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Web.Accounts.ShippingDataModel.CompareTo(System.Object)">
+            <summary>
+            Compares the current object to the specified <paramref name="obj"/>
+            </summary>
+            <param name="obj">The object to be compared to</param>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Web.Accounts.ShippingDataModel.CompareTo(Atom.Web.Accounts.ShippingDataModel)">
+            <summary>
+            Compares the current object to the specified <paramref name="other"/>
+            </summary>
+            <param name="other">The object to be compared to</param>
+            <returns></returns>
+        </member>
+        <member name="T:Atom.Web.Accounts.TaxDataModel">
+            <summary>
+            Represents tax related information
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.TaxDataModel.CountryCode">
+            <summary>
+            The country code
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.TaxDataModel.VATNumber">
+            <summary>
+            The VAT number
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.TaxDataModel.Name">
+            <summary>
+            The company name
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.TaxDataModel.Address">
+            <summary>
+            The address
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Accounts.TaxDataModel.Rate">
+            <summary>
+            The VAT rate
+            </summary>
+        </member>
+        <member name="M:Atom.Web.Accounts.TaxDataModel.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Atom.Web.Accounts.TaxDataModel.ToString">
+            <summary>
+            Returns a string that represents the current object
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Atom.Web.Accounts.NotificationKeys">
+            <summary>
+            A set of predefined keys set at the <see cref="P:Atom.Web.Accounts.NotificationResponseModel.Key"/>
+            </summary>
+        </member>
+        <member name="T:Atom.Web.Accounts.WebAccountsConstants">
+            <summary>
+            Constants related to accounts
+            </summary>
+        </member>
+        <member name="T:Atom.Web.Accounts.WebAccountsHubConstants">
+            <summary>
+            Constants related to accounts hub
+            </summary>
+        </member>
+    </members>
+</doc>

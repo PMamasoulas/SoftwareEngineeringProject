@@ -1,0 +1,289 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Atom.Web.Abstractions</name>
+    </assembly>
+    <members>
+        <member name="T:Atom.Web.Abstractions.CategoryRequestModel">
+            <summary>
+            Request model used for creating and updating plug in categories
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Abstractions.CategoryRequestModel.Parent">
+            <summary>
+            The if of the parent category id any
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Abstractions.CategoryRequestModel.Name">
+            <summary>
+            The name
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Abstractions.CategoryRequestModel.Description">
+            <summary>
+            The description
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Abstractions.CategoryRequestModel.Color">
+            <summary>
+            The color
+            </summary>
+        </member>
+        <member name="M:Atom.Web.Abstractions.CategoryRequestModel.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="T:Atom.Web.Abstractions.ImageRequestModel">
+            <summary>
+            Request model used for creating and updating images
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Abstractions.ImageRequestModel.Name">
+            <summary>
+            The name
+            </summary>
+        </member>
+        <member name="M:Atom.Web.Abstractions.ImageRequestModel.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="T:Atom.Web.Abstractions.LabelRequestModel">
+            <summary>
+            Request model used for creating a label
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Abstractions.LabelRequestModel.Name">
+            <summary>
+            The name
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Abstractions.LabelRequestModel.Color">
+            <summary>
+            The color
+            </summary>
+        </member>
+        <member name="M:Atom.Web.Abstractions.LabelRequestModel.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="T:Atom.Web.Abstractions.BaseEmbeddedResponseModel">
+            <summary>
+            The base for all the embedded response models
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Abstractions.BaseEmbeddedResponseModel.Source">
+            <summary>
+            The id of the model that's the source of the current model
+            </summary>
+        </member>
+        <member name="M:Atom.Web.Abstractions.BaseEmbeddedResponseModel.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="T:Atom.Web.Abstractions.BaseResponseModel">
+            <summary>
+            The base for all identifiable response models
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Abstractions.BaseResponseModel.Id">
+            <summary>
+            The id of the resource
+            </summary>
+        </member>
+        <member name="M:Atom.Web.Abstractions.BaseResponseModel.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Atom.Web.Abstractions.BaseResponseModel.ToString">
+            <summary>
+            Returns a string that represents the current object
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Web.Abstractions.BaseResponseModel.Equals(System.Object)">
+            <summary>
+            Determines whether the specified object is equal to the current object.
+            </summary>
+            <param name="obj">The object to compare with the current object.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Web.Abstractions.BaseResponseModel.Equals(Atom.Web.Abstractions.BaseResponseModel)">
+            <summary>
+            Indicates whether the current object is equal to another object of the same type.
+            </summary>
+            <param name="other">An object to compare with this object.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Web.Abstractions.BaseResponseModel.GetHashCode">
+            <summary>
+            Serves as the default hash function.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Atom.Web.Abstractions.CategoryResponseModel">
+            <summary>
+            Represents a category
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Abstractions.CategoryResponseModel.Parent">
+            <summary>
+            The id of the parent category if any
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Abstractions.CategoryResponseModel.Description">
+            <summary>
+            The description
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Abstractions.CategoryResponseModel.Color">
+            <summary>
+            The color
+            </summary>
+        </member>
+        <member name="M:Atom.Web.Abstractions.CategoryResponseModel.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Atom.Web.Abstractions.CategoryResponseModel.ToRequestModel">
+            <summary>
+            Creates and returns a <see cref="T:Atom.Web.Abstractions.CategoryRequestModel"/> from the current <see cref="T:Atom.Web.Abstractions.CategoryResponseModel"/>
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Atom.Web.Abstractions.EmbeddedCategoryResponseModel">
+            <summary>
+            A minimal version of the <see cref="T:Atom.Web.Abstractions.CategoryResponseModel"/> usually used when embedding
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Abstractions.EmbeddedCategoryResponseModel.Name">
+            <summary>
+            The name
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Abstractions.EmbeddedCategoryResponseModel.Color">
+            <summary>
+            The color
+            </summary>
+        </member>
+        <member name="M:Atom.Web.Abstractions.EmbeddedCategoryResponseModel.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Atom.Web.Abstractions.EmbeddedCategoryResponseModel.ToString">
+            <summary>
+            Returns a string that represents the current object
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Atom.Web.Abstractions.DateResponseModel">
+            <summary>
+            The <see cref="T:Atom.Web.Abstractions.BaseResponseModel"/> that has a <see cref="P:Atom.Web.Abstractions.DateResponseModel.DateCreated"/> and a <see cref="P:Atom.Web.Abstractions.DateResponseModel.DateModified"/>
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Abstractions.DateResponseModel.DateCreated">
+            <summary>
+            The creation date
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Abstractions.DateResponseModel.DateModified">
+            <summary>
+            The last modification date
+            </summary>
+        </member>
+        <member name="M:Atom.Web.Abstractions.DateResponseModel.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="T:Atom.Web.Abstractions.ImageResponseModel">
+            <summary>
+            Represents an image
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Abstractions.ImageResponseModel.Source">
+            <summary>
+            The source
+            </summary>
+        </member>
+        <member name="M:Atom.Web.Abstractions.ImageResponseModel.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="T:Atom.Web.Abstractions.LabelResponseModel">
+            <summary>
+            Represents a label
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Abstractions.LabelResponseModel.Color">
+            <summary>
+            The color
+            </summary>
+        </member>
+        <member name="M:Atom.Web.Abstractions.LabelResponseModel.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Atom.Web.Abstractions.LabelResponseModel.ToRequestModel">
+            <summary>
+            Creates and returns a <see cref="T:Atom.Web.Abstractions.LabelRequestModel"/> from the current <see cref="T:Atom.Web.Abstractions.LabelResponseModel"/>
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Atom.Web.Abstractions.EmbeddedLabelResponseModel">
+            <summary>
+            A minimal version of the <see cref="T:Atom.Web.Abstractions.LabelResponseModel"/> usually used when embedding
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Abstractions.EmbeddedLabelResponseModel.Name">
+            <summary>
+            The name
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Abstractions.EmbeddedLabelResponseModel.Color">
+            <summary>
+            The color
+            </summary>
+        </member>
+        <member name="M:Atom.Web.Abstractions.EmbeddedLabelResponseModel.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Atom.Web.Abstractions.EmbeddedLabelResponseModel.ToString">
+            <summary>
+            Returns a string that represents the current object
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Atom.Web.Abstractions.StandardResponseModel">
+            <summary>
+            A <see cref="T:Atom.Web.Abstractions.DateResponseModel"/> that has a <see cref="P:Atom.Web.Abstractions.StandardResponseModel.Name"/>
+            </summary>
+        </member>
+        <member name="P:Atom.Web.Abstractions.StandardResponseModel.Name">
+            <summary>
+            The name
+            </summary>
+        </member>
+        <member name="M:Atom.Web.Abstractions.StandardResponseModel.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Atom.Web.Abstractions.StandardResponseModel.ToString">
+            <summary>
+            Returns a string that represents the current object
+            </summary>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

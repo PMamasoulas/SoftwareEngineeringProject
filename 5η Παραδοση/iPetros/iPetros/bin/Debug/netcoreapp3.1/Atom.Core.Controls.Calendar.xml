@@ -1,0 +1,408 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Atom.Core.Controls.Calendar</name>
+    </assembly>
+    <members>
+        <member name="T:Atom.Core.Controls.Calendar.EventType">
+            <summary>
+            The type of the calendar event
+            </summary>
+        </member>
+        <member name="F:Atom.Core.Controls.Calendar.EventType.Standard">
+            <summary>
+            An event that has a starting and an ending time
+            </summary>
+        </member>
+        <member name="F:Atom.Core.Controls.Calendar.EventType.Reminder">
+            <summary>
+            An event that has only a starting time but not an ending time 
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Controls.Calendar.RepeatPattern.DateType">
+            <summary>
+            The repeat date type
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Controls.Calendar.RepeatPattern.NumberOfRepeats">
+            <summary>
+            The number of requested repeats
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Controls.Calendar.RepeatPattern.DateFilter">
+            <summary>
+            Delegate that determines if the inserted date should be selected or not
+            </summary>
+        </member>
+        <member name="M:Atom.Core.Controls.Calendar.RepeatPattern.#ctor(Atom.Core.DateType,System.Int32,System.Func{System.DateTime,System.Boolean})">
+            <summary>
+            Default constructor
+            </summary>
+            <param name="dateType">The repeat date type</param>
+            <param name="numberOfRepeats">The number of requested repeats</param>
+            <param name="dateFilter">Delegate that determines if the inserted date should be selected or not</param>
+        </member>
+        <member name="T:Atom.Core.Controls.Calendar.CalendarDI">
+            <summary>
+            The default calendar services that should be available anywhere in the application
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Controls.Calendar.CalendarDI.GetEventStateMapper">
+            <summary>
+            Gets the event state mapper
+            </summary>
+        </member>
+        <member name="T:Atom.Core.Controls.Calendar.DefaultEventStateMapper">
+            <summary>
+            The default implementation of the <see cref="T:Atom.Core.Controls.Calendar.IEventStateMapper"/>
+            </summary>
+        </member>
+        <member name="F:Atom.Core.Controls.Calendar.DefaultEventStateMapper.mMapper">
+            <summary>
+            Mapper used for lazy-loading the properties of a calendar event type
+            </summary>
+        </member>
+        <member name="M:Atom.Core.Controls.Calendar.DefaultEventStateMapper.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Atom.Core.Controls.Calendar.DefaultEventStateMapper.Map``1(``0,``0)">
+            <summary>
+            Applies the current state of the specified <paramref name="source"/> to the specified <paramref name="destination"/>
+            </summary>
+            <typeparam name="TCalendarEvent">The type of the calendar event</typeparam>
+            <param name="source">The source</param>
+            <param name="destination">The destination</param>
+        </member>
+        <member name="M:Atom.Core.Controls.Calendar.DefaultEventStateMapper.MapCore``1(``0,``0)">
+            <summary>
+            Applies the current state of the specified <paramref name="source"/> to the specified <paramref name="destination"/>
+            </summary>
+            <typeparam name="TCalendarEvent">The type of the calendar event</typeparam>
+            <param name="source">The source</param>
+            <param name="destination">The destination</param>
+        </member>
+        <member name="T:Atom.Core.Controls.Calendar.IEventStateMapper">
+            <summary>
+            Provides abstractions for an event state mapper
+            </summary>
+        </member>
+        <member name="M:Atom.Core.Controls.Calendar.IEventStateMapper.Map``1(``0,``0)">
+            <summary>
+            Applies the current state of the specified <paramref name="source"/> to the specified <paramref name="destination"/>
+            </summary>
+            <typeparam name="TCalendarEvent">The type of the calendar event</typeparam>
+            <param name="source">The source</param>
+            <param name="destination">The destination</param>
+        </member>
+        <member name="T:Atom.Core.Controls.Calendar.CalendarEvent">
+            <summary>
+            Represents a calendar event
+            </summary>
+        </member>
+        <member name="F:Atom.Core.Controls.Calendar.CalendarEvent.mDateStart">
+            <summary>
+            The member of the <see cref="P:Atom.Core.Controls.Calendar.CalendarEvent.DateStart"/>
+            </summary>
+        </member>
+        <member name="F:Atom.Core.Controls.Calendar.CalendarEvent.mDateEnd">
+            <summary>
+            The member of the <see cref="P:Atom.Core.Controls.Calendar.CalendarEvent.DateEnd"/>
+            </summary>
+        </member>
+        <member name="F:Atom.Core.Controls.Calendar.CalendarEvent.mName">
+            <summary>
+            The member of the <see cref="P:Atom.Core.Controls.Calendar.CalendarEvent.Name"/> property
+            </summary>
+        </member>
+        <member name="F:Atom.Core.Controls.Calendar.CalendarEvent.mDescription">
+            <summary>
+            The member of the <see cref="P:Atom.Core.Controls.Calendar.CalendarEvent.Description"/> property
+            </summary>
+        </member>
+        <member name="F:Atom.Core.Controls.Calendar.CalendarEvent.mColor">
+            <summary>
+            The member of the <see cref="P:Atom.Core.Controls.Calendar.CalendarEvent.Color"/> property
+            </summary>
+        </member>
+        <member name="F:Atom.Core.Controls.Calendar.CalendarEvent.mSavedState">
+            <summary>
+            Represents a saved state of the calendar event.
+            NOTE: This is generated using the 
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Controls.Calendar.CalendarEvent.SuppressEventUpdateEvent">
+            <summary>
+            A flag indicating whether the <see cref="E:Atom.Core.Controls.Calendar.CalendarEvent.EventUpdated"/> should get fired or not.
+            NOTE: We usually suppress this event to make multiple changes to the event and then
+                  re-enable it!
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Controls.Calendar.CalendarEvent.Id">
+            <summary>
+            The unique identifier of the event
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Controls.Calendar.CalendarEvent.Type">
+            <summary>
+            The type of the calendar event
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Controls.Calendar.CalendarEvent.Name">
+            <summary>
+            The name of the event
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Controls.Calendar.CalendarEvent.Description">
+            <summary>
+            A description about the event
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Controls.Calendar.CalendarEvent.DateStart">
+            <summary>
+            The initialization date time
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Controls.Calendar.CalendarEvent.DateEnd">
+            <summary>
+            The finish date time
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Controls.Calendar.CalendarEvent.DaySpan">
+            <summary>
+            The date based duration of event
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Controls.Calendar.CalendarEvent.TimeSpan">
+            <summary>
+            The duration of the event.
+            NOTE: If the <see cref="P:Atom.Core.Controls.Calendar.CalendarEvent.Type"/> is <see cref="F:Atom.Core.Controls.Calendar.EventType.Reminder"/> then the returned time span is <see cref="!:null"/>!
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Controls.Calendar.CalendarEvent.Color">
+            <summary>
+            The color of the event
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Controls.Calendar.CalendarEvent.Owner">
+            <summary>
+            The name of the owner
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Controls.Calendar.CalendarEvent.EventInfo">
+            <summary>
+            Information related to the event
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Controls.Calendar.CalendarEvent.IsEditable">
+            <summary>
+            A flag indicating whether the event can be edited or not
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Controls.Calendar.CalendarEvent.VectorSource">
+            <summary>
+            The vector source
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Controls.Calendar.CalendarEvent.Parent">
+            <summary>
+            The parent.
+            NOTE: This is the id of the recursive event that spawned this event!
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Controls.Calendar.CalendarEvent.IsRecursionActive">
+            <summary>
+            A flag indicating whether recursion is applied based on this event
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Controls.Calendar.CalendarEvent.CronExpression">
+            <summary>
+            The cron expression
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Controls.Calendar.CalendarEvent.RepeatUntilActive">
+            <summary>
+            A flag indicating whether there is a repeat until limit
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Controls.Calendar.CalendarEvent.RepeatUntil">
+            <summary>
+            The date that the repetition of the event ends.
+            NOTE: This date has any effect when the <see cref="P:Atom.Core.Controls.Calendar.CalendarEvent.RepeatUntil"/> flag is set to <see cref="!:true"/>!
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Controls.Calendar.CalendarEvent.MetaData">
+            <summary>
+            The meta data
+            </summary>
+        </member>
+        <member name="M:Atom.Core.Controls.Calendar.CalendarEvent.#ctor(System.DateTime,System.DateTime)">
+            <summary>
+            Standard event constructor
+            </summary>
+            <param name="dateStart">The initialization date time</param>
+            <param name="dateEnd">The finish date time</param>
+        </member>
+        <member name="M:Atom.Core.Controls.Calendar.CalendarEvent.#ctor(System.DateTimeOffset,System.DateTimeOffset)">
+            <summary>
+            Standard event constructor
+            </summary>
+            <param name="dateStart">The initialization date time</param>
+            <param name="dateEnd">The finish date time</param>
+        </member>
+        <member name="M:Atom.Core.Controls.Calendar.CalendarEvent.#ctor(System.DateTime)">
+            <summary>
+            Reminder event constructor
+            </summary>
+            <param name="dateStart">The initialization date time</param>
+        </member>
+        <member name="M:Atom.Core.Controls.Calendar.CalendarEvent.#ctor(System.DateTimeOffset)">
+            <summary>
+            Reminder event constructor
+            </summary>
+            <param name="dateStart">The initialization date time</param>
+        </member>
+        <member name="M:Atom.Core.Controls.Calendar.CalendarEvent.ChangesApplied">
+            <summary>
+            Fires the <see cref="E:Atom.Core.Controls.Calendar.CalendarEvent.EventUpdated"/> causing all the related
+            elements to update.
+            </summary>
+        </member>
+        <member name="M:Atom.Core.Controls.Calendar.CalendarEvent.SaveState">
+            <summary>
+            Saves the current state of the event.
+            NOTE: The state of the event can be restored using the <see cref="M:Atom.Core.Controls.Calendar.CalendarEvent.RestoreState"/> method!
+            </summary>
+        </member>
+        <member name="M:Atom.Core.Controls.Calendar.CalendarEvent.RestoreState">
+            <summary>
+            Restores the event to the lastly saved state
+            </summary>
+        </member>
+        <member name="M:Atom.Core.Controls.Calendar.CalendarEvent.Move(System.DateTime)">
+            <summary>
+            Moves the initial date time of the event while maintains the duration of the event
+            </summary>
+            <param name="newDateStart">The new initial date and time</param>
+        </member>
+        <member name="M:Atom.Core.Controls.Calendar.CalendarEvent.ToString">
+            <summary>
+            Returns a string that represents the current object
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Core.Controls.Calendar.CalendarEvent.ToTimespanString">
+            <summary>
+            Returns a string that represents the time span of the event
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Core.Controls.Calendar.CalendarEvent.GetStateCore">
+            <summary>
+            Gets an object that represents the current state of the event.
+            NOTE: This object is used by the <see cref="M:Atom.Core.Controls.Calendar.CalendarEvent.RestoreStateCore(System.Object)"/>
+                  method to restore the object.
+            NOTE: Overriding both methods may be required!
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Core.Controls.Calendar.CalendarEvent.RestoreStateCore(System.Object)">
+            <summary>
+            Restores the event to the specified <paramref name="state"/>
+            </summary>
+            <param name="state">The state</param>
+        </member>
+        <member name="M:Atom.Core.Controls.Calendar.CalendarEvent.OnNameChanged(System.String)">
+            <summary>
+            Handles the change of the <see cref="P:Atom.Core.Controls.Calendar.CalendarEvent.Name"/> property
+            </summary>
+            <param name="name">The new name</param>
+        </member>
+        <member name="M:Atom.Core.Controls.Calendar.CalendarEvent.OnDateStartChanged(System.DateTime)">
+            <summary>
+            Handles the change of the <see cref="P:Atom.Core.Controls.Calendar.CalendarEvent.DateStart"/> property
+            </summary>
+            <param name="newDate">The new date</param>
+        </member>
+        <member name="M:Atom.Core.Controls.Calendar.CalendarEvent.OnDateEndChanged(System.Nullable{System.DateTime})">
+            <summary>
+            Handles the change of the <see cref="P:Atom.Core.Controls.Calendar.CalendarEvent.DateEnd"/> property
+            </summary>
+            <param name="newDate"></param>
+        </member>
+        <member name="M:Atom.Core.Controls.Calendar.CalendarEvent.OnEventUpdated">
+            <summary>
+            Fires the <see cref="E:Atom.Core.Controls.Calendar.CalendarEvent.EventUpdated"/> event.
+            NOTE: This method should be called every time the event gets updated!
+            </summary>
+        </member>
+        <member name="E:Atom.Core.Controls.Calendar.CalendarEvent.NameChanged">
+            <summary>
+            Fires when the <see cref="P:Atom.Core.Controls.Calendar.CalendarEvent.Name"/> property changes
+            </summary>
+        </member>
+        <member name="E:Atom.Core.Controls.Calendar.CalendarEvent.DateStartChanged">
+            <summary>
+            Fires when the <see cref="P:Atom.Core.Controls.Calendar.CalendarEvent.DateStart"/> property changes
+            </summary>
+        </member>
+        <member name="E:Atom.Core.Controls.Calendar.CalendarEvent.DateEndChanged">
+            <summary>
+            Fires when the <see cref="P:Atom.Core.Controls.Calendar.CalendarEvent.DateEnd"/> property changes
+            </summary>
+        </member>
+        <member name="E:Atom.Core.Controls.Calendar.CalendarEvent.EventUpdated">
+            <summary>
+            Event that fires every time the event gets updated
+            </summary>
+        </member>
+        <member name="T:Atom.Core.Controls.Calendar.FrameworkConstructionExtensions">
+            <summary>
+            Extension methods for <see cref="T:Atom.Core.FrameworkConstruction"/>
+            </summary>
+        </member>
+        <member name="M:Atom.Core.Controls.Calendar.FrameworkConstructionExtensions.AddDefaultEventStateMapper(Atom.Core.FrameworkConstruction)">
+            <summary>
+            Injects the default event state mapper in to the framework construction
+            </summary>
+            <param name="construction">The construction</param>
+            <returns></returns>
+        </member>
+        <member name="T:Atom.Core.Controls.Calendar.SubCalendar">
+            <summary>
+            Represents a sub calendar
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Controls.Calendar.SubCalendar.Category">
+            <summary>
+            The sub calendar category
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Controls.Calendar.SubCalendar.Name">
+            <summary>
+            The name of the sub calendar
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Controls.Calendar.SubCalendar.Color">
+            <summary>
+            The color of the sub calendar
+            </summary>
+        </member>
+        <member name="M:Atom.Core.Controls.Calendar.SubCalendar.#ctor(System.String,System.String,System.String,System.String)">
+            <summary>
+            Default constructor
+            </summary>
+            <param name="id">The id of the sub calendar</param>
+            <param name="color">The color of the sub calendar</param>
+            <param name="name">The name of the sub calendar</param>
+            <param name="category">The sub calendar category</param>
+        </member>
+        <member name="M:Atom.Core.Controls.Calendar.SubCalendar.ToString">
+            <summary>
+            Returns a string that represents the current object
+            </summary>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

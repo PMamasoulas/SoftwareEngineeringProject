@@ -1,0 +1,413 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Atom.Windows.Controls.Abstractions</name>
+    </assembly>
+    <members>
+        <member name="T:Atom.Windows.Controls.Abstractions.BaseConfigurableDataPresenterPaginatedPage`1">
+            <summary>
+            A <see cref="T:Atom.Windows.Controls.BaseDataPresenterPaginatedPage`1"/> that can configure its preview options
+            </summary>
+            <typeparam name="TClass">The type of the models</typeparam>
+        </member>
+        <member name="M:Atom.Windows.Controls.Abstractions.BaseConfigurableDataPresenterPaginatedPage`1.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Atom.Windows.Controls.Abstractions.BaseConfigurableDataPresenterPaginatedPage`1.OnInitialized(System.EventArgs)">
+            <summary>
+            Handles the initialization of the control
+            </summary>
+            <param name="e">Event args</param>
+        </member>
+        <member name="M:Atom.Windows.Controls.Abstractions.BaseConfigurableDataPresenterPaginatedPage`1.OnInitializedCore(System.EventArgs)">
+            <summary>
+            Handles the initialization of the control
+            </summary>
+            <param name="e">Event args</param>
+        </member>
+        <member name="M:Atom.Windows.Controls.Abstractions.BaseConfigurableDataPresenterPaginatedPage`1.GetPropertyOptionsDataStorage">
+            <summary>
+            Gets the property options data storage
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Windows.Controls.Abstractions.BaseConfigurableDataPresenterPaginatedPage`1.GetPropertyMapper">
+            <summary>
+            Gets the property mapper
+            </summary>
+        </member>
+        <member name="M:Atom.Windows.Controls.Abstractions.BaseConfigurableDataPresenterPaginatedPage`1.GetTranslator">
+            <summary>
+            Gets the translator responsible for translating the values of the model.
+            NOTE: <see cref="!:null"/> may get returned if there isn't a translator for the specified model!
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Windows.Controls.Abstractions.BaseConfigurableDataPresenterPaginatedPage`1.CreateGUI">
+            <summary>
+            Creates and adds the required GUI elements
+            </summary>
+        </member>
+        <member name="T:Atom.Windows.Controls.Abstractions.BaseConfigurableDataPresenterPaginatedPage`2">
+            <summary>
+            A <see cref="T:Atom.Windows.Controls.Abstractions.BaseConfigurableDataPresenterPaginatedPage`2"/> that can configure its preview options
+            </summary>
+            <typeparam name="TClass">The type of the models</typeparam>
+            <typeparam name="TArgs">The type of the arguments</typeparam>
+        </member>
+        <member name="M:Atom.Windows.Controls.Abstractions.BaseConfigurableDataPresenterPaginatedPage`2.#ctor(`1)">
+            <summary>
+            Default constructor
+            </summary>
+            <param name="args">The args</param>
+        </member>
+        <member name="M:Atom.Windows.Controls.Abstractions.BaseConfigurableDataPresenterPaginatedPage`2.OnInitialized(System.EventArgs)">
+            <summary>
+            Handles the initialization of the control
+            </summary>
+            <param name="e">Event args</param>
+        </member>
+        <member name="M:Atom.Windows.Controls.Abstractions.BaseConfigurableDataPresenterPaginatedPage`2.OnInitializedCore(System.EventArgs)">
+            <summary>
+            Handles the initialization of the control
+            </summary>
+            <param name="e">Event args</param>
+        </member>
+        <member name="M:Atom.Windows.Controls.Abstractions.BaseConfigurableDataPresenterPaginatedPage`2.GetPropertyOptionsDataStorage">
+            <summary>
+            Gets the property options data storage
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Windows.Controls.Abstractions.BaseConfigurableDataPresenterPaginatedPage`2.GetPropertyMapper">
+            <summary>
+            Gets the property mapper
+            </summary>
+        </member>
+        <member name="M:Atom.Windows.Controls.Abstractions.BaseConfigurableDataPresenterPaginatedPage`2.GetTranslator">
+            <summary>
+            Gets the translator responsible for translating the values of the model.
+            NOTE: <see cref="!:null"/> may get returned if there isn't a translator for the specified model!
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Windows.Controls.Abstractions.BaseConfigurableDataPresenterPaginatedPage`2.CreateGUI">
+            <summary>
+            Creates and adds the required GUI elements
+            </summary>
+        </member>
+        <member name="T:Atom.Windows.Controls.Abstractions.BaseConfigurableFullyInitializableDataPresenterPage`1">
+            <summary>
+            A <see cref="T:Atom.Windows.Controls.BaseFullyInitializableDataPresenterPage`1"/> that can configure its preview options
+            </summary>
+            <typeparam name="TClass">The type of the models</typeparam>
+        </member>
+        <member name="M:Atom.Windows.Controls.Abstractions.BaseConfigurableFullyInitializableDataPresenterPage`1.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Atom.Windows.Controls.Abstractions.BaseConfigurableFullyInitializableDataPresenterPage`1.OnInitializedCore(System.EventArgs)">
+            <summary>
+            Handles the initialization of the control
+            </summary>
+            <param name="e">Event args</param>
+        </member>
+        <member name="M:Atom.Windows.Controls.Abstractions.BaseConfigurableFullyInitializableDataPresenterPage`1.OnInitializedInternal(System.EventArgs)">
+            <summary>
+            Handles the initialization of the control
+            </summary>
+            <param name="e">Event args</param>
+        </member>
+        <member name="M:Atom.Windows.Controls.Abstractions.BaseConfigurableFullyInitializableDataPresenterPage`1.GetPropertyOptionsDataStorage">
+            <summary>
+            Gets the property options data storage
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Windows.Controls.Abstractions.BaseConfigurableFullyInitializableDataPresenterPage`1.GetPropertyMapper">
+            <summary>
+            Gets the property mapper
+            </summary>
+        </member>
+        <member name="M:Atom.Windows.Controls.Abstractions.BaseConfigurableFullyInitializableDataPresenterPage`1.GetTranslator">
+            <summary>
+            Gets the translator responsible for translating the values of the model.
+            NOTE: <see cref="!:null"/> may get returned if there isn't a translator for the specified model!
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Windows.Controls.Abstractions.BaseConfigurableFullyInitializableDataPresenterPage`1.CreateGUI">
+            <summary>
+            Creates and adds the required GUI elements
+            </summary>
+        </member>
+        <member name="T:Atom.Windows.Controls.Abstractions.StandardConfigurableDataPresenterPaginatedPage`1">
+            <summary>
+            A <see cref="T:Atom.Windows.Controls.StandardDataPresenterPaginatedPage`1"/> that can configure its preview options
+            </summary>
+            <typeparam name="TClass">The type of the models</typeparam>
+        </member>
+        <member name="M:Atom.Windows.Controls.Abstractions.StandardConfigurableDataPresenterPaginatedPage`1.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Atom.Windows.Controls.Abstractions.StandardConfigurableDataPresenterPaginatedPage`1.OnInitialized(System.EventArgs)">
+            <summary>
+            Handles the initialization of the control
+            </summary>
+            <param name="e">Event args</param>
+        </member>
+        <member name="M:Atom.Windows.Controls.Abstractions.StandardConfigurableDataPresenterPaginatedPage`1.OnInitializedCore(System.EventArgs)">
+            <summary>
+            Handles the initialization of the control
+            </summary>
+            <param name="e">Event args</param>
+        </member>
+        <member name="M:Atom.Windows.Controls.Abstractions.StandardConfigurableDataPresenterPaginatedPage`1.GetPropertyOptionsDataStorage">
+            <summary>
+            Gets the property options data storage
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Windows.Controls.Abstractions.StandardConfigurableDataPresenterPaginatedPage`1.GetPropertyMapper">
+            <summary>
+            Gets the property mapper
+            </summary>
+        </member>
+        <member name="M:Atom.Windows.Controls.Abstractions.StandardConfigurableDataPresenterPaginatedPage`1.GetTranslator">
+            <summary>
+            Gets the translator responsible for translating the values of the model.
+            NOTE: <see cref="!:null"/> may get returned if there isn't a translator for the specified model!
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Windows.Controls.Abstractions.StandardConfigurableDataPresenterPaginatedPage`1.CreateGUI">
+            <summary>
+            Creates and adds the required GUI elements
+            </summary>
+        </member>
+        <member name="T:Atom.Windows.Controls.Abstractions.StandardConfigurableDataPresenterPaginatedPage`2">
+            <summary>
+            A <see cref="T:Atom.Windows.Controls.StandardDataPresenterPaginatedPage`2"/> that can configure its preview options
+            </summary>
+            <typeparam name="TArgs">The type of the args</typeparam>
+            <typeparam name="TClass">The type of the models</typeparam>
+        </member>
+        <member name="M:Atom.Windows.Controls.Abstractions.StandardConfigurableDataPresenterPaginatedPage`2.#ctor(`1)">
+            <summary>
+            Default constructor
+            </summary>
+            <param name="args">The args</param>
+        </member>
+        <member name="M:Atom.Windows.Controls.Abstractions.StandardConfigurableDataPresenterPaginatedPage`2.OnInitialized(System.EventArgs)">
+            <summary>
+            Handles the initialization of the control
+            </summary>
+            <param name="e">Event args</param>
+        </member>
+        <member name="M:Atom.Windows.Controls.Abstractions.StandardConfigurableDataPresenterPaginatedPage`2.OnInitializedCore(System.EventArgs)">
+            <summary>
+            Handles the initialization of the control
+            </summary>
+            <param name="e">Event args</param>
+        </member>
+        <member name="M:Atom.Windows.Controls.Abstractions.StandardConfigurableDataPresenterPaginatedPage`2.GetPropertyOptionsDataStorage">
+            <summary>
+            Gets the property options data storage
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Windows.Controls.Abstractions.StandardConfigurableDataPresenterPaginatedPage`2.GetPropertyMapper">
+            <summary>
+            Gets the property mapper
+            </summary>
+        </member>
+        <member name="M:Atom.Windows.Controls.Abstractions.StandardConfigurableDataPresenterPaginatedPage`2.GetTranslator">
+            <summary>
+            Gets the translator responsible for translating the values of the model.
+            NOTE: <see cref="!:null"/> may get returned if there isn't a translator for the specified model!
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Windows.Controls.Abstractions.StandardConfigurableDataPresenterPaginatedPage`2.CreateGUI">
+            <summary>
+            Creates and adds the required GUI elements
+            </summary>
+        </member>
+        <member name="T:Atom.Windows.Controls.Abstractions.StandardConfigurableFullyInitializableDataPresenterPage`1">
+            <summary>
+            A <see cref="T:Atom.Windows.Controls.StandardFullyInitializableDataPresenterPage`1"/> that can configure its preview options
+            </summary>
+            <typeparam name="TClass">The type of the models</typeparam>
+        </member>
+        <member name="M:Atom.Windows.Controls.Abstractions.StandardConfigurableFullyInitializableDataPresenterPage`1.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Atom.Windows.Controls.Abstractions.StandardConfigurableFullyInitializableDataPresenterPage`1.OnInitializedCore(System.EventArgs)">
+            <summary>
+            Handles the initialization of the control
+            </summary>
+            <param name="e">Event args</param>
+        </member>
+        <member name="M:Atom.Windows.Controls.Abstractions.StandardConfigurableFullyInitializableDataPresenterPage`1.OnInitializedInternal(System.EventArgs)">
+            <summary>
+            Handles the initialization of the control
+            </summary>
+            <param name="e">Event args</param>
+        </member>
+        <member name="M:Atom.Windows.Controls.Abstractions.StandardConfigurableFullyInitializableDataPresenterPage`1.GetPropertyOptionsDataStorage">
+            <summary>
+            Gets the property options data storage
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Windows.Controls.Abstractions.StandardConfigurableFullyInitializableDataPresenterPage`1.GetPropertyMapper">
+            <summary>
+            Gets the property mapper
+            </summary>
+        </member>
+        <member name="M:Atom.Windows.Controls.Abstractions.StandardConfigurableFullyInitializableDataPresenterPage`1.GetTranslator">
+            <summary>
+            Gets the translator responsible for translating the values of the model.
+            NOTE: <see cref="!:null"/> may get returned if there isn't a translator for the specified model!
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Windows.Controls.Abstractions.StandardConfigurableFullyInitializableDataPresenterPage`1.CreateGUI">
+            <summary>
+            Creates and adds the required GUI elements
+            </summary>
+        </member>
+        <member name="T:Atom.Windows.Controls.Abstractions.WindowsControlsAbstractionsDataModelHelpers">
+            <summary>
+            Helper methods related to data models
+            </summary>
+        </member>
+        <member name="M:Atom.Windows.Controls.Abstractions.WindowsControlsAbstractionsDataModelHelpers.CreateImageRequestModelDataForm">
+            <summary>
+            Creates and returns a <see cref="T:Atom.Windows.Controls.DataForm`1"/> for <see cref="T:Atom.Web.Abstractions.ImageRequestModel"/>s
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Windows.Controls.Abstractions.WindowsControlsAbstractionsDataModelHelpers.CreateImageResponseModelDataGrid">
+            <summary>
+            Creates and returns a <see cref="T:Atom.Windows.Controls.DataGrid`1"/> used for presenting
+            <see cref="T:Atom.Web.Abstractions.ImageResponseModel"/>s
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Windows.Controls.Abstractions.WindowsControlsAbstractionsDataModelHelpers.CreateDefaultImageResponseModelDataGrid">
+            <summary>
+             Creates and returns a <see cref="T:Atom.Windows.Controls.DataGrid`1"/> used for presenting
+            <see cref="T:Atom.Web.Abstractions.ImageResponseModel"/>s that has pre-selected the default columns
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Windows.Controls.Abstractions.WindowsControlsAbstractionsDataModelHelpers.CreateImageResponseModelTilesPresenter">
+            <summary>
+            Creates and returns a <see cref="T:Atom.Windows.Controls.TilesPresenter`1"/> used for presenting <see cref="T:Atom.Web.Abstractions.ImageResponseModel"/>
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Windows.Controls.Abstractions.WindowsControlsAbstractionsDataModelHelpers.CreateCategoryResponseModelDataGrid">
+            <summary>
+            Creates and returns a <see cref="T:Atom.Windows.Controls.DataGrid`1"/> used for presenting
+            <see cref="T:Atom.Web.Abstractions.CategoryResponseModel"/>s
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Windows.Controls.Abstractions.WindowsControlsAbstractionsDataModelHelpers.CreateDefaultCategoryResponseModelDataGrid">
+            <summary>
+            Creates and returns a <see cref="T:Atom.Windows.Controls.DataGrid`1"/> used for presenting
+            <see cref="T:Atom.Web.Abstractions.CategoryResponseModel"/>s that has pre-selected the default columns
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Windows.Controls.Abstractions.WindowsControlsAbstractionsDataModelHelpers.CreateEmbeddedCategoryResponseModelDataGrid">
+            <summary>
+            Creates and returns a <see cref="T:Atom.Windows.Controls.DataGrid`1"/> used for presenting
+            <see cref="T:Atom.Web.Abstractions.EmbeddedCategoryResponseModel"/>s
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Windows.Controls.Abstractions.WindowsControlsAbstractionsDataModelHelpers.CreateDefaultEmbeddedCategoryResponseModelDataGrid">
+            <summary>
+            Creates and returns a <see cref="T:Atom.Windows.Controls.DataGrid`1"/> used for presenting
+            <see cref="T:Atom.Web.Abstractions.EmbeddedCategoryResponseModel"/>s that has pre-selected the default columns
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Windows.Controls.Abstractions.WindowsControlsAbstractionsDataModelHelpers.CreateLabelResponseModelDataGrid">
+            <summary>
+            Creates and returns a <see cref="T:Atom.Windows.Controls.DataGrid`1"/> used for presenting
+            <see cref="T:Atom.Web.Abstractions.LabelResponseModel"/>s
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Windows.Controls.Abstractions.WindowsControlsAbstractionsDataModelHelpers.CreateDefaultLabelResponseModelDataGrid">
+            <summary>
+            Creates and returns a <see cref="T:Atom.Windows.Controls.DataGrid`1"/> used for presenting
+            <see cref="T:Atom.Web.Abstractions.LabelResponseModel"/>s that has pre-selected the default columns
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Windows.Controls.Abstractions.WindowsControlsAbstractionsDataModelHelpers.CreateEmbeddedLabelResponseModelDataGrid">
+            <summary>
+            Creates and returns a <see cref="T:Atom.Windows.Controls.DataGrid`1"/> used for presenting
+            <see cref="T:Atom.Web.Abstractions.EmbeddedLabelResponseModel"/>s
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Windows.Controls.Abstractions.WindowsControlsAbstractionsDataModelHelpers.CreateDefaultEmbeddedLabelResponseModelDataGrid">
+            <summary>
+            Creates and returns a <see cref="T:Atom.Windows.Controls.DataGrid`1"/> used for presenting
+            <see cref="T:Atom.Web.Abstractions.LabelResponseModel"/>s that has pre-selected the default columns
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Windows.Controls.Abstractions.WindowsControlsAbstractionsDataModelHelpers.CreateCategoryRequestModelDataForm">
+            <summary>
+            Creates and returns a <see cref="T:Atom.Windows.Controls.DataForm`1"/> for <see cref="T:Atom.Web.Abstractions.CategoryRequestModel"/>s
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Windows.Controls.Abstractions.WindowsControlsAbstractionsDataModelHelpers.CreateLabelRequestModelDataForm">
+            <summary>
+            Creates and returns a <see cref="T:Atom.Windows.Controls.DataForm`1"/> for <see cref="T:Atom.Web.Abstractions.LabelRequestModel"/>s
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Windows.Controls.Abstractions.WindowsControlsAbstractionsDataModelHelpers.CreateMetaDataModelDataGrid">
+            <summary>
+            Creates and returns a <see cref="T:Atom.Windows.Controls.DataGrid`1"/> used for presenting
+            <see cref="T:Atom.Core.MetaDataModel"/>s
+            </summary>
+        </member>
+        <member name="M:Atom.Windows.Controls.Abstractions.WindowsControlsAbstractionsDataModelHelpers.CreateDefaultMetaDataModelDataGrid">
+            <summary>
+            Creates and returns a <see cref="T:Atom.Windows.Controls.DataGrid`1"/> used for presenting 
+            <see cref="T:Atom.Core.MetaDataModel"/>s that has pre-selected the default columns
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Windows.Controls.Abstractions.WindowsControlsAbstractionsDataModelHelpers.CreateDefaultFileDataModelCollapsibleDataGrid">
+            <summary>
+            Creates and returns a <see cref="T:Atom.Windows.Controls.CollapsibleDataGrid`1"/> used for presenting 
+            <see cref="T:Atom.Core.FileDataModel"/>s that has pre-selected the default columns
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Windows.Controls.Abstractions.WindowsControlsAbstractionsDataModelHelpers.CreateDefaultPricingOptionDataModelDataGrid">
+            <summary>
+            Creates and returns a <see cref="T:Atom.Windows.Controls.CollapsibleDataGrid`1"/> used for presenting
+            <see cref="T:Atom.Core.PricingOptionDataModel"/>s that has pre-selected the default columns
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Atom.CodeGeneration</name>
+    </assembly>
+    <members>
+        <member name="M:Atom.CodeGeneration.CodeGeneration.GenerateDataModelHelpers(System.String,System.Type[])">
+            <summary>
+            Generates data model helpers for the specified <paramref name="types"/>.
+            NOTE: The helpers include: <see cref="T:Atom.Core.PropertyMapper`1"/>, <see cref="T:Atom.Core.Translator`1"/>, DefaultProperties,
+                  DataGrid, DataForm!
+            </summary>
+            <param name="localizationAccessor"></param>
+            <param name="types"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.CodeGeneration.CodeGeneration.GenerateLocalizationProperties(System.Object)">
+            <summary>
+            Generates a localization string for the specified <paramref name="localizationInstance"/>.
+            NOTE: All the public properties with a getter and a setter are converted to readonly properties 
+                  (only getter)!
+            NOTE: If the properties has a default value, the value remains unchanged, otherwise the values
+                  is generated based on the name of the property
+            </summary>
+            <param name="localizationInstance">Instance of the localization class</param>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.CodeGeneration.CodeGeneration.GenerateSpellCheckText(System.Object)">
+            <summary>
+            Generates a string suitable for spell checking
+            </summary>
+            <param name="localizationInstance">Instance of the localization class</param>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.CodeGeneration.CodeGeneration.GenerateEnumHelpers(System.String,System.Type[])">
+            <summary>
+            Generates enum helpers for the specified <paramref name="types"/>.
+            NOTE: The helpers include: ToLocalizedString, ToColorHex
+            </summary>
+            <param name="localizationAccessor">Instance of the localization class</param>
+            <param name="types">The enum types</param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

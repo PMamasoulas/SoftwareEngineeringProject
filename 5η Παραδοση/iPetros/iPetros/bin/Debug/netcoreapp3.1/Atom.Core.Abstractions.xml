@@ -1,0 +1,122 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Atom.Core.Abstractions</name>
+    </assembly>
+    <members>
+        <member name="T:Atom.Core.Abstractions.CoreAbstractionsDataModelHelpers">
+            <summary>
+            Helper methods related to data models
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Abstractions.CoreAbstractionsDataModelHelpers.BaseResponseModelMapper">
+            <summary>
+            Maps the properties of the <see cref="T:Atom.Web.Abstractions.BaseResponseModel"/> to custom values
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Abstractions.CoreAbstractionsDataModelHelpers.BaseEmbeddedResponseModelMapper">
+            <summary>
+            Maps the properties of the <see cref="T:Atom.Web.Abstractions.BaseEmbeddedResponseModel"/> to custom values
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Abstractions.CoreAbstractionsDataModelHelpers.DateResponseModelMapper">
+            <summary>
+            Maps the properties of the <see cref="T:Atom.Web.Abstractions.DateResponseModel"/> to custom values
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Abstractions.CoreAbstractionsDataModelHelpers.DateResponseModelTranslator">
+            <summary>
+            Gets the <see cref="T:Atom.Core.Translator`1"/> required for translating the 
+            values of a <see cref="T:Atom.Web.Abstractions.DateResponseModel"/>
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Abstractions.CoreAbstractionsDataModelHelpers.StandardResponseModelMapper">
+            <summary>
+            Maps the properties of the <see cref="T:Atom.Web.Abstractions.StandardResponseModel"/> to custom values
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Abstractions.CoreAbstractionsDataModelHelpers.ImageRequestModelMapper">
+            <summary>
+            Maps the properties of the <see cref="T:Atom.Web.Abstractions.ImageRequestModel"/> to custom values
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Abstractions.CoreAbstractionsDataModelHelpers.ImageResponseModelMapper">
+            <summary>
+            Maps the properties of the <see cref="T:Atom.Web.Abstractions.ImageResponseModel"/> to custom values
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Abstractions.CoreAbstractionsDataModelHelpers.ImageResponseModelTranslator">
+            <summary>
+            Gets the <see cref="T:Atom.Core.Translator`1"/> for a <see cref="T:Atom.Web.Abstractions.ImageResponseModel"/>
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:Atom.Core.Abstractions.CoreAbstractionsDataModelHelpers.DefaultImageResponseModelProperties">
+            <summary>
+            Gets the most commonly used properties of the <see cref="T:Atom.Web.Abstractions.ImageResponseModel"/>
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Abstractions.CoreAbstractionsDataModelHelpers.CategoryResponseModelMapper">
+            <summary>
+            Maps the properties of the <see cref="T:Atom.Web.Abstractions.CategoryResponseModel"/> to custom values
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Abstractions.CoreAbstractionsDataModelHelpers.DefaultCategoryResponseModelProperties">
+            <summary>
+            Gets the most commonly used properties of the <see cref="T:Atom.Web.Abstractions.CategoryResponseModel"/>
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Abstractions.CoreAbstractionsDataModelHelpers.CategoryResponseModelTranslator">
+            <summary>
+            Gets the <see cref="T:Atom.Core.Translator`1"/> for a <see cref="T:Atom.Web.Abstractions.CategoryResponseModel"/>
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:Atom.Core.Abstractions.CoreAbstractionsDataModelHelpers.EmbeddedCategoryResponseModelMapper">
+            <summary>
+            Maps the properties of the <see cref="T:Atom.Web.Abstractions.EmbeddedCategoryResponseModel"/> to custom values
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Abstractions.CoreAbstractionsDataModelHelpers.DefaultEmbeddedCategoryResponseModelProperties">
+            <summary>
+            Gets the most commonly used properties of the <see cref="T:Atom.Web.Abstractions.EmbeddedCategoryResponseModel"/>
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Abstractions.CoreAbstractionsDataModelHelpers.LabelResponseModelMapper">
+            <summary>
+            Maps the properties of the <see cref="T:Atom.Web.Abstractions.LabelResponseModel"/> to custom values
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Abstractions.CoreAbstractionsDataModelHelpers.LabelResponseModelTranslator">
+            <summary>
+            Gets the <see cref="T:Atom.Core.Translator`1"/> for a <see cref="T:Atom.Web.Abstractions.LabelResponseModel"/>
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:Atom.Core.Abstractions.CoreAbstractionsDataModelHelpers.DefaultLabelResponseModelProperties">
+            <summary>
+            Gets the most commonly used properties of the <see cref="T:Atom.Web.Abstractions.LabelResponseModel"/>
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Abstractions.CoreAbstractionsDataModelHelpers.EmbeddedLabelResponseModelMapper">
+            <summary>
+            Maps the properties of the <see cref="T:Atom.Web.Abstractions.EmbeddedLabelResponseModel"/> to custom values
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Abstractions.CoreAbstractionsDataModelHelpers.DefaultEmbeddedLabelResponseModelProperties">
+            <summary>
+            Gets the most commonly used properties of the <see cref="T:Atom.Web.Abstractions.LabelResponseModel"/>
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Abstractions.CoreAbstractionsDataModelHelpers.CategoryRequestModelMapper">
+            <summary>
+            Maps the properties of the <see cref="T:Atom.Web.Abstractions.CategoryRequestModel"/> to custom values
+            </summary>
+        </member>
+        <member name="P:Atom.Core.Abstractions.CoreAbstractionsDataModelHelpers.LabelRequestModelMapper">
+            <summary>
+            Maps the properties of the <see cref="T:Atom.Web.Abstractions.LabelRequestModel"/> to custom values
+            </summary>
+        </member>
+    </members>
+</doc>

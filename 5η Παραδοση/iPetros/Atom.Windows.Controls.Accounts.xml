@@ -1,0 +1,1724 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Atom.Windows.Controls.Accounts</name>
+    </assembly>
+    <members>
+        <member name="T:Atom.Windows.Controls.Accounts.AccountComponent">
+            <summary>
+            Component used for manipulating the information of an account
+            </summary>
+        </member>
+        <member name="P:Atom.Windows.Controls.Accounts.AccountComponent.Model">
+            <summary>
+            The model
+            </summary>
+        </member>
+        <member name="P:Atom.Windows.Controls.Accounts.AccountComponent.ImageSource">
+            <summary>
+            The user avatar
+            </summary>
+        </member>
+        <member name="P:Atom.Windows.Controls.Accounts.AccountComponent.ImageChanged">
+            <summary>
+            A flag that gets set to true every time the image gets changed
+            </summary>
+        </member>
+        <member name="P:Atom.Windows.Controls.Accounts.AccountComponent.ContentGrid">
+            <summary>
+            The grid that contains all the content
+            </summary>
+        </member>
+        <member name="P:Atom.Windows.Controls.Accounts.AccountComponent.Image">
+            <summary>
+            The image
+            </summary>
+        </member>
+        <member name="P:Atom.Windows.Controls.Accounts.AccountComponent.Form">
+            <summary>
+            The information form
+            </summary>
+        </member>
+        <member name="M:Atom.Windows.Controls.Accounts.AccountComponent.#ctor(Atom.Web.Accounts.UserResponseModel)">
+            <summary>
+            Default constructor
+            </summary>
+            <param name="model">The model</param>
+        </member>
+        <member name="M:Atom.Windows.Controls.Accounts.AccountComponent.Validate">
+            <summary>
+            Validates the values inserted by the user
+            </summary>
+        </member>
+        <member name="M:Atom.Windows.Controls.Accounts.AccountComponent.Update">
+            <summary>
+            Updates the values of the form
+            </summary>
+        </member>
+        <member name="M:Atom.Windows.Controls.Accounts.AccountComponent.UpdateModelValues">
+            <summary>
+            Updates the values of the <see cref="P:Atom.Windows.Controls.Accounts.AccountComponent.Model"/> with the values inserted by the user.
+            NOTE: This method should be called after calling the <see cref="M:Atom.Windows.Controls.Accounts.AccountComponent.Validate"/> method!
+            </summary>
+        </member>
+        <member name="M:Atom.Windows.Controls.Accounts.AccountComponent.CreateBaseGUIElement">
+            <summary>
+            Creates and returns the GUI in a form of a <see cref="T:System.Windows.FrameworkElement"/>
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Windows.Controls.Accounts.AccountComponent.CreateGUI">
+            <summary>
+            Creates and adds the required GUI elements
+            </summary>
+        </member>
+        <member name="T:Atom.Windows.Controls.Accounts.ApplicationUpdateComponent">
+            <summary>
+            An application update component
+            </summary>
+        </member>
+        <member name="P:Atom.Windows.Controls.Accounts.ApplicationUpdateComponent.Application">
+            <summary>
+            The application
+            </summary>
+        </member>
+        <member name="P:Atom.Windows.Controls.Accounts.ApplicationUpdateComponent.StatusColor">
+            <summary>
+            The color of the status label
+            </summary>
+        </member>
+        <member name="P:Atom.Windows.Controls.Accounts.ApplicationUpdateComponent.StatusText">
+            <summary>
+            The text of the status label
+            </summary>
+        </member>
+        <member name="P:Atom.Windows.Controls.Accounts.ApplicationUpdateComponent.IsLoading">
+            <summary>
+            A flag indicating whether the loading indicator should be visible or not
+            </summary>
+        </member>
+        <member name="P:Atom.Windows.Controls.Accounts.ApplicationUpdateComponent.ContentBorder">
+            <summary>
+            The border that contains all the content
+            </summary>
+        </member>
+        <member name="P:Atom.Windows.Controls.Accounts.ApplicationUpdateComponent.ContentStackPanel">
+            <summary>
+            The stack panel that contains all the content
+            </summary>
+        </member>
+        <member name="P:Atom.Windows.Controls.Accounts.ApplicationUpdateComponent.Image">
+            <summary>
+            The image
+            </summary>
+        </member>
+        <member name="P:Atom.Windows.Controls.Accounts.ApplicationUpdateComponent.NameTextBlock">
+            <summary>
+            The name text block
+            </summary>
+        </member>
+        <member name="P:Atom.Windows.Controls.Accounts.ApplicationUpdateComponent.StatusBorder">
+            <summary>
+            The border that contains the <see cref="P:Atom.Windows.Controls.Accounts.ApplicationUpdateComponent.StatusStackPanel"/>
+            </summary>
+        </member>
+        <member name="P:Atom.Windows.Controls.Accounts.ApplicationUpdateComponent.StatusStackPanel">
+            <summary>
+            The stack panel that contains the <see cref="P:Atom.Windows.Controls.Accounts.ApplicationUpdateComponent.StatusLoadingIcon"/> and the <see cref="P:Atom.Windows.Controls.Accounts.ApplicationUpdateComponent.StatusTextBlock"/>
+            </summary>
+        </member>
+        <member name="P:Atom.Windows.Controls.Accounts.ApplicationUpdateComponent.StatusLoadingIcon">
+            <summary>
+            The status loading icon
+            </summary>
+        </member>
+        <member name="P:Atom.Windows.Controls.Accounts.ApplicationUpdateComponent.StatusTextBlock">
+            <summary>
+            The status text block
+            </summary>
+        </member>
+        <member name="M:Atom.Windows.Controls.Accounts.ApplicationUpdateComponent.#ctor(Atom.Web.Accounts.EmbeddedApplicationResponseModel)">
+            <summary>
+            Default constructor
+            </summary>
+            <param name="application">The application</param>
+        </member>
+        <member name="M:Atom.Windows.Controls.Accounts.ApplicationUpdateComponent.OnInitialized(System.EventArgs)">
+            <summary>
+            Handles the initialization of the component
+            </summary>
+            <param name="e">Event args</param>
+        </member>
+        <member name="M:Atom.Windows.Controls.Accounts.ApplicationUpdateComponent.CreateBaseGUIElement">
+            <summary>
+            Creates and returns the GUI in a form of a <see cref="T:System.Windows.FrameworkElement"/>
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Atom.Windows.Controls.Accounts.BaseAccountComponent`1">
+            <summary>
+            The base for all the account components
+            </summary>
+            <typeparam name="TCredentials">The type of the credentials</typeparam>
+        </member>
+        <member name="P:Atom.Windows.Controls.Accounts.BaseAccountComponent`1.Credentials">
+            <summary>
+            The log in credentials.
+            NOTE: <see cref="!:null"/> is returned when the credentials inserted by the user are not valid!
+            NOTE: To ensure that the user has entered valid credentials use the <see cref="M:Atom.Windows.Controls.Accounts.BaseAccountComponent`1.Validate"/> method!
+            </summary>
+        </member>
+        <member name="P:Atom.Windows.Controls.Accounts.BaseAccountComponent`1.ContentStackPanel">
+            <summary>
+            The stack panel that contains all the content
+            </summary>
+        </member>
+        <member name="P:Atom.Windows.Controls.Accounts.BaseAccountComponent`1.HeaderCircularBorder">
+            <summary>
+            The circular border that contains the <see cref="P:Atom.Windows.Controls.Accounts.BaseAccountComponent`1.HeaderImage"/>
+            </summary>
+        </member>
+        <member name="P:Atom.Windows.Controls.Accounts.BaseAccountComponent`1.HeaderImage">
+            <summary>
+            The image that's presented in the header
+            </summary>
+        </member>
+        <member name="P:Atom.Windows.Controls.Accounts.BaseAccountComponent`1.TitleTextBlock">
+            <summary>
+            The title text block
+            </summary>
+        </member>
+        <member name="P:Atom.Windows.Controls.Accounts.BaseAccountComponent`1.SubTitleTextBlock">
+            <summary>
+            The sub title text block
+            </summary>
+        </member>
+        <member name="P:Atom.Windows.Controls.Accounts.BaseAccountComponent`1.CredentialsForm">
+            <summary>
+            The credentials form
+            </summary>
+        </member>
+        <member name="P:Atom.Windows.Controls.Accounts.BaseAccountComponent`1.VectorSource">
+            <summary>
+            The vector source
+            </summary>
+        </member>
+        <member name="F:Atom.Windows.Controls.Accounts.BaseAccountComponent`1.VectorSourceProperty">
+            <summary>
+            Identifies the <see cref="P:Atom.Windows.Controls.Accounts.BaseAccountComponent`1.VectorSource"/> dependency property
+            </summary>
+        </member>
+        <member name="P:Atom.Windows.Controls.Accounts.BaseAccountComponent`1.IconColor">
+            <summary>
+            The color of the icon
+            </summary>
+        </member>
+        <member name="F:Atom.Windows.Controls.Accounts.BaseAccountComponent`1.IconColorProperty">
+            <summary>
+            Identifies the <see cref="P:Atom.Windows.Controls.Accounts.BaseAccountComponent`1.IconColor"/> dependency property
+            </summary>
+        </member>
+        <member name="P:Atom.Windows.Controls.Accounts.BaseAccountComponent`1.Title">
+            <summary>
+            The title of log in component
+            </summary>
+        </member>
+        <member name="F:Atom.Windows.Controls.Accounts.BaseAccountComponent`1.TitleProperty">
+            <summary>
+            Identifies the <see cref="P:Atom.Windows.Controls.Accounts.BaseAccountComponent`1.Title"/> dependency property
+            </summary>
+        </member>
+        <member name="P:Atom.Windows.Controls.Accounts.BaseAccountComponent`1.SubTitle">
+            <summary>
+            A secondary informational title
+            </summary>
+        </member>
+        <member name="F:Atom.Windows.Controls.Accounts.BaseAccountComponent`1.SubTitleProperty">
+            <summary>
+            Identifies the <see cref="P:Atom.Windows.Controls.Accounts.BaseAccountComponent`1.SubTitle"/> dependency property
+            </summary>
+        </member>
+        <member name="M:Atom.Windows.Controls.Accounts.BaseAccountComponent`1.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Atom.Windows.Controls.Accounts.BaseAccountComponent`1.Validate">
+            <summary>
+            Validates the state of the component
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Windows.Controls.Accounts.BaseAccountComponent`1.Clear">
+            <summary>
+            Clears the values of the component
+            </summary>
+        </member>
+        <member name="M:Atom.Windows.Controls.Accounts.BaseAccountComponent`1.CreateBaseGUIElement">
+            <summary>
+            Creates and returns the GUI in a form of a <see cref="T:System.Windows.FrameworkElement"/>
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Windows.Controls.Accounts.BaseAccountComponent`1.CreateCredentialsForm">
+            <summary>
+            Creates and returns the <see cref="P:Atom.Windows.Controls.Accounts.BaseAccountComponent`1.CredentialsForm"/>
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Atom.Windows.Controls.Accounts.CompanyButton">
+            <summary>
+            A <see cref="T:Atom.Windows.Controls.BorderControl"/> that represents a company
+            </summary>
+        </member>
+        <member name="P:Atom.Windows.Controls.Accounts.CompanyButton.Company">
+            <summary>
+            The company
+            </summary>
+        </member>
+        <member name="P:Atom.Windows.Controls.Accounts.CompanyButton.ContentBorder">
+            <summary>
+            The border that contains the <see cref="P:Atom.Windows.Controls.Accounts.CompanyButton.ContentStackPanel"/>
+            </summary>
+        </member>
+        <member name="P:Atom.Windows.Controls.Accounts.CompanyButton.ContentStackPanel">
+            <summary>
+            The stack panel that contains all the content
+            </summary>
+        </member>
+        <member name="P:Atom.Windows.Controls.Accounts.CompanyButton.Image">
+            <summary>
+            The image
+            </summary>
+        </member>
+        <member name="P:Atom.Windows.Controls.Accounts.CompanyButton.TitleTextBlock">
+            <summary>
+            The title text block
+            </summary>
+        </member>
+        <member name="P:Atom.Windows.Controls.Accounts.CompanyButton.DescriptionTextBlock">
+            <summary>
+            The description text block
+            </summary>
+        </member>
+        <member name="P:Atom.Windows.Controls.Accounts.CompanyButton.DemoLabel">
+            <summary>
+            The demo bordered text block
+            </summary>
+        </member>
+        <member name="M:Atom.Windows.Controls.Accounts.CompanyButton.#ctor(Atom.Web.Accounts.CompanyResponseModel)">
+            <summary>
+            Default constructor
+            </summary>
+            <param name="company">The company</param>
+        </member>
+        <member name="M:Atom.Windows.Controls.Accounts.CompanyButton.Update">
+            <summary>
+            Updates the button with the values of the 
+            </summary>
+        </member>
+        <member name="M:Atom.Windows.Controls.Accounts.CompanyButton.CreateBaseGUIElement">
+            <summary>
+            Creates and returns the GUI in a form of a <see cref="T:System.Windows.FrameworkElement"/>
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Windows.Controls.Accounts.CompanyButton.GetImageSource(Atom.Web.Accounts.CompanyResponseModel)">
+            <summary>
+            Gets the image
+            </summary>
+            <param name="company">The company</param>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Windows.Controls.Accounts.CompanyButton.GetTitle(Atom.Web.Accounts.CompanyResponseModel)">
+            <summary>
+            Gets the title
+            </summary>
+            <param name="company">The company</param>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Windows.Controls.Accounts.CompanyButton.GetDescription(Atom.Web.Accounts.CompanyResponseModel)">
+            <summary>
+            Gets the description
+            </summary>
+            <param name="company">The company</param>
+            <returns></returns>
+        </member>
+        <member name="T:Atom.Windows.Controls.Accounts.LogInComponent">
+            <summary>
+            A log in component
+            </summary>
+        </member>
+        <member name="P:Atom.Windows.Controls.Accounts.LogInComponent.AccountControlsContainer">
+            <summary>
+            The account controls container
+            </summary>
+        </member>
+        <member name="P:Atom.Windows.Controls.Accounts.LogInComponent.RememberMeCheckBox">
+            <summary>
+            The remember me check box
+            </summary>
+        </member>
+        <member name="P:Atom.Windows.Controls.Accounts.LogInComponent.ForgotPasswordTextBlock">
+            <summary>
+            The forgot password indicator
+            </summary>
+        </member>
+        <member name="P:Atom.Windows.Controls.Accounts.LogInComponent.ShowRememberMeOption">
+            <summary>
+            A flag indicating whether the <see cref="P:Atom.Windows.Controls.Accounts.LogInComponent.RememberMeCheckBox"/> should be shown or not.
+            NOTE: The default value is <see cref="!:true"/>!
+            </summary>
+        </member>
+        <member name="F:Atom.Windows.Controls.Accounts.LogInComponent.ShowRememberMeOptionProperty">
+            <summary>
+            Identifies the <see cref="P:Atom.Windows.Controls.Accounts.LogInComponent.ShowRememberMeOption"/> dependency property
+            </summary>
+        </member>
+        <member name="P:Atom.Windows.Controls.Accounts.LogInComponent.RememberMe">
+            <summary>
+            A flag indicating whether the user credentials should be saved or not
+            </summary>
+        </member>
+        <member name="F:Atom.Windows.Controls.Accounts.LogInComponent.RememberMeProperty">
+            <summary>
+            Identifies the <see cref="P:Atom.Windows.Controls.Accounts.LogInComponent.RememberMe"/> dependency property
+            </summary>
+        </member>
+        <member name="M:Atom.Windows.Controls.Accounts.LogInComponent.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Atom.Windows.Controls.Accounts.LogInComponent.CreateCredentialsForm">
+            <summary>
+            Creates and returns the <see cref="P:Atom.Windows.Controls.Accounts.BaseAccountComponent`1.CredentialsForm"/>
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Windows.Controls.Accounts.LogInComponent.CreateGUI">
+            <summary>
+            Creates and adds the required GUI elements
+            </summary>
+        </member>
+        <member name="T:Atom.Windows.Controls.Accounts.NotificationComponent">
+            <summary>
+            Component that represents a <see cref="T:Atom.Web.Accounts.NotificationResponseModel"/>
+            </summary>
+        </member>
+        <member name="P:Atom.Windows.Controls.Accounts.NotificationComponent.Notification">
+            <summary>
+            The notification
+            </summary>
+        </member>
+        <member name="P:Atom.Windows.Controls.Accounts.NotificationComponent.ContentGrid">
+            <summary>
+            The content grid
+            </summary>
+        </member>
+        <member name="P:Atom.Windows.Controls.Accounts.NotificationComponent.Image">
+            <summary>
+            The image
+            </summary>
+        </member>
+        <member name="P:Atom.Windows.Controls.Accounts.NotificationComponent.MainBodyStackPanel">
+            <summary>
+            The stack panel that contains the <see cref="P:Atom.Windows.Controls.Accounts.NotificationComponent.TitleTextBlock"/>, the <see cref="P:Atom.Windows.Controls.Accounts.NotificationComponent.SubTitleTextBlock"/>
+            and the <see cref="P:Atom.Windows.Controls.Accounts.NotificationComponent.DescriptionTextBlock"/>
+            </summary>
+        </member>
+        <member name="P:Atom.Windows.Controls.Accounts.NotificationComponent.TitleTextBlock">
+            <summary>
+            The title text block
+            </summary>
+        </member>
+        <member name="P:Atom.Windows.Controls.Accounts.NotificationComponent.SubTitleTextBlock">
+            <summary>
+            The sub title text block
+            </summary>
+        </member>
+        <member name="P:Atom.Windows.Controls.Accounts.NotificationComponent.DescriptionTextBlock">
+            <summary>
+            The description text block
+            </summary>
+        </member>
+        <member name="P:Atom.Windows.Controls.Accounts.NotificationComponent.DateTextBlock">
+            <summary>
+            The date text block
+            </summary>
+        </member>
+        <member name="M:Atom.Windows.Controls.Accounts.NotificationComponent.#ctor(Atom.Web.Accounts.NotificationResponseModel)">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Atom.Windows.Controls.Accounts.NotificationComponent.Update">
+            <summary>
+            Update the component
+            </summary>
+        </member>
+        <member name="M:Atom.Windows.Controls.Accounts.NotificationComponent.OnInitialized(System.EventArgs)">
+            <summary>
+            Handles the initialization of the component
+            </summary>
+            <param name="e">Event args</param>
+        </member>
+        <member name="M:Atom.Windows.Controls.Accounts.NotificationComponent.CreateBaseGUIElement">
+            <summary>
+            Creates and returns the GUI in a form of a <see cref="T:System.Windows.FrameworkElement"/>
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Windows.Controls.Accounts.NotificationComponent.GetDateString(System.DateTimeOffset)">
+            <summary>
+            Gets the text that represents the specified <paramref name="date"/>
+            </summary>
+            <param name="date">The date</param>
+            <returns></returns>
+        </member>
+        <member name="T:Atom.Windows.Controls.Accounts.NotificationsContainer">
+            <summary>
+            The notifications container
+            </summary>
+        </member>
+        <member name="F:Atom.Windows.Controls.Accounts.NotificationsContainer.mImplementationFactories">
+            <summary>
+            The custom implementation factories
+            </summary>
+        </member>
+        <member name="F:Atom.Windows.Controls.Accounts.NotificationsContainer.mNextScrollBasedRequestMinDate">
+            <summary>
+            The date time where the next request is eligible to commence.
+            NOTE: This is done to prevent multiple requests being send that retrieve no items but complete very fast
+                  causing multiple info hint dialogs to get shown!
+            </summary>
+        </member>
+        <member name="F:Atom.Windows.Controls.Accounts.NotificationsContainer.mIsNextPageLoading">
+            <summary>
+            A flag indicating whether the next page of items is loading
+            </summary>
+        </member>
+        <member name="F:Atom.Windows.Controls.Accounts.NotificationsContainer.mLoadCancellationToken">
+            <summary>
+            A cancellation token source used for canceling the load request
+            </summary>
+        </member>
+        <member name="P:Atom.Windows.Controls.Accounts.NotificationsContainer.CurrentPageIndex">
+            <summary>
+            The current page index
+            </summary>
+        </member>
+        <member name="P:Atom.Windows.Controls.Accounts.NotificationsContainer.ContentGrid">
+            <summary>
+            The grid that contains all the content
+            </summary>
+        </member>
+        <member name="P:Atom.Windows.Controls.Accounts.NotificationsContainer.ContentScrollViewer">
+            <summary>
+            The scroll viewer that contains the <see cref="P:Atom.Windows.Controls.Accounts.NotificationsContainer.Container"/>
+            </summary>
+        </member>
+        <member name="P:Atom.Windows.Controls.Accounts.NotificationsContainer.Container">
+            <summary>
+            The notifications container
+            </summary>
+        </member>
+        <member name="M:Atom.Windows.Controls.Accounts.NotificationsContainer.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Atom.Windows.Controls.Accounts.NotificationsContainer.LoadNextAsync">
+            <summary>
+            Loads the next set of notifications
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Windows.Controls.Accounts.NotificationsContainer.RegisterFactory(System.String,System.Func{Atom.Web.Accounts.NotificationResponseModel,System.Windows.UIElement})">
+            <summary>
+            Registers the specified <paramref name="implementationFactory"/> used when the <see cref="P:Atom.Web.Accounts.NotificationResponseModel.Key"/>
+            is the specified <paramref name="key"/>
+            </summary>
+            <param name="key">The key</param>
+            <param name="implementationFactory">The implementation factory</param>
+        </member>
+        <member name="M:Atom.Windows.Controls.Accounts.NotificationsContainer.Add(Atom.Web.Accounts.NotificationResponseModel)">
+            <summary>
+            Adds the specified <paramref name="notification"/>
+            </summary>
+            <param name="notification">The notification</param>
+        </member>
+        <member name="M:Atom.Windows.Controls.Accounts.NotificationsContainer.AddRange(System.Collections.Generic.IEnumerable{Atom.Web.Accounts.NotificationResponseModel})">
+            <summary>
+            Adds the specified <paramref name="notifications"/>
+            </summary>
+            <param name="notifications">The notifications</param>
+        </member>
+        <member name="M:Atom.Windows.Controls.Accounts.NotificationsContainer.Insert(System.Int32,Atom.Web.Accounts.NotificationResponseModel)">
+            <summary>
+            Inserts the specified <paramref name="notification"/> at the specified <paramref name="index"/>
+            </summary>
+            <param name="index">The index</param>
+            <param name="notification">The notification</param>
+        </member>
+        <member name="M:Atom.Windows.Controls.Accounts.NotificationsContainer.OnInitialized(System.EventArgs)">
+            <summary>
+            Handles the initialization of the component
+            </summary>
+            <param name="e">Event args</param>
+        </member>
+        <member name="M:Atom.Windows.Controls.Accounts.NotificationsContainer.CreateBaseGUIElement">
+            <summary>
+            Creates and returns the GUI in a form of a <see cref="T:System.Windows.FrameworkElement"/>
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Atom.Windows.Controls.Accounts.NotificationsDropDown">
+            <summary>
+            The notifications drop down.
+            ΝΟΤΕ: The notifications drop down uses the <see cref="P:Atom.Core.Accounts.CoreAccountsDI.Hub"/> to update its state!
+            </summary>
+        </member>
+        <member name="P:Atom.Windows.Controls.Accounts.NotificationsDropDown.ContentGrid">
+            <summary>
+            The grid that contains all the content
+            </summary>
+        </member>
+        <member name="P:Atom.Windows.Controls.Accounts.NotificationsDropDown.DropDownButton">
+            <summary>
+            The drop down button
+            </summary>
+        </member>
+        <member name="P:Atom.Windows.Controls.Accounts.NotificationsDropDown.NotificationsContainer">
+            <summary>
+            The notifications container
+            </summary>
+        </member>
+        <member name="P:Atom.Windows.Controls.Accounts.NotificationsDropDown.NotificationsCountBorder">
+            <summary>
+            The border that contains the <see cref="P:Atom.Windows.Controls.Accounts.NotificationsDropDown.NotificationsCountViewBox"/>
+            </summary>
+        </member>
+        <member name="P:Atom.Windows.Controls.Accounts.NotificationsDropDown.NotificationsCountViewBox">
+            <summary>
+            The view box that contains the <see cref="P:Atom.Windows.Controls.Accounts.NotificationsDropDown.NotificationsCountTextBlock"/>
+            </summary>
+        </member>
+        <member name="P:Atom.Windows.Controls.Accounts.NotificationsDropDown.NotificationsCountTextBlock">
+            <summary>
+            The notifications count text block
+            </summary>
+        </member>
+        <member name="P:Atom.Windows.Controls.Accounts.NotificationsDropDown.LoadingIcon">
+            <summary>
+            The loading icon, shown when the indicator is getting set up
+            </summary>
+        </member>
+        <member name="P:Atom.Windows.Controls.Accounts.NotificationsDropDown.UnavailableIcon">
+            <summary>
+            The unavailable icon, shown when the <see cref="P:Atom.Core.Accounts.CoreAccountsDI.Hub"/> is set to <see cref="!:null"/>
+            </summary>
+        </member>
+        <member name="M:Atom.Windows.Controls.Accounts.NotificationsDropDown.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Atom.Windows.Controls.Accounts.NotificationsDropDown.Update">
+            <summary>
+            Updates the component
+            </summary>
+        </member>
+        <member name="M:Atom.Windows.Controls.Accounts.NotificationsDropDown.Dispose">
+            <summary>
+            Performs application-defined tasks associated with freeing, releasing, or resetting
+            unmanaged resources.
+            </summary>
+        </member>
+        <member name="M:Atom.Windows.Controls.Accounts.NotificationsDropDown.OnInitialized(System.EventArgs)">
+            <summary>
+            Handles the initialization of the component
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:Atom.Windows.Controls.Accounts.NotificationsDropDown.CreateBaseGUIElement">
+            <summary>
+            Creates and returns the GUI in a form of a <see cref="T:System.Windows.FrameworkElement"/>
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Windows.Controls.Accounts.NotificationsDropDown.Hub_Changed(Atom.Core.Accounts.IAccountsHub)">
+            <summary>
+            Handles the change of the <see cref="P:Atom.Core.Accounts.CoreAccountsDI.Hub"/> property
+            </summary>
+            <param name="hub">The hub</param>
+        </member>
+        <member name="M:Atom.Windows.Controls.Accounts.NotificationsDropDown.Hub_NotificationReceived(Atom.Web.Accounts.NotificationResponseModel)">
+            <summary>
+            Handles the <see cref="E:Atom.Core.Accounts.IAccountsHub.NotificationReceived"/> event
+            </summary>
+            <param name="notification">The notification</param>
+        </member>
+        <member name="T:Atom.Windows.Controls.Accounts.RegisterComponent">
+            <summary>
+            A register component
+            </summary>
+        </member>
+        <member name="M:Atom.Windows.Controls.Accounts.RegisterComponent.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Atom.Windows.Controls.Accounts.RegisterComponent.CreateCredentialsForm">
+            <summary>
+            Creates and returns the <see cref="P:Atom.Windows.Controls.Accounts.BaseAccountComponent`1.CredentialsForm"/>
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Atom.Windows.Controls.Accounts.ResetPasswordComponent">
+            <summary>
+            A password reset component
+            </summary>
+        </member>
+        <member name="P:Atom.Windows.Controls.Accounts.ResetPasswordComponent.ContentStackPanel">
+            <summary>
+            The stack panel that contains all the content
+            </summary>
+        </member>
+        <member name="P:Atom.Windows.Controls.Accounts.ResetPasswordComponent.UsernameInput">
+            <summary>
+            The username input
+            </summary>
+        </member>
+        <member name="P:Atom.Windows.Controls.Accounts.ResetPasswordComponent.RequestTokenButton">
+            <summary>
+            The request token button
+            </summary>
+        </member>
+        <member name="P:Atom.Windows.Controls.Accounts.ResetPasswordComponent.TokenSentTextBlock">
+            <summary>
+            The token sent text block
+            </summary>
+        </member>
+        <member name="P:Atom.Windows.Controls.Accounts.ResetPasswordComponent.TokenInputContainer">
+            <summary>
+            The input that contains the <see cref="P:Atom.Windows.Controls.Accounts.ResetPasswordComponent.TokenInput"/>
+            </summary>
+        </member>
+        <member name="P:Atom.Windows.Controls.Accounts.ResetPasswordComponent.TokenInput">
+            <summary>
+            The token input
+            </summary>
+        </member>
+        <member name="P:Atom.Windows.Controls.Accounts.ResetPasswordComponent.NewPasswordInputContainer">
+            <summary>
+            The input container that contains the <see cref="P:Atom.Windows.Controls.Accounts.ResetPasswordComponent.NewPasswordInput"/>
+            </summary>
+        </member>
+        <member name="P:Atom.Windows.Controls.Accounts.ResetPasswordComponent.NewPasswordInput">
+            <summary>
+            The password input
+            </summary>
+        </member>
+        <member name="P:Atom.Windows.Controls.Accounts.ResetPasswordComponent.ResetPasswordButton">
+            <summary>
+            The reset password button
+            </summary>
+        </member>
+        <member name="M:Atom.Windows.Controls.Accounts.ResetPasswordComponent.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Atom.Windows.Controls.Accounts.ResetPasswordComponent.CreateBaseGUIElement">
+            <summary>
+            Creates and returns the GUI in a form of a <see cref="T:System.Windows.FrameworkElement"/>
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="E:Atom.Windows.Controls.Accounts.ResetPasswordComponent.PasswordResetSuccessful">
+            <summary>
+            Fires every time there is a successful password reset
+            </summary>
+        </member>
+        <member name="T:Atom.Windows.Controls.Accounts.AccountBillingPage">
+            <summary>
+            The account billing page
+            </summary>
+        </member>
+        <member name="P:Atom.Windows.Controls.Accounts.AccountBillingPage.Model">
+            <summary>
+            The model
+            </summary>
+        </member>
+        <member name="M:Atom.Windows.Controls.Accounts.AccountBillingPage.#ctor(Atom.Web.Accounts.UserResponseModel)">
+            <summary>
+            Default constructor
+            </summary>
+            <param name="model">The model</param>
+        </member>
+        <member name="M:Atom.Windows.Controls.Accounts.AccountBillingPage.CreateDataForm">
+            <summary>
+            Creates and returns the data form
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Windows.Controls.Accounts.AccountBillingPage.SaveChangesAsync(Atom.Web.Accounts.BillingDataModel)">
+            <summary>
+            Updates the values of the model
+            </summary>
+            <param name="model">The model</param>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Windows.Controls.Accounts.AccountBillingPage.CreateGUI">
+            <summary>
+            Creates and adds the required GUI elements
+            </summary>
+        </member>
+        <member name="T:Atom.Windows.Controls.Accounts.AccountInformationPage">
+            <summary>
+            The account information page
+            </summary>
+        </member>
+        <member name="P:Atom.Windows.Controls.Accounts.AccountInformationPage.Model">
+            <summary>
+            The model
+            </summary>
+        </member>
+        <member name="P:Atom.Windows.Controls.Accounts.AccountInformationPage.ContentGrid">
+            <summary>
+            The grid that contains all the content
+            </summary>
+        </member>
+        <member name="P:Atom.Windows.Controls.Accounts.AccountInformationPage.SectionScrollViewer">
+            <summary>
+            The scroll viewer that contains the <see cref="P:Atom.Windows.Controls.Accounts.AccountInformationPage.ContentSection"/>
+            </summary>
+        </member>
+        <member name="P:Atom.Windows.Controls.Accounts.AccountInformationPage.ContentSection">
+            <summary>
+            The section that contains all the content
+            </summary>
+        </member>
+        <member name="P:Atom.Windows.Controls.Accounts.AccountInformationPage.Component">
+            <summary>
+            The component
+            </summary>
+        </member>
+        <member name="P:Atom.Windows.Controls.Accounts.AccountInformationPage.SaveButton">
+            <summary>
+            The save button
+            </summary>
+        </member>
+        <member name="M:Atom.Windows.Controls.Accounts.AccountInformationPage.#ctor(Atom.Web.Accounts.UserResponseModel)">
+            <summary>
+            Default constructor
+            </summary>
+            <param name="model">The model</param>
+        </member>
+        <member name="M:Atom.Windows.Controls.Accounts.AccountInformationPage.CreateBaseGUIElement">
+            <summary>
+            Creates and returns the GUI in a form of a <see cref="T:System.Windows.FrameworkElement"/>
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Windows.Controls.Accounts.AccountInformationPage.CreateGUI">
+            <summary>
+            Creates and adds the required GUI elements
+            </summary>
+        </member>
+        <member name="T:Atom.Windows.Controls.Accounts.AccountMetaDataPage">
+            <summary>
+            The account meta data page
+            </summary>
+        </member>
+        <member name="P:Atom.Windows.Controls.Accounts.AccountMetaDataPage.Model">
+            <summary>
+            The model
+            </summary>
+        </member>
+        <member name="M:Atom.Windows.Controls.Accounts.AccountMetaDataPage.#ctor(Atom.Web.Accounts.UserResponseModel)">
+            <summary>
+            Default constructor
+            </summary>
+            <param name="model">The model</param>
+        </member>
+        <member name="M:Atom.Windows.Controls.Accounts.AccountMetaDataPage.CreateDataPresenter">
+            <summary>
+            Creates and returns the <see cref="P:Atom.Windows.Controls.BaseDataPresenterPage`1.DataPresenter"/>
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Atom.Windows.Controls.Accounts.AccountPage">
+            <summary>
+            The account page
+            </summary>
+        </member>
+        <member name="P:Atom.Windows.Controls.Accounts.AccountPage.User">
+            <summary>
+            The user
+            </summary>
+        </member>
+        <member name="M:Atom.Windows.Controls.Accounts.AccountPage.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Atom.Windows.Controls.Accounts.AccountPage.InitializeAsync">
+            <summary>
+            Initializes the page
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Windows.Controls.Accounts.AccountPage.OnSuccessfulInitializationAsync">
+            <summary>
+            Handles the successful initialization.
+            NOTE: Usually used for creating the UI elements after the initialization succeeded!
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Atom.Windows.Controls.Accounts.AccountSecurityPage">
+            <summary>
+            The account security page
+            </summary>
+        </member>
+        <member name="P:Atom.Windows.Controls.Accounts.AccountSecurityPage.ContentGrid">
+            <summary>
+            The grid that contains all the content
+            </summary>
+        </member>
+        <member name="P:Atom.Windows.Controls.Accounts.AccountSecurityPage.SectionScrollViewer">
+            <summary>
+            The scroll viewer that contains the <see cref="P:Atom.Windows.Controls.Accounts.AccountSecurityPage.ContentSection"/>
+            </summary>
+        </member>
+        <member name="P:Atom.Windows.Controls.Accounts.AccountSecurityPage.ContentSection">
+            <summary>
+            The section that contains all the content
+            </summary>
+        </member>
+        <member name="P:Atom.Windows.Controls.Accounts.AccountSecurityPage.PasswordForm">
+            <summary>
+            The password form
+            </summary>
+        </member>
+        <member name="P:Atom.Windows.Controls.Accounts.AccountSecurityPage.SaveButton">
+            <summary>
+            The save button
+            </summary>
+        </member>
+        <member name="M:Atom.Windows.Controls.Accounts.AccountSecurityPage.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Atom.Windows.Controls.Accounts.AccountSecurityPage.CreateBaseGUIElement">
+            <summary>
+            Creates and returns the GUI in a form of a <see cref="T:System.Windows.FrameworkElement"/>
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Atom.Windows.Controls.Accounts.AccountShippingPage">
+            <summary>
+            The account shipping page
+            </summary>
+        </member>
+        <member name="P:Atom.Windows.Controls.Accounts.AccountShippingPage.Model">
+            <summary>
+            The model
+            </summary>
+        </member>
+        <member name="M:Atom.Windows.Controls.Accounts.AccountShippingPage.#ctor(Atom.Web.Accounts.UserResponseModel)">
+            <summary>
+            Default constructor
+            </summary>
+            <param name="model">The model</param>
+        </member>
+        <member name="M:Atom.Windows.Controls.Accounts.AccountShippingPage.CreateDataForm">
+            <summary>
+            Creates and returns the data form
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Windows.Controls.Accounts.AccountShippingPage.SaveChangesAsync(Atom.Web.Accounts.ShippingDataModel)">
+            <summary>
+            Updates the values of the model
+            </summary>
+            <param name="model">The model</param>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Windows.Controls.Accounts.AccountShippingPage.CreateGUI">
+            <summary>
+            Creates and adds the required GUI elements
+            </summary>
+        </member>
+        <member name="T:Atom.Windows.Controls.Accounts.BaseApplicationPagesContainer">
+            <summary>
+            The base for all the standard application pages containers
+            </summary>
+        </member>
+        <member name="F:Atom.Windows.Controls.Accounts.BaseApplicationPagesContainer.mMainApplicationPage">
+            <summary>
+            The application page
+            </summary>
+        </member>
+        <member name="P:Atom.Windows.Controls.Accounts.BaseApplicationPagesContainer.DialogOverlayContainer">
+            <summary>
+            The dialog overlay container used for displaying the log in and register related dialogs
+            </summary>
+        </member>
+        <member name="P:Atom.Windows.Controls.Accounts.BaseApplicationPagesContainer.ContentGrid">
+            <summary>
+            The grid that contains all the content
+            </summary>
+        </member>
+        <member name="P:Atom.Windows.Controls.Accounts.BaseApplicationPagesContainer.LogInScrollViewer">
+            <summary>
+            The scroll viewer that contains the <see cref="P:Atom.Windows.Controls.Accounts.BaseApplicationPagesContainer.LogInBorder"/>
+            </summary>
+        </member>
+        <member name="P:Atom.Windows.Controls.Accounts.BaseApplicationPagesContainer.LogInBorder">
+            <summary>
+            The border that contains the <see cref="P:Atom.Windows.Controls.Accounts.BaseApplicationPagesContainer.LogInStackPanel"/>
+            </summary>
+        </member>
+        <member name="P:Atom.Windows.Controls.Accounts.BaseApplicationPagesContainer.LogInStackPanel">
+            <summary>
+            The stack panel that contains the log in content
+            </summary>
+        </member>
+        <member name="P:Atom.Windows.Controls.Accounts.BaseApplicationPagesContainer.LogInComponent">
+            <summary>
+            The log in component
+            </summary>
+        </member>
+        <member name="P:Atom.Windows.Controls.Accounts.BaseApplicationPagesContainer.LogInControlButtonsGrid">
+            <summary>
+            The grid that contains the <see cref="P:Atom.Windows.Controls.Accounts.BaseApplicationPagesContainer.LogInButton"/> and the <see cref="P:Atom.Windows.Controls.Accounts.BaseApplicationPagesContainer.GoToRegisterButton"/>
+            </summary>
+        </member>
+        <member name="P:Atom.Windows.Controls.Accounts.BaseApplicationPagesContainer.LogInButton">
+            <summary>
+            The log in button
+            </summary>
+        </member>
+        <member name="P:Atom.Windows.Controls.Accounts.BaseApplicationPagesContainer.GoToRegisterButton">
+            <summary>
+            The register button
+            </summary>
+        </member>
+        <member name="P:Atom.Windows.Controls.Accounts.BaseApplicationPagesContainer.RegisterScrollViewer">
+            <summary>
+            The scroll viewer that contains the <see cref="P:Atom.Windows.Controls.Accounts.BaseApplicationPagesContainer.RegisterBorder"/>
+            </summary>
+        </member>
+        <member name="P:Atom.Windows.Controls.Accounts.BaseApplicationPagesContainer.RegisterBorder">
+            <summary>
+            The border that contains the <see cref="P:Atom.Windows.Controls.Accounts.BaseApplicationPagesContainer.RegisterStackPanel"/>
+            </summary>
+        </member>
+        <member name="P:Atom.Windows.Controls.Accounts.BaseApplicationPagesContainer.RegisterStackPanel">
+            <summary>
+            The stack panel that contains the register content
+            </summary>
+        </member>
+        <member name="P:Atom.Windows.Controls.Accounts.BaseApplicationPagesContainer.RegisterComponent">
+            <summary>
+            The register component
+            </summary>
+        </member>
+        <member name="P:Atom.Windows.Controls.Accounts.BaseApplicationPagesContainer.RegisterControlButtonsGrid">
+            <summary>
+            The grid that contains the <see cref="P:Atom.Windows.Controls.Accounts.BaseApplicationPagesContainer.GoToLogInButton"/> and the <see cref="P:Atom.Windows.Controls.Accounts.BaseApplicationPagesContainer.RegisterButton"/>
+            </summary>
+        </member>
+        <member name="P:Atom.Windows.Controls.Accounts.BaseApplicationPagesContainer.GoToLogInButton">
+            <summary>
+            The go to log in button
+            </summary>
+        </member>
+        <member name="P:Atom.Windows.Controls.Accounts.BaseApplicationPagesContainer.RegisterButton">
+            <summary>
+            The register button
+            </summary>
+        </member>
+        <member name="P:Atom.Windows.Controls.Accounts.BaseApplicationPagesContainer.MainApplicationPage">
+            <summary>
+            Gets the main application page.
+            NOTE: The main application page gets initialized by the <see cref="M:Atom.Windows.Controls.Accounts.BaseApplicationPagesContainer.InitializeMainApplicationPage"/>!
+            NOTE: If the <see cref="M:Atom.Windows.Controls.Accounts.BaseApplicationPagesContainer.InitializeMainApplicationPage"/> isn't called before accessing this property,
+                  then the returned value is <see cref="!:null"/>!
+            </summary>
+        </member>
+        <member name="P:Atom.Windows.Controls.Accounts.BaseApplicationPagesContainer.CurrentPage">
+            <summary>
+            The current application page
+            </summary>
+        </member>
+        <member name="F:Atom.Windows.Controls.Accounts.BaseApplicationPagesContainer.CurrentPageProperty">
+            <summary>
+            Identifies the <see cref="P:Atom.Windows.Controls.Accounts.BaseApplicationPagesContainer.CurrentPage"/> dependency property
+            </summary>
+        </member>
+        <member name="M:Atom.Windows.Controls.Accounts.BaseApplicationPagesContainer.CurrentPagePropertyChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Fires when the <see cref="P:Atom.Windows.Controls.Accounts.BaseApplicationPagesContainer.CurrentPage"/> property changes
+            </summary>
+        </member>
+        <member name="M:Atom.Windows.Controls.Accounts.BaseApplicationPagesContainer.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Atom.Windows.Controls.Accounts.BaseApplicationPagesContainer.InitializeMainApplicationPage">
+            <summary>
+            Creates the main application page and places it in the <see cref="P:Atom.Windows.Controls.Accounts.BaseApplicationPagesContainer.ContentGrid"/>.
+            NOTE: If the main application page has already been created, then the old one is removed!
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Windows.Controls.Accounts.BaseApplicationPagesContainer.OnInitialized(System.EventArgs)">
+            <summary>
+            Handles the initialization of the page
+            </summary>
+            <param name="e">Event args</param>
+        </member>
+        <member name="M:Atom.Windows.Controls.Accounts.BaseApplicationPagesContainer.CreateBaseGUIElement">
+            <summary>
+            Creates and returns the GUI in a form of a <see cref="T:System.Windows.FrameworkElement"/>
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Windows.Controls.Accounts.BaseApplicationPagesContainer.CreateMainApplicationPage">
+            <summary>
+            Creates and returns the element that will be used as the main application page
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Windows.Controls.Accounts.BaseApplicationPagesContainer.LogInAsync(Atom.Web.Accounts.LogInRequestModel)">
+            <summary>
+            Log ins the user
+            </summary>
+            <param name="model">The model</param>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Windows.Controls.Accounts.BaseApplicationPagesContainer.OnLoggedInAsync(Atom.Core.Accounts.CredentialsDataModel)">
+            <summary>
+            Further handles the log in
+            </summary>
+            <param name="credentials">The credentials</param>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Windows.Controls.Accounts.BaseApplicationPagesContainer.RegisterAsync(Atom.Web.Accounts.RegisterUserRequestModel)">
+            <summary>
+            Registers the user
+            </summary>
+            <param name="model">The request model</param>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Windows.Controls.Accounts.BaseApplicationPagesContainer.OnCurrentPageChanged(System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Handles the change of the <see cref="P:Atom.Windows.Controls.Accounts.BaseApplicationPagesContainer.CurrentPage"/> property
+            </summary>
+            <param name="e">Event args</param>
+        </member>
+        <member name="M:Atom.Windows.Controls.Accounts.BaseApplicationPagesContainer.OnCurrentPageChangedCore(System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Handles the change of the <see cref="P:Atom.Windows.Controls.Accounts.BaseApplicationPagesContainer.CurrentPage"/> property internally
+            </summary>
+            <param name="e">Event args</param>
+        </member>
+        <member name="T:Atom.Windows.Controls.Accounts.WindowsAccountExtensions">
+            <summary>
+            Extension method for the Account models
+            </summary>
+        </member>
+        <member name="M:Atom.Windows.Controls.Accounts.WindowsAccountExtensions.SetUserUIElement``2(Atom.Windows.Controls.DataGrid{``0},System.Linq.Expressions.Expression{System.Func{``0,``1}})">
+            <summary>
+            Sets a custom ui element responsible for presenting a user
+            </summary>
+            <typeparam name="TClass">The type of the model</typeparam>
+            <typeparam name="TKey">The type of the property</typeparam>
+            <param name="dataGrid">The data grid</param>
+            <param name="propertySelector">The property selector</param>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Windows.Controls.Accounts.WindowsAccountExtensions.SetUserUIElement``2(Atom.Windows.Controls.CollapsibleDataGrid{``0},System.Linq.Expressions.Expression{System.Func{``0,``1}})">
+            <summary>
+            Sets a custom ui element responsible for presenting a user
+            </summary>
+            <typeparam name="TClass">The type of the model</typeparam>
+            <typeparam name="TKey">The type of the property</typeparam>
+            <param name="dataGrid">The data grid</param>
+            <param name="propertySelector">The property selector</param>
+            <returns></returns>
+        </member>
+        <member name="T:Atom.Windows.Controls.Accounts.WindowsControlsAccountsDataModelHelpers">
+            <summary>
+            Helper methods for the account data models
+            </summary>
+        </member>
+        <member name="M:Atom.Windows.Controls.Accounts.WindowsControlsAccountsDataModelHelpers.CreateRegisterRequestModelForm">
+            <summary>
+            Creates and returns a <see cref="T:Atom.Windows.Controls.DataForm`1"/> used configuring <see cref="T:Atom.Web.Accounts.RegisterUserRequestModel"/>s
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Windows.Controls.Accounts.WindowsControlsAccountsDataModelHelpers.CreateCredentialsDataModelForm">
+            <summary>
+            Creates and returns a <see cref="T:Atom.Windows.Controls.DataForm`1"/> used for configuring a <see cref="T:Atom.Core.Accounts.CredentialsDataModel"/>s
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Windows.Controls.Accounts.WindowsControlsAccountsDataModelHelpers.CreateUserResponseModelCollapsibleDataGrid">
+            <summary>
+            Creates and returns a <see cref="T:Atom.Windows.Controls.CollapsibleDataGrid`1"/> for <see cref="T:Atom.Web.Accounts.UserResponseModel"/>s
+            </summary>
+        </member>
+        <member name="M:Atom.Windows.Controls.Accounts.WindowsControlsAccountsDataModelHelpers.CreateDefaultUserResponseModelCollapsibleDataGrid">
+            <summary>
+            Creates and returns a <see cref="T:Atom.Windows.Controls.CollapsibleDataGrid`1"/> used for presenting
+            <see cref="T:Atom.Web.Accounts.UserResponseModel"/>s that has pre-selected the default columns
+            </summary>
+        </member>
+        <member name="M:Atom.Windows.Controls.Accounts.WindowsControlsAccountsDataModelHelpers.CreateUserResponseModelForm">
+            <summary>
+            Creates and returns a <see cref="T:Atom.Windows.Controls.DataForm`1"/> used for configuring a <see cref="T:Atom.Web.Accounts.UserResponseModel"/>s
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Windows.Controls.Accounts.WindowsControlsAccountsDataModelHelpers.CreateEmbeddedUserResponseModelDataGrid">
+            <summary>
+            Creates and returns a <see cref="T:Atom.Windows.Controls.DataGrid`1"/> used for presenting
+            <see cref="T:Atom.Web.Accounts.EmbeddedUserResponseModel"/>s that has pre-selected the default columns
+            </summary>
+        </member>
+        <member name="M:Atom.Windows.Controls.Accounts.WindowsControlsAccountsDataModelHelpers.CreateDefaultEmbeddedUserResponseModelDataGrid">
+            <summary>
+            Creates and returns a <see cref="T:Atom.Windows.Controls.DataGrid`1"/> used for presenting
+            <see cref="T:Atom.Web.Accounts.EmbeddedUserResponseModel"/>s that has pre-selected the default columns
+            </summary>
+        </member>
+        <member name="M:Atom.Windows.Controls.Accounts.WindowsControlsAccountsDataModelHelpers.CreateEmbeddedUserResponseModelForm">
+            <summary>
+            Creates and returns a <see cref="T:Atom.Windows.Controls.DataForm`1"/> used for configuring a <see cref="T:Atom.Web.Accounts.EmbeddedUserResponseModel"/>s
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Windows.Controls.Accounts.WindowsControlsAccountsDataModelHelpers.CreateSearchableUserResponseModelDataGrid">
+            <summary>
+            Creates and returns a <see cref="T:Atom.Windows.Controls.DataGrid`1"/> for <see cref="T:Atom.Web.Accounts.SearchableUserResponseModel"/>s
+            </summary>
+        </member>
+        <member name="M:Atom.Windows.Controls.Accounts.WindowsControlsAccountsDataModelHelpers.CreateDefaultSearchableUserResponseModelDataGrid">
+            <summary>
+            Creates and returns a <see cref="T:Atom.Windows.Controls.DataGrid`1"/> used for presenting
+            <see cref="T:Atom.Web.Accounts.SearchableUserResponseModel"/>s that has pre-selected the default columns
+            </summary>
+        </member>
+        <member name="M:Atom.Windows.Controls.Accounts.WindowsControlsAccountsDataModelHelpers.CreateShippingDataModelForm">
+            <summary>
+            Creates and returns a <see cref="T:Atom.Windows.Controls.DataForm`1"/> used for configuring a <see cref="T:Atom.Web.Accounts.ShippingDataModel"/>s
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Windows.Controls.Accounts.WindowsControlsAccountsDataModelHelpers.CreateBillingDataModelForm">
+            <summary>
+            Creates and returns a <see cref="T:Atom.Windows.Controls.DataForm`1"/> used for configuring a <see cref="T:Atom.Web.Accounts.BillingDataModel"/>s
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Windows.Controls.Accounts.WindowsControlsAccountsDataModelHelpers.CreateTaxDataModelDataGrid">
+            <summary>
+            Creates and returns a <see cref="T:Atom.Windows.Controls.DataGrid`1"/> for <see cref="T:Atom.Web.Accounts.TaxDataModel"/>s
+            </summary>
+        </member>
+        <member name="M:Atom.Windows.Controls.Accounts.WindowsControlsAccountsDataModelHelpers.CreateDefaultTaxDataModelDataGrid">
+            <summary>
+            Creates and returns a <see cref="T:Atom.Windows.Controls.DataGrid`1"/> used for presenting
+            <see cref="T:Atom.Web.Accounts.TaxDataModel"/>s that has pre-selected the default columns
+            </summary>
+        </member>
+        <member name="M:Atom.Windows.Controls.Accounts.WindowsControlsAccountsDataModelHelpers.CreateTaxDataModelDataForm">
+            <summary>
+            Creates and returns a <see cref="T:Atom.Windows.Controls.DataForm`1"/> for a <see cref="T:Atom.Web.Accounts.TaxDataModel"/>
+            </summary>
+        </member>
+        <member name="M:Atom.Windows.Controls.Accounts.WindowsControlsAccountsDataModelHelpers.CreatePasswordRequestModelDataForm">
+            <summary>
+            Creates and returns a <see cref="T:Atom.Windows.Controls.DataForm`1"/> used for configuring a <see cref="T:Atom.Web.Accounts.PasswordRequestModel"/>s
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Windows.Controls.Accounts.WindowsControlsAccountsDataModelHelpers.CreateCompanyResponseModelCollapsibleDataGrid">
+            <summary>
+            Creates and returns a <see cref="T:Atom.Windows.Controls.CollapsibleDataGrid`1"/> used for presenting
+            <see cref="T:Atom.Web.Accounts.CompanyResponseModel"/>s
+            </summary>
+        </member>
+        <member name="M:Atom.Windows.Controls.Accounts.WindowsControlsAccountsDataModelHelpers.CreateDefaultCompanyResponseModelCollapsibleDataGrid">
+            <summary>
+            Creates and returns a <see cref="T:Atom.Windows.Controls.CollapsibleDataGrid`1"/> used for presenting
+            <see cref="T:Atom.Web.Accounts.CompanyResponseModel"/>s that has pre-selected the default columns
+            </summary>
+        </member>
+        <member name="M:Atom.Windows.Controls.Accounts.WindowsControlsAccountsDataModelHelpers.CreateCompanyResponseModelDataForm">
+            <summary>
+            Creates and returns a <see cref="T:Atom.Windows.Controls.DataForm`1"/> used for configuring a <see cref="T:Atom.Web.Accounts.CompanyResponseModel"/>s
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Windows.Controls.Accounts.WindowsControlsAccountsDataModelHelpers.CreateSearchableCompanyResponseModelCollapsibleDataGrid">
+            <summary>
+            Creates and returns a <see cref="T:Atom.Windows.Controls.DataGrid`1"/> for <see cref="T:Atom.Web.Accounts.SearchableCompanyResponseModel"/>s
+            </summary>
+        </member>
+        <member name="M:Atom.Windows.Controls.Accounts.WindowsControlsAccountsDataModelHelpers.CreateDefaultSearchableCompanyResponseModelCollapsibleDataGrid">
+            <summary>
+            Creates and returns a <see cref="T:Atom.Windows.Controls.DataGrid`1"/> used for presenting
+            <see cref="T:Atom.Web.Accounts.SearchableCompanyResponseModel"/>s that has pre-selected the default columns
+            </summary>
+        </member>
+        <member name="M:Atom.Windows.Controls.Accounts.WindowsControlsAccountsDataModelHelpers.CreateCreateApplicationRequestModelDataForm">
+            <summary>
+            Creates and returns a <see cref="T:Atom.Windows.Controls.DataForm`1"/> for a <see cref="T:Atom.Web.Accounts.CreateApplicationRequestModel"/>
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Windows.Controls.Accounts.WindowsControlsAccountsDataModelHelpers.CreateApplicationVersionRequestModelDataForm">
+            <summary>
+            Creates and returns a <see cref="T:Atom.Windows.Controls.DataForm`1"/> for a <see cref="T:Atom.Web.Accounts.ApplicationVersionRequestModel"/>
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Windows.Controls.Accounts.WindowsControlsAccountsDataModelHelpers.CreateApplicationResponseModelCollapsibleDataGrid">
+            <summary>
+            Creates and returns a <see cref="T:Atom.Windows.Controls.DataGrid`1"/> used for presenting
+            <see cref="T:Atom.Web.Accounts.ApplicationResponseModel"/>s
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Windows.Controls.Accounts.WindowsControlsAccountsDataModelHelpers.CreateDefaultApplicationResponseModelCollapsibleDataGrid">
+            <summary>
+            Creates and returns a <see cref="T:Atom.Windows.Controls.DataGrid`1"/> used for presenting
+            <see cref="T:Atom.Web.Accounts.ApplicationResponseModel"/>s that has pre-selected the default columns
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Windows.Controls.Accounts.WindowsControlsAccountsDataModelHelpers.CreateApplicationResponseModelDataForm">
+            <summary>
+            Creates and returns a <see cref="T:Atom.Windows.Controls.DataForm`1"/> for a <see cref="T:Atom.Web.Accounts.ApplicationResponseModel"/>
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Windows.Controls.Accounts.WindowsControlsAccountsDataModelHelpers.CreateEmbeddedApplicationResponseModelDataGrid">
+            <summary>
+            Creates and returns a <see cref="T:Atom.Windows.Controls.DataGrid`1"/> for <see cref="T:Atom.Web.Accounts.EmbeddedApplicationResponseModel"/>s
+            </summary>
+        </member>
+        <member name="M:Atom.Windows.Controls.Accounts.WindowsControlsAccountsDataModelHelpers.CreateDefaultEmbeddedApplicationResponseModelDataGrid">
+            <summary>
+            Creates and returns a <see cref="T:Atom.Windows.Controls.DataGrid`1"/> used for presenting
+            <see cref="T:Atom.Web.Accounts.EmbeddedApplicationResponseModel"/>s that has pre-selected the default columns
+            </summary>
+        </member>
+        <member name="M:Atom.Windows.Controls.Accounts.WindowsControlsAccountsDataModelHelpers.CreateApplicationVersionResponseModelCollapsibleDataGrid">
+            <summary>
+            Creates and returns a <see cref="T:Atom.Windows.Controls.DataGrid`1"/> used for presenting
+            <see cref="T:Atom.Web.Accounts.ApplicationVersionResponseModel"/>s
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Windows.Controls.Accounts.WindowsControlsAccountsDataModelHelpers.CreateDefaultApplicationVersionResponseModelCollapsibleDataGrid">
+            <summary>
+            Creates and returns a <see cref="T:Atom.Windows.Controls.DataGrid`1"/> used for presenting
+            <see cref="T:Atom.Web.Accounts.ApplicationVersionResponseModel"/>s that has pre-selected the default columns
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Windows.Controls.Accounts.WindowsControlsAccountsDataModelHelpers.CreateCompanyRegisterUserRequestModelDataForm">
+            <summary>
+            Creates and returns a <see cref="T:Atom.Windows.Controls.DataForm`1"/> for a <see cref="T:Atom.Web.Accounts.CompanyRegisterUserRequestModel"/>
+            </summary>
+        </member>
+        <member name="M:Atom.Windows.Controls.Accounts.WindowsControlsAccountsDataModelHelpers.CreateUpdateSellerCommissionRequestModelDataForm">
+            <summary>
+            Creates and returns a <see cref="T:Atom.Windows.Controls.DataForm`1"/> for a <see cref="T:Atom.Web.Accounts.UpdateSellerCommissionRequestModel"/>
+            </summary>
+        </member>
+        <member name="M:Atom.Windows.Controls.Accounts.WindowsControlsAccountsDataModelHelpers.ConfigureSellerCommissionNumericInput(Atom.Windows.Controls.NumericInput)">
+            <summary>
+            Configures the specified <paramref name="input"/> based on the rules of the seller commission
+            </summary>
+            <param name="input">The input</param>
+        </member>
+        <member name="M:Atom.Windows.Controls.Accounts.WindowsControlsAccountsDataModelHelpers.CreateSellerCommissionResponseModelDataGrid">
+            <summary>
+            Creates and returns a <see cref="T:Atom.Windows.Controls.DataGrid`1"/> for <see cref="T:Atom.Web.Accounts.SellerCommissionResponseModel"/>s
+            </summary>
+        </member>
+        <member name="M:Atom.Windows.Controls.Accounts.WindowsControlsAccountsDataModelHelpers.CreateDefaultSellerCommissionResponseModelDataGrid">
+            <summary>
+            Creates and returns a <see cref="T:Atom.Windows.Controls.DataGrid`1"/> used for presenting
+            <see cref="T:Atom.Web.Accounts.SellerCommissionResponseModel"/>s that has pre-selected the default columns
+            </summary>
+        </member>
+        <member name="M:Atom.Windows.Controls.Accounts.WindowsControlsAccountsDataModelHelpers.CreateUpdateSellerRequestModelDataForm">
+            <summary>
+            Creates and returns a <see cref="T:Atom.Windows.Controls.DataForm`1"/> for a <see cref="T:Atom.Web.Accounts.UpdateSellerRequestModel"/>
+            </summary>
+        </member>
+        <member name="M:Atom.Windows.Controls.Accounts.WindowsControlsAccountsDataModelHelpers.CreateSellerResponseModelCollapsibleDataGrid">
+            <summary>
+            Creates and returns a <see cref="T:Atom.Windows.Controls.CollapsibleDataGrid`1"/> used for presenting
+            <see cref="T:Atom.Web.Accounts.SellerResponseModel"/>s that has pre-selected the default columns
+            </summary>
+        </member>
+        <member name="M:Atom.Windows.Controls.Accounts.WindowsControlsAccountsDataModelHelpers.CreateDefaultSellerResponseModelCollapsibleDataGrid">
+            <summary>
+            Creates and returns a <see cref="T:Atom.Windows.Controls.CollapsibleDataGrid`1"/> used for presenting
+            <see cref="T:Atom.Web.Accounts.SellerResponseModel"/>s that has pre-selected the default columns
+            </summary>
+        </member>
+        <member name="M:Atom.Windows.Controls.Accounts.WindowsControlsAccountsDataModelHelpers.CreateEmbeddedSellerResponseModelDataGrid">
+            <summary>
+            Creates and returns a <see cref="T:Atom.Windows.Controls.DataGrid`1"/> used for presenting
+            <see cref="T:Atom.Web.Accounts.EmbeddedSellerResponseModel"/>s that has pre-selected the default columns
+            </summary>
+        </member>
+        <member name="M:Atom.Windows.Controls.Accounts.WindowsControlsAccountsDataModelHelpers.CreateDefaultEmbeddedSellerResponseModelDataGrid">
+            <summary>
+            Creates and returns a <see cref="T:Atom.Windows.Controls.DataGrid`1"/> used for presenting
+            <see cref="T:Atom.Web.Accounts.EmbeddedSellerResponseModel"/>s that has pre-selected the default columns
+            </summary>
+        </member>
+        <member name="M:Atom.Windows.Controls.Accounts.WindowsControlsAccountsDataModelHelpers.CreateCreateSellerApplicationContractRequestModelDataForm">
+            <summary>
+            Creates and returns a <see cref="T:Atom.Windows.Controls.DataForm`1"/> for a <see cref="T:Atom.Web.Accounts.CreateSellerApplicationContractRequestModel"/>
+            </summary>
+        </member>
+        <member name="M:Atom.Windows.Controls.Accounts.WindowsControlsAccountsDataModelHelpers.CreateUpdateSellerApplicationContractRequestModelDataForm">
+            <summary>
+            Creates and returns a <see cref="T:Atom.Windows.Controls.DataForm`1"/> for a <see cref="T:Atom.Web.Accounts.UpdateSellerApplicationContractRequestModel"/>
+            </summary>
+        </member>
+        <member name="M:Atom.Windows.Controls.Accounts.WindowsControlsAccountsDataModelHelpers.CreateSellerApplicationContractResponseModelDataGrid">
+            <summary>
+            Creates and returns a <see cref="T:Atom.Windows.Controls.DataGrid`1"/> for <see cref="T:Atom.Web.Accounts.SellerApplicationContractResponseModel"/>s
+            </summary>
+        </member>
+        <member name="M:Atom.Windows.Controls.Accounts.WindowsControlsAccountsDataModelHelpers.CreateDefaultSellerApplicationContractResponseModelDataGrid">
+            <summary>
+            Creates and returns a <see cref="T:Atom.Windows.Controls.DataGrid`1"/> used for presenting
+            <see cref="T:Atom.Web.Accounts.SellerApplicationContractResponseModel"/>s that has pre-selected the default columns
+            </summary>
+        </member>
+        <member name="M:Atom.Windows.Controls.Accounts.WindowsControlsAccountsDataModelHelpers.CreateSellerApplicationContractResponseModelDataForm">
+            <summary>
+            Creates and returns a <see cref="T:Atom.Windows.Controls.DataForm`1"/> for a <see cref="T:Atom.Web.Accounts.SellerApplicationContractResponseModel"/>
+            </summary>
+        </member>
+        <member name="M:Atom.Windows.Controls.Accounts.WindowsControlsAccountsDataModelHelpers.CreateEmbeddedSellerApplicationContractResponseModelCollapsibleDataGrid">
+            <summary>
+            Creates and returns a <see cref="T:Atom.Windows.Controls.CollapsibleDataGrid`1"/> for <see cref="T:Atom.Web.Accounts.EmbeddedSellerApplicationContractResponseModel"/>s
+            </summary>
+        </member>
+        <member name="M:Atom.Windows.Controls.Accounts.WindowsControlsAccountsDataModelHelpers.CreateDefaultEmbeddedSellerApplicationContractResponseModelCollapsibleDataGrid">
+            <summary>
+            Creates and returns a <see cref="T:Atom.Windows.Controls.CollapsibleDataGrid`1"/> used for presenting
+            <see cref="T:Atom.Web.Accounts.EmbeddedSellerApplicationContractResponseModel"/>s that has pre-selected the default columns
+            </summary>
+        </member>
+        <member name="M:Atom.Windows.Controls.Accounts.WindowsControlsAccountsDataModelHelpers.CreateSubContractRequestModelDataForm">
+            <summary>
+            Creates and returns a <see cref="T:Atom.Windows.Controls.DataForm`1"/> for a <see cref="T:Atom.Web.Accounts.SubContractRequestModel"/>
+            </summary>
+        </member>
+        <member name="M:Atom.Windows.Controls.Accounts.WindowsControlsAccountsDataModelHelpers.CreateSubContractResponseModelCollapsibleDataGrid">
+            <summary>
+            Creates and returns a <see cref="T:Atom.Windows.Controls.CollapsibleDataGrid`1"/> for <see cref="T:Atom.Web.Accounts.SubContractResponseModel"/>s
+            </summary>
+        </member>
+        <member name="M:Atom.Windows.Controls.Accounts.WindowsControlsAccountsDataModelHelpers.CreateDefaultSubContractResponseModelCollapsibleDataGrid">
+            <summary>
+            Creates and returns a <see cref="T:Atom.Windows.Controls.CollapsibleDataGrid`1"/> used for presenting
+            <see cref="T:Atom.Web.Accounts.SubContractResponseModel"/>s that has pre-selected the default columns
+            </summary>
+        </member>
+        <member name="M:Atom.Windows.Controls.Accounts.WindowsControlsAccountsDataModelHelpers.CreateEmbeddedSubContractResponseModelCollapsibleDataGrid">
+            <summary>
+            Creates and returns a <see cref="T:Atom.Windows.Controls.CollapsibleDataGrid`1"/> for <see cref="T:Atom.Web.Accounts.EmbeddedSubContractResponseModel"/>s
+            </summary>
+        </member>
+        <member name="M:Atom.Windows.Controls.Accounts.WindowsControlsAccountsDataModelHelpers.CreateDefaultEmbeddedSubContractResponseModelCollapsibleDataGrid">
+            <summary>
+            Creates and returns a <see cref="T:Atom.Windows.Controls.CollapsibleDataGrid`1"/> used for presenting
+            <see cref="T:Atom.Web.Accounts.EmbeddedSubContractResponseModel"/>s that has pre-selected the default columns
+            </summary>
+        </member>
+        <member name="M:Atom.Windows.Controls.Accounts.WindowsControlsAccountsDataModelHelpers.CreateSellerContractRequestModelDataForm">
+            <summary>
+            Creates and returns a <see cref="T:Atom.Windows.Controls.DataForm`1"/> for a <see cref="T:Atom.Web.Accounts.SellerContractRequestModel"/>
+            </summary>
+        </member>
+        <member name="M:Atom.Windows.Controls.Accounts.WindowsControlsAccountsDataModelHelpers.CreateSellerContractResponseModelCollapsibleDataGrid">
+            <summary>
+            Creates and returns a <see cref="T:Atom.Windows.Controls.DataGrid`1"/> for <see cref="T:Atom.Web.Accounts.SellerContractResponseModel"/>s
+            </summary>
+        </member>
+        <member name="M:Atom.Windows.Controls.Accounts.WindowsControlsAccountsDataModelHelpers.CreateDefaultSellerContractResponseModelCollapsibleDataGrid">
+            <summary>
+            Creates and returns a <see cref="T:Atom.Windows.Controls.DataGrid`1"/> used for presenting
+            <see cref="T:Atom.Web.Accounts.SellerContractResponseModel"/>s that has pre-selected the default columns
+            </summary>
+        </member>
+        <member name="M:Atom.Windows.Controls.Accounts.WindowsControlsAccountsDataModelHelpers.CreateSellerContractResponseModelDataForm">
+            <summary>
+            Creates and returns a <see cref="T:Atom.Windows.Controls.DataForm`1"/> for a <see cref="T:Atom.Web.Accounts.SellerContractResponseModel"/>
+            </summary>
+        </member>
+        <member name="M:Atom.Windows.Controls.Accounts.WindowsControlsAccountsDataModelHelpers.CreateEmbeddedSellerContractResponseModelCollapsibleDataGrid">
+            <summary>
+            Creates and returns a <see cref="T:Atom.Windows.Controls.CollapsibleDataGrid`1"/> for <see cref="T:Atom.Web.Accounts.EmbeddedSellerContractResponseModel"/>s
+            </summary>
+        </member>
+        <member name="M:Atom.Windows.Controls.Accounts.WindowsControlsAccountsDataModelHelpers.CreateDefaultEmbeddedSellerContractResponseModelCollapsibleDataGrid">
+            <summary>
+            Creates and returns a <see cref="T:Atom.Windows.Controls.CollapsibleDataGrid`1"/> used for presenting
+            <see cref="T:Atom.Web.Accounts.EmbeddedSellerContractResponseModel"/>s that has pre-selected the default columns
+            </summary>
+        </member>
+        <member name="M:Atom.Windows.Controls.Accounts.WindowsControlsAccountsDataModelHelpers.CreatePaymentRequestModelDataForm">
+            <summary>
+            Creates and returns a <see cref="T:Atom.Windows.Controls.DataForm`1"/> for a <see cref="T:Atom.Web.Accounts.PaymentRequestModel"/>
+            </summary>
+        </member>
+        <member name="M:Atom.Windows.Controls.Accounts.WindowsControlsAccountsDataModelHelpers.CreatePaymentResponseModelDataGrid">
+            <summary>
+            Creates and returns a <see cref="T:Atom.Windows.Controls.DataGrid`1"/> for <see cref="T:Atom.Web.Accounts.PaymentResponseModel"/>s
+            </summary>
+        </member>
+        <member name="M:Atom.Windows.Controls.Accounts.WindowsControlsAccountsDataModelHelpers.CreateDefaultPaymentResponseModelDataGrid">
+            <summary>
+            Creates and returns a <see cref="T:Atom.Windows.Controls.DataGrid`1"/> used for presenting
+            <see cref="T:Atom.Web.Accounts.PaymentResponseModel"/>s that has pre-selected the default columns
+            </summary>
+        </member>
+        <member name="M:Atom.Windows.Controls.Accounts.WindowsControlsAccountsDataModelHelpers.CreateSellerDeptResponseModelDataGrid">
+            <summary>
+            Creates and returns a <see cref="T:Atom.Windows.Controls.DataGrid`1"/> for <see cref="T:Atom.Web.Accounts.SellerDeptResponseModel"/>s
+            </summary>
+        </member>
+        <member name="M:Atom.Windows.Controls.Accounts.WindowsControlsAccountsDataModelHelpers.CreateDefaultDeptResponseModelDataGrid">
+            <summary>
+            Creates and returns a <see cref="T:Atom.Windows.Controls.DataGrid`1"/> used for presenting
+            <see cref="T:Atom.Web.Accounts.SellerDeptResponseModel"/>s that has pre-selected the default columns
+            </summary>
+        </member>
+        <member name="M:Atom.Windows.Controls.Accounts.WindowsControlsAccountsDataModelHelpers.CreateChargeResponseModelCollapsibleDataGrid">
+            <summary>
+            Creates and returns a <see cref="T:Atom.Windows.Controls.CollapsibleDataGrid`1"/> for <see cref="T:Atom.Web.Accounts.ChargeResponseModel"/>s
+            </summary>
+        </member>
+        <member name="M:Atom.Windows.Controls.Accounts.WindowsControlsAccountsDataModelHelpers.CreateDefaultChargeResponseModelCollapsibleDataGrid">
+            <summary>
+            Creates and returns a <see cref="T:Atom.Windows.Controls.CollapsibleDataGrid`1"/> used for presenting
+            <see cref="T:Atom.Web.Accounts.ChargeResponseModel"/>s that has pre-selected the default columns
+            </summary>
+        </member>
+        <member name="M:Atom.Windows.Controls.Accounts.WindowsControlsAccountsDataModelHelpers.CreatePaymentMethodResponseModelDataGrid">
+            <summary>
+            Creates and returns a <see cref="T:Atom.Windows.Controls.DataGrid`1"/> for <see cref="T:Atom.Web.Accounts.PaymentMethodResponseModel"/>s
+            </summary>
+        </member>
+        <member name="M:Atom.Windows.Controls.Accounts.WindowsControlsAccountsDataModelHelpers.CreateDefaultPaymentMethodResponseModelDataGrid">
+            <summary>
+            Creates and returns a <see cref="T:Atom.Windows.Controls.DataGrid`1"/> used for presenting
+            <see cref="T:Atom.Web.Accounts.PaymentMethodResponseModel"/>s that has pre-selected the default columns
+            </summary>
+        </member>
+        <member name="M:Atom.Windows.Controls.Accounts.WindowsControlsAccountsDataModelHelpers.CreatePaymentMethodRequestModelDataForm">
+            <summary>
+            Creates and returns a <see cref="T:Atom.Windows.Controls.DataForm`1"/> for a <see cref="T:Atom.Web.Accounts.PaymentMethodRequestModel"/>
+            </summary>
+        </member>
+        <member name="M:Atom.Windows.Controls.Accounts.WindowsControlsAccountsDataModelHelpers.CreateEmbeddedPaymentMethodResponseModelDataGrid">
+            <summary>
+            Creates and returns a <see cref="T:Atom.Windows.Controls.DataGrid`1"/> for <see cref="T:Atom.Web.Accounts.EmbeddedPaymentMethodResponseModel"/>s
+            </summary>
+        </member>
+        <member name="M:Atom.Windows.Controls.Accounts.WindowsControlsAccountsDataModelHelpers.CreateDefaultEmbeddedPaymentMethodResponseModelDataGrid">
+            <summary>
+            Creates and returns a <see cref="T:Atom.Windows.Controls.DataGrid`1"/> used for presenting
+            <see cref="T:Atom.Web.Accounts.EmbeddedPaymentMethodResponseModel"/>s that has pre-selected the default columns
+            </summary>
+        </member>
+        <member name="M:Atom.Windows.Controls.Accounts.WindowsControlsAccountsDataModelHelpers.CreateNotificationResponseModelCollapsibleDataGrid">
+            <summary>
+            Creates and returns a <see cref="T:Atom.Windows.Controls.CollapsibleDataGrid`1"/> for <see cref="T:Atom.Web.Accounts.NotificationResponseModel"/>s
+            </summary>
+        </member>
+        <member name="M:Atom.Windows.Controls.Accounts.WindowsControlsAccountsDataModelHelpers.CreateDefaultNotificationResponseModelCollapsibleDataGrid">
+            <summary>
+            Creates and returns a <see cref="T:Atom.Windows.Controls.CollapsibleDataGrid`1"/> used for presenting
+            <see cref="T:Atom.Web.Accounts.NotificationResponseModel"/>s that has pre-selected the default columns
+            </summary>
+        </member>
+        <member name="M:Atom.Windows.Controls.Accounts.WindowsControlsAccountsDataModelHelpers.CreateCompanyUserResponseModelDataGrid">
+            <summary>
+            Creates and returns a <see cref="T:Atom.Windows.Controls.DataGrid`1"/> for <see cref="T:Atom.Web.Accounts.CompanyUserResponseModel"/>s
+            </summary>
+        </member>
+        <member name="M:Atom.Windows.Controls.Accounts.WindowsControlsAccountsDataModelHelpers.CreateDefaultCompanyUserResponseModelDataGrid">
+            <summary>
+            Creates and returns a <see cref="T:Atom.Windows.Controls.DataGrid`1"/> used for presenting
+            <see cref="T:Atom.Web.Accounts.CompanyUserResponseModel"/>s that has pre-selected the default columns
+            </summary>
+        </member>
+        <member name="M:Atom.Windows.Controls.Accounts.WindowsControlsAccountsDataModelHelpers.CreateEmbeddedCompanyUserResponseModelDataGrid">
+            <summary>
+            Creates and returns a <see cref="T:Atom.Windows.Controls.DataGrid`1"/> for <see cref="T:Atom.Web.Accounts.EmbeddedCompanyUserResponseModel"/>s
+            </summary>
+        </member>
+        <member name="M:Atom.Windows.Controls.Accounts.WindowsControlsAccountsDataModelHelpers.CreateDefaultEmbeddedCompanyUserResponseModelDataGrid">
+            <summary>
+            Creates and returns a <see cref="T:Atom.Windows.Controls.DataGrid`1"/> used for presenting
+            <see cref="T:Atom.Web.Accounts.EmbeddedCompanyUserResponseModel"/>s that has pre-selected the default columns
+            </summary>
+        </member>
+        <member name="T:Atom.Windows.Controls.Accounts.AccountsHub">
+            <summary>
+            Provides events used for live communication between the client and the server
+            </summary>
+        </member>
+        <member name="F:Atom.Windows.Controls.Accounts.AccountsHub.mSynchronizationContext">
+            <summary>
+            The main thread sync context
+            </summary>
+        </member>
+        <member name="P:Atom.Windows.Controls.Accounts.AccountsHub.Connection">
+            <summary>
+            The hub connection
+            </summary>
+        </member>
+        <member name="M:Atom.Windows.Controls.Accounts.AccountsHub.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Atom.Windows.Controls.Accounts.AccountsHub.ConnectAsync">
+            <summary>
+            Creates and returns a a<see cref="T:Atom.Windows.Controls.Accounts.AccountsHub"/> with an established connection
+            to the server
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="E:Atom.Windows.Controls.Accounts.AccountsHub.NotificationReceived">
+            <summary>
+            Fires every time a notification is received
+            </summary>
+        </member>
+        <member name="E:Atom.Windows.Controls.Accounts.AccountsHub.DisconnectRequestReceived">
+            <summary>
+            Fires every time a disconnect request is received
+            </summary>
+        </member>
+        <member name="T:Atom.Windows.Controls.UserButton">
+            <summary>
+            An <see cref="T:Atom.Windows.Controls.ImageMenuButton"/> that presents an embedded user
+            </summary>
+        </member>
+        <member name="F:Atom.Windows.Controls.UserButton.mUser">
+            <summary>
+            The member of the <see cref="P:Atom.Windows.Controls.UserButton.User"/> property
+            </summary>
+        </member>
+        <member name="P:Atom.Windows.Controls.UserButton.User">
+            <summary>
+            The model
+            </summary>
+        </member>
+        <member name="M:Atom.Windows.Controls.UserButton.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Atom.Windows.Controls.UserButton.Update">
+            <summary>
+            Updates the button
+            </summary>
+        </member>
+        <member name="M:Atom.Windows.Controls.UserButton.OnContentPlacementChanged(System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Handles the <see cref="P:Atom.Windows.Controls.AdjustableTextDualContentControl`2.ContentPlacement"/> property change
+            </summary>
+            <param name="e">Event args</param>
+        </member>
+        <member name="T:Atom.Windows.Controls.UserPreviewComponent">
+            <summary>
+            Component used for previewing a user
+            </summary>
+        </member>
+        <member name="F:Atom.Windows.Controls.UserPreviewComponent.mModel">
+            <summary>
+            The member of the <see cref="P:Atom.Windows.Controls.UserPreviewComponent.Model"/> property
+            </summary>
+        </member>
+        <member name="P:Atom.Windows.Controls.UserPreviewComponent.Model">
+            <summary>
+            The model
+            </summary>
+        </member>
+        <member name="P:Atom.Windows.Controls.UserPreviewComponent.ContentStackPanel">
+            <summary>
+            The stack panel that contains all the content
+            </summary>
+        </member>
+        <member name="P:Atom.Windows.Controls.UserPreviewComponent.Image">
+            <summary>
+            The image
+            </summary>
+        </member>
+        <member name="P:Atom.Windows.Controls.UserPreviewComponent.UserNameTextBlock">
+            <summary>
+            The user name text block
+            </summary>
+        </member>
+        <member name="P:Atom.Windows.Controls.UserPreviewComponent.FirstNameInputContainer">
+            <summary>
+            The input container that contains the <see cref="P:Atom.Windows.Controls.UserPreviewComponent.FirstNameTextBlock"/>
+            </summary>
+        </member>
+        <member name="P:Atom.Windows.Controls.UserPreviewComponent.FirstNameTextBlock">
+            <summary>
+            The first name text block
+            </summary>
+        </member>
+        <member name="P:Atom.Windows.Controls.UserPreviewComponent.LastNameInputContainer">
+            <summary>
+            The input container that contains the <see cref="P:Atom.Windows.Controls.UserPreviewComponent.LastNameTextBlock"/>
+            </summary>
+        </member>
+        <member name="P:Atom.Windows.Controls.UserPreviewComponent.LastNameTextBlock">
+            <summary>
+            The last name text block
+            </summary>
+        </member>
+        <member name="M:Atom.Windows.Controls.UserPreviewComponent.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Atom.Windows.Controls.UserPreviewComponent.Update">
+            <summary>
+            Updates the component
+            </summary>
+        </member>
+        <member name="M:Atom.Windows.Controls.UserPreviewComponent.CreateBaseGUIElement">
+            <summary>
+            Creates and returns the GUI in a form of a <see cref="T:System.Windows.FrameworkElement"/>
+            </summary>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
