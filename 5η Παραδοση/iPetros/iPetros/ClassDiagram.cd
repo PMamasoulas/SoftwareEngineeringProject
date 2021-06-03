@@ -1,0 +1,212 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="iPetros.CustomerAppointmentDataStorageArgs">
+    <Position X="20" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAUAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Args\CustomerAppointmentDataStorageArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="iPetros.DataStorageArgs">
+    <Position X="16" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAgoAA=</HashCode>
+      <FileName>Args\DataStorageArgs.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="iPetros.DateDataStorageArgs">
+    <Position X="18" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAQAA=</HashCode>
+      <FileName>Args\DateDataStorageArgs.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="iPetros.DocumentationAttribute">
+    <Position X="10.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Attributes\DocumentationAttribute.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="iPetros.ParameterDocumentationAttribute">
+    <Position X="10.25" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Attributes\ParameterDocumentationAttribute.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="iPetros.iPetrosDataStorage">
+    <Position X="12.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAgAAAIAAAAAIAkAAKIqAAAAAAIAAAAAARA4AIAACA=</HashCode>
+      <FileName>ClientDataStorage\iPetrosDataStorage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="iPetros.iPetrosDbContext">
+    <Position X="16" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAQAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAQAAAA=</HashCode>
+      <FileName>ClientDataStorage\iPetrosDbContext.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="iPetros.iPetrosApplicationPagesContainer">
+    <Position X="17.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAIAAAA=</HashCode>
+      <FileName>Controls\Accounts\iPetrosApplicationPagesContainer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="iPetros.iPetrosMainApplicationPage">
+    <Position X="14.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQRAAAAAAAEEABAJAUAAAAAAAAAAAgIACAAIAEAAAAA=</HashCode>
+      <FileName>Controls\Accounts\iPetrosMainApplicationPage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="iPetros.iPetrosCalendar">
+    <Position X="10.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controls\Calendar\iPetrosCalendar.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="iPetros.CustomerAppointmentsPage">
+    <Position X="14.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAABAAAQAAAAAEAAAAAAAACAAAAAABAAAIAABAA=</HashCode>
+      <FileName>Controls\CustomerAppointments\CustomerAppointmentsPage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="iPetros.CustomerInformationPage">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAACAgAAAAAAAA=</HashCode>
+      <FileName>Controls\Customers\CustomerInformationPage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="iPetros.CustomerPage">
+    <Position X="19.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQAAAABAAAAAAAAAAAAAAAAAAAAAIAAAA=</HashCode>
+      <FileName>Controls\Customers\CustomerPage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="iPetros.CustomersPage">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAABAAAQAAAAAEAAAAAAAACAAAAAABAAAIAABAA=</HashCode>
+      <FileName>Controls\Customers\CustomersPage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="iPetros.StaffMembersPage">
+    <Position X="17.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAABAAAQAAAAAEAAAAAAAACAAAAAABAAAIAABAA=</HashCode>
+      <FileName>Controls\StaffMembers\StaffMembersPage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="iPetros.BaseDataModel">
+    <Position X="6.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DataModels\BaseDataModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="iPetros.BaseDateDataModel">
+    <Position X="8.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAEAAAAAAA=</HashCode>
+      <FileName>DataModels\BaseDateDataModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="iPetros.CustomerAppointmentDataModel">
+    <Position X="8.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAEAGAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAEAAAA=</HashCode>
+      <FileName>DataModels\CustomerAppointmentDataModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="iPetros.CustomerDataModel">
+    <Position X="2.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAkAAACAAAQAAAAAAQAAAAAAAAAAAAAAAAAAAAAg=</HashCode>
+      <FileName>DataModels\CustomerDataModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="iPetros.LogDataModel">
+    <Position X="4.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAA=</HashCode>
+      <FileName>DataModels\LogDataModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="iPetros.StaffMemberDataModel">
+    <Position X="6.5" Y="3.75" Width="1.5" />
+    <InheritanceLine Type="iPetros.BaseDateDataModel" FixedFromPoint="true">
+      <Path>
+        <Point X="9.25" Y="2.377" />
+        <Point X="9.25" Y="3.51" />
+        <Point X="7.25" Y="3.51" />
+        <Point X="7.25" Y="3.75" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAACAAAQAAAQAAQAAAAAAAAAACAQAAgAAAAAg=</HashCode>
+      <FileName>DataModels\StaffMemberDataModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="iPetros.iPetrosDI">
+    <Position X="4.25" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQABAAA=</HashCode>
+      <FileName>DI\iPetrosDI.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="iPetros.FrameworkConstructionExtensions">
+    <Position X="16" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>FrameworkConstruction\FrameworkConstructionExtensions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="iPetros.iPetrosDataModelHelpers">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABEBKAKAAQIwAAAARAEAAwAEEAACgASAJAAAAABAAA=</HashCode>
+      <FileName>Helpers\iPetrosDataModelHelpers.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="iPetros.App">
+    <Position X="12.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>App.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="iPetros.EntryPoint">
+    <Position X="19.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAQAAAAEAAAAAAAAAAAAABAEAAAA=</HashCode>
+      <FileName>EntryPoint.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="iPetros.MainWindow" BaseTypeListCollapsed="true">
+    <Position X="16" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MainWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Enum Name="iPetros.StaffMemberType">
+    <Position X="10.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAAAAAAAAAAAAQAAEAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DataModels\StaffMemberType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

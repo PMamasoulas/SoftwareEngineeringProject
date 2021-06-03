@@ -92,6 +92,9 @@
     <Reference Include="Atom.Windows.Controls.Calendar">
       <HintPath>..\Atom.Windows.Controls.Calendar.dll</HintPath>
     </Reference>
+    <Reference Include="Atom.Windows.Controls.Relational">
+      <HintPath>..\Atom.Windows.Controls.Relational.dll</HintPath>
+    </Reference>
     <Reference Include="Atom.Windows.Controls.TabControl">
       <HintPath>..\Atom.Windows.Controls.TabControl.dll</HintPath>
     </Reference>

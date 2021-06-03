@@ -23,6 +23,14 @@ namespace iPetros
         [Documentation("Ο αριθμός τηλεφώνου του πελάτη")]
         public string PhoneNumber { get; set; }
 
+        [Documentation("Κανονικοποιημένο string το οποίο χρησιμοποιείτε κατά την αναζήτηση")]
+        public string NormalizedName
+        {
+            get => $"{FirstName} {LastName} {VAT}".ToUpper();
+
+            set { }
+        }
+
         #endregion
 
         #region Constructors

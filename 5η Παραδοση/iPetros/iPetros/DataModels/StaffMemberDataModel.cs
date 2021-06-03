@@ -32,6 +32,14 @@ namespace iPetros
         [Documentation("Το χρώμα που αντιπροσωπεύει τον υπάλληλο")]
         public string Color { get; set; } = Blue;
 
+        [Documentation("Κανονικοποιημένο string το οποίο χρησιμοποιείτε κατά την αναζήτηση")]
+        public string NormalizedName
+        {
+            get => $"{FirstName} {LastName} {Username}".ToUpper();
+
+            set { }
+        }
+
         #endregion
 
         #region Constructors

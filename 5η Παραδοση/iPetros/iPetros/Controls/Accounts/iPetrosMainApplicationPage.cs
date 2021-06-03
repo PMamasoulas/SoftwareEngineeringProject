@@ -1,11 +1,16 @@
 ﻿using Atom.Core;
 using Atom.Core.Accounts;
+using Atom.Core.Controls.Calendar;
 using Atom.Windows;
 using Atom.Windows.Controls;
 using Atom.Windows.Controls.Accounts;
+using Atom.Windows.Controls.Calendar;
 using Atom.Windows.Controls.TabControl;
 
 using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
 using System.Windows;
 
 using static Atom.Personalization.Constants;
@@ -40,6 +45,9 @@ namespace iPetros
 
         [Documentation("Το κουμπί που οδηγεί στη σελίδα του προσωπικού")]
         protected MenuButton StaffMembersButton { get; private set; }
+
+        [Documentation("Το κουμπί που οδηγεί στη σελίδα ωραρίου προσωπικού")]
+        protected MenuButton StaffMembersScheduleButton { get; private set; }
 
         [Documentation("Το κουμπί που οδηγεί στη σελίδα των logs")]
         protected MenuButton LogsMenuButton { get; private set; }
@@ -76,16 +84,55 @@ namespace iPetros
         #region Protected Methods
 
         [Documentation("Διαχειρίζεται την αρχικοποίηση του UI")]
-        protected override void OnInitialized(EventArgs e)
+        protected override async void OnInitialized(EventArgs e)
         {
             base.OnInitialized(e);
 
             AccountDropDown.Text = iPetrosDI.ConnectedUser.Username;
 
+            ModeratorsMenuOptionsContainer.Visibility = iPetrosDI.ConnectedUser.Type == StaffMemberType.StaffMember ? Visibility.Collapsed : Visibility.Visible;
+
+            IFailable<IEnumerable<StaffMemberDataModel>> staffMembersResult = null;
+
+            if (iPetrosDI.ConnectedUser.Type == StaffMemberType.Admin)
+                staffMembersResult = await iPetrosDI.GetDataStorage.GetStaffMembersAsync();
+            else
+                staffMembersResult = await iPetrosDI.GetDataStorage.GetStaffMembersAsync(new DateDataStorageArgs() { Include = new List<int>() { iPetrosDI.ConnectedUser.Id } });
+
+            if (!staffMembersResult.Successful)
+                return;
+
             // Open the calendar
-            WindowsControlsDI.GetWindowsDialogManager.OpenAsync(Host, "Ημερολόγιο", IconPaths.CalendarPath, () =>
+            await WindowsControlsDI.GetWindowsDialogManager.OpenAsync(Host, "Ημερολόγιο", IconPaths.CalendarPath, () =>
             {
-                return new iPetrosCalendar();
+                var calendar = new iPetrosCalendar();
+
+                calendar.Add(new SubCalendarGroup<CalendarEvent>(
+                    staffMembersResult.Result.Select(x => new SubCalendar(x.Id.ToString(), "Υπάλληλοι", x.FirstName + " " + x.LastName + " (" + x.Username + ")", x.Color)),
+                    async context => 
+                    {
+                        var dictionary = new Dictionary<SubCalendar, IEnumerable<CalendarEvent>>();
+
+                        var appointmentsResult = await iPetrosDI.GetDataStorage.GetCustomerAppointmentsAsync(new CustomerAppointmentDataStorageArgs()
+                        {
+                            StaffMembers = context.SubCalendars.Select(x => x.Id.ToInt()).ToList()
+                        });
+
+                        if (!appointmentsResult.Successful)
+                            return new Failable<IDictionary<SubCalendar, IEnumerable<CalendarEvent>>>() { ErrorMessage = appointmentsResult.ErrorMessage };
+
+                        return new Failable<IDictionary<SubCalendar, IEnumerable<CalendarEvent>>>() { Result = appointmentsResult.Result
+                            .GroupBy(x => x.StaffMemberId)
+                            .ToDictionary(
+                                x => context.SubCalendars.First(y => y.Id == x.Key.ToString()), 
+                                x => x.Select(y => new CalendarEvent(y.DateStart, y.DateEnd) 
+                                {
+                                    Name = y.Customer.FirstName + " " + y.Customer.LastName,
+                                    Color = y.StaffMember.Color
+                                }).ToList().AsEnumerable()) };
+                    }));
+
+                return calendar;
             }, "calendar", false);
         }
 
@@ -169,8 +216,14 @@ namespace iPetros
 
             StaffMembersButton.Command = new RelayCommand(() =>
             {
-
+                WindowsControlsDI.GetWindowsDialogManager.OpenAsync(Host, "Προσωπικό", IconPaths.AccountSupervisorCirclePath, () => new StaffMembersPage(), "staffMembers");
             });
+
+            #endregion
+
+            #region Staff Members Schedule
+
+            StaffMembersScheduleButton = ModeratorsMenuOptionsContainer.Add("Ωράριο προσωπικού", IconPaths.CalendarMonthPath);
 
             #endregion
 
@@ -198,6 +251,7 @@ namespace iPetros
 
             CustomersButton.Command = new RelayCommand(() =>
             {
+                WindowsControlsDI.GetWindowsDialogManager.OpenAsync(Host, "Πελάτες", IconPaths.AccountGroupPath, () => new CustomersPage(), "customers");
             });
 
             #endregion
@@ -208,6 +262,7 @@ namespace iPetros
 
             CustomerAppointmentsButton.Command = new RelayCommand(() =>
             {
+                WindowsControlsDI.GetWindowsDialogManager.OpenAsync(Host, "Ραντεβού πελατών", IconPaths.MapMarkerPath, () => new CustomerAppointmentsPage(), "customerAppointments");
             });
 
             #endregion

@@ -1,4 +1,5 @@
-﻿using Atom.Core;
+﻿using Atom.CodeGeneration;
+using Atom.Core;
 using Atom.Core.Accounts;
 using Atom.Windows.Controls.TabControl;
 
@@ -47,6 +48,20 @@ namespace iPetros
         {
             await CoreAccountsDI.GetCredentialsDataStorage.EnsureDataStorageAsync();
             await iPetrosDI.GetDataStorage.EnsureDataStorageAsync();
+        }
+
+        private static void GenerateHelpers()
+        {
+            var helpers = CodeGeneration.GenerateDataModelHelpers(string.Empty, typeof(CustomerAppointmentDataModel));
+
+            CoreDI.GetFileManager.WriteTextToFileAsync(helpers, Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\helpers.cs");
+        }
+
+        private static void GenerateEnumHelpers()
+        {
+            var helpers = CodeGeneration.GenerateEnumHelpers(string.Empty, typeof(StaffMemberType));
+
+            CoreDI.GetFileManager.WriteTextToFileAsync(helpers, Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\enumHelpers.cs");
         }
     }
 }

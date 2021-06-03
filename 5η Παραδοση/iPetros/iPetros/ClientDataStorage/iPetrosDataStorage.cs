@@ -12,11 +12,21 @@ using System.Threading.Tasks;
 namespace iPetros
 {
     [Documentation("Περιέχει βοηθητικές μεθόδους χρήσιμες για την επικοινωνία με τη βάση δεδομένων")]
-    public class iPetrosDataStorage : BaseDataStorage<iPetrosDbContext>
+    public class iPetrosDataStorage : StandardDataStorage<iPetrosDbContext>
     {
         #region Constants
 
         public const int PerPage = 10;
+
+        #endregion
+
+        #region Public Properties
+
+        public Lazy<PropertyOptionsDataStorage<StaffMemberDataModel>> StaffMembersPropertyOptionsDataStorage { get; }
+
+        public Lazy<PropertyOptionsDataStorage<CustomerDataModel>> CustomersPropertyOptionsDataStorage { get; }
+
+        public Lazy<PropertyOptionsDataStorage<CustomerAppointmentDataModel>> CustomerAppointmentsPropertyOptionsDataStorage { get; }
 
         #endregion
 
@@ -25,6 +35,9 @@ namespace iPetros
         [Documentation("Βασικός κατασκευαστής")]
         public iPetrosDataStorage([ParameterDocumentation("Η δομή της βάσης δεδομένων η οποία θα χρησιμοποιηθεί")]iPetrosDbContext dbContext) : base(dbContext)
         {
+            StaffMembersPropertyOptionsDataStorage = new Lazy<PropertyOptionsDataStorage<StaffMemberDataModel>>(() => new PropertyOptionsDataStorage<StaffMemberDataModel>(dbContext, iPetrosDataModelHelpers.DefaultStaffMemberDataModelProperties.Value));
+            CustomersPropertyOptionsDataStorage = new Lazy<PropertyOptionsDataStorage<CustomerDataModel>>(() => new PropertyOptionsDataStorage<CustomerDataModel>(dbContext, iPetrosDataModelHelpers.DefaultCustomerDataModelProperties.Value));
+            CustomerAppointmentsPropertyOptionsDataStorage = new Lazy<PropertyOptionsDataStorage<CustomerAppointmentDataModel>>(() => new PropertyOptionsDataStorage<CustomerAppointmentDataModel>(dbContext, iPetrosDataModelHelpers.DefaultCustomerAppointmentDataModelProperties.Value));
         }
 
         #endregion
@@ -80,13 +93,36 @@ namespace iPetros
                 var query = (IQueryable<StaffMemberDataModel>)DbContext.StaffMembers;
 
                 if (args.Search != null)
-                    query = query.Where(x => x.Username.Contains(args.Search) || x.FirstName.Contains(args.Search) || x.LastName.Contains(args.Search));
+                    query = query.Where(x => x.NormalizedName.Contains(args.Search));
 
                 query = AttachParameters(query, args);
 
                 return await query.OrderByDescending(x => x.Id).Skip((page * PerPage) + args.Offset).Take(PerPage).ToListAsync();
             }
             catch(Exception ex)
+            {
+                return ex;
+            }
+        }
+
+        [Documentation("Επιστρέφει όλα τα μέλη προσωπικού")]
+        public async Task<DataStorageResult<IEnumerable<StaffMemberDataModel>>> GetStaffMembersAsync([ParameterDocumentation("Οι κανόνες αναζήτησης")] DateDataStorageArgs args = null)
+        {
+            if (args == null)
+                args = new DateDataStorageArgs();
+
+            try
+            {
+                var query = (IQueryable<StaffMemberDataModel>)DbContext.StaffMembers;
+
+                if (args.Search != null)
+                    query = query.Where(x => x.NormalizedName.Contains(args.Search));
+
+                query = AttachParameters(query, args);
+
+                return await query.OrderByDescending(x => x.Id).ToListAsync();
+            }
+            catch (Exception ex)
             {
                 return ex;
             }
@@ -127,7 +163,7 @@ namespace iPetros
                 var query = (IQueryable<CustomerDataModel>)DbContext.Customers;
 
                 if (args.Search != null)
-                    query = query.Where(x => x.VAT.Contains(args.Search) || x.FirstName.Contains(args.Search) || x.LastName.Contains(args.Search));
+                    query = query.Where(x => x.NormalizedName.Contains(args.Search));
 
                 query = AttachParameters(query, args);
 
@@ -138,6 +174,10 @@ namespace iPetros
                 return ex;
             }
         }
+
+        [Documentation("Επιστρέφει τον πελάτη με το συγκεκριμένο αναγνωριστικό")]
+        public Task<DataStorageResult<CustomerDataModel>> GetCustomerAsync([ParameterDocumentation("Το id του πελάτη")] int id)
+            => FirstAsync(x => x.Customers, x => x.Id == id);
 
         [Documentation("Ενημερώνει το συγκεκριμένο πελάτη")]
         public Task<DataStorageResult<CustomerDataModel>> UpdateCustomerAsync([ParameterDocumentation("Ο πελάτης")] CustomerDataModel model)
@@ -159,8 +199,21 @@ namespace iPetros
         #region Customer Appointments
 
         [Documentation("Προσθέτει ένα νέο ραντεβού πελάτη")]
-        public Task<DataStorageResult<CustomerAppointmentDataModel>> AddCustomerAppointmentAsync([ParameterDocumentation("Το ραντεβού πελάτη")]CustomerAppointmentDataModel model)
-            => AddAsync(x => x.CustomerAppointmets, model);
+        public async Task<DataStorageResult<CustomerAppointmentDataModel>> AddCustomerAppointmentAsync([ParameterDocumentation("Το ραντεβού πελάτη")] CustomerAppointmentDataModel model)
+        {
+            try
+            {
+                DbContext.CustomerAppointmets.Add(model);
+
+                await DbContext.SaveChangesAsync();
+
+                return await DbContext.CustomerAppointmets.Include(x => x.Customer).Include(x => x.StaffMember).FirstAsync(x => x.Id == model.Id);
+            }
+            catch(Exception ex)
+            {
+                return ex;
+            }
+        }
 
         [Documentation("Επιστρέφει τα ραντεβού πελατών")]
         public async Task<DataStorageResult<IEnumerable<CustomerAppointmentDataModel>>> GetCustomerAppointmentsAsync([ParameterDocumentation("Ο δείκτης της σελίδας ξεκινώντας από το 0")] int page, [ParameterDocumentation("Οι κανόνες αναζήτησης")] CustomerAppointmentDataStorageArgs args = null)
@@ -173,13 +226,19 @@ namespace iPetros
                 var query = (IQueryable<CustomerAppointmentDataModel>)DbContext.CustomerAppointmets.Include(x => x.Customer).Include(x => x.StaffMember);
 
                 if (args.Search != null)
-                    query = query.Where(x => x.Customer.VAT.Contains(args.Search) || x.Customer.FirstName.Contains(args.Search) || x.Customer.LastName.Contains(args.Search) || x.Note.Contains(args.Search));
+                    query = query.Where(x => x.Customer.NormalizedName.Contains(args.Search) || x.StaffMember.NormalizedName.Contains(args.Search));
 
                 if (args.DateStartAfter != null)
                     query = query.Where(x => x.DateStart >= args.DateStartAfter);
 
                 if (args.DateStartBefore != null)
                     query = query.Where(x => x.DateStart <= args.DateStartBefore);
+
+                if (!args.StaffMembers.IsNullOrEmpty())
+                    query = query.Where(x => args.StaffMembers.Contains(x.StaffMemberId));
+
+                if (!args.Customers.IsNullOrEmpty())
+                    query = query.Where(x => args.Customers.Contains(x.CustomerId));
 
                 query = AttachParameters(query, args);
 
@@ -202,7 +261,7 @@ namespace iPetros
                 var query = (IQueryable<CustomerAppointmentDataModel>)DbContext.CustomerAppointmets.Include(x => x.Customer).Include(x => x.StaffMember);
 
                 if (args.Search != null)
-                    query = query.Where(x => x.Customer.VAT.Contains(args.Search) || x.Customer.FirstName.Contains(args.Search) || x.Customer.LastName.Contains(args.Search) || x.Note.Contains(args.Search));
+                    query = query.Where(x => x.Customer.NormalizedName.Contains(args.Search) || x.StaffMember.NormalizedName.Contains(args.Search));
 
                 if (args.DateStartAfter != null)
                     query = query.Where(x => x.DateStart >= args.DateStartAfter);
@@ -250,6 +309,9 @@ namespace iPetros
 
             if (args.Before != null)
                 query = query.Where(x => x.DateCreated <= args.Before);
+
+            if (!args.Include.IsNullOrEmpty())
+                query = query.Where(x => args.Include.Contains(x.Id));
 
             return query;
         }

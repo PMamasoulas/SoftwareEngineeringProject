@@ -147,3 +147,5 @@ C:\Users\PapLabros\Documents\GitHub\SoftwareEngineeringProject\5η Παραδο�
 C:\Users\PapLabros\Documents\GitHub\SoftwareEngineeringProject\5η Παραδοση\iPetros\iPetros\bin\Debug\netcoreapp3.1\Atom.Windows.Controls.Abstractions.xml
 C:\Users\PapLabros\Documents\GitHub\SoftwareEngineeringProject\5η Παραδοση\iPetros\iPetros\bin\Debug\netcoreapp3.1\Atom.Core.Controls.Calendar.dll
 C:\Users\PapLabros\Documents\GitHub\SoftwareEngineeringProject\5η Παραδοση\iPetros\iPetros\bin\Debug\netcoreapp3.1\Atom.Core.Controls.Calendar.xml
+C:\Users\PapLabros\Documents\GitHub\SoftwareEngineeringProject\5η Παραδοση\iPetros\iPetros\bin\Debug\netcoreapp3.1\Atom.Windows.Controls.Relational.dll
+C:\Users\PapLabros\Documents\GitHub\SoftwareEngineeringProject\5η Παραδοση\iPetros\iPetros\bin\Debug\netcoreapp3.1\Atom.Windows.Controls.Relational.xml

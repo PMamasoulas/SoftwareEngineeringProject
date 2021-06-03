@@ -1,18 +1,20 @@
 ﻿
+using Atom.Core;
+
 using System;
 
 namespace iPetros
 {
     [Documentation("Περιέχει τους βασικούς κανόνες για την αναζήτηση δεδομένων χρησιμοποιώντας την ημερομηνία δημιουργίας")]
-    public class DateDataStorageArgs : DataStorageArgs
+    public class DateDataStorageArgs : DataStorageArgs, IDateLimitable
     {
         #region Public Properties
 
         [Documentation("Περιορίζει τα δεδομένα χρησιμοποιόντας μια μεταγενέστερη ημερομηνία δημιουργίας")]
-        public DateTimeOffset After { get; set; }
+        public DateTimeOffset? After { get; set; }
 
         [Documentation("Περιορίζει τα δεδομένα χρησιμοποιόντας μια προγενέστερη ημερομηνία δημιουργίας")]
-        public DateTimeOffset Before { get; set; }
+        public DateTimeOffset? Before { get; set; }
 
         #endregion
 

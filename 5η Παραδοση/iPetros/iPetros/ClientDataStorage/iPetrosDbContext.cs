@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 namespace iPetros
 {
     [Documentation("Περιέχει πληροφορίες σχετικά με τη δομή της βάσης δεδομένων")]
-    public class iPetrosDbContext : StandardDbContext
+    public class iPetrosDbContext : SelectableOptionsDbContext
     {
         #region Public Properties
 
