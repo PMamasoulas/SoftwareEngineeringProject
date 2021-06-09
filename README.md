@@ -1,12 +1,12 @@
 # ![# iPetros](img/iPetros.png "iPetros Logo")
-In Greece almost every hospital uses its own software platform to register doctors, nurses, patients and other information. That causes various problems like lack of compatibility between different platforms and many communication problems. I-aso, willing to help these hospitals provides this platform to all of them.
+ERP Solution for hospitals
 
 ## Name
 This project named after a deity intertwined with the iPhone *(Άγιος Πέτρος)*.
 
 ## Contributors
 * [Papadopoulos Labros](https://github.com/PapLabros): lpapad@ceid.upatras.gr
-* [Mmaasoulas Panagiotis](https://github.com/PanagiotisMamasoulas)): mamasoulas@ceid.upatras.gr
+* [Mamasoulas Panagiotis](https://github.com/PanagiotisMamasoulas)): mamasoulas@ceid.upatras.gr
 * [//](https://github.com/): //@ceid.upatras.gr
 * [//](https://github.com/): //@ceid.upatras.gr
 
