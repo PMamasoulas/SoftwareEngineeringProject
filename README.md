@@ -6,9 +6,9 @@ This project named after a deity intertwined with the iPhone *(Άγιος Πέτ
 
 ## Contributors
 * [Papadopoulos Labros](https://github.com/PapLabros): lpapad@ceid.upatras.gr
-* [Mamasoulas Panagiotis](https://github.com/PanagiotisMamasoulas)): mamasoulas@ceid.upatras.gr
+* [Mamasoulas Panagiotis](https://github.com/PanagiotisMamasoulas): mamasoulas@ceid.upatras.gr
 * [Spyros Tsimpoukis](https://github.com/dispatchedx): dispatchedx@outlook.com
-* [//](https://github.com/): //@ceid.upatras.gr
+* [Hlias Skondras](https://github.com/HliasSkondras): up1052513@upnet.gr
 
 ## Execution
 With Visual Studio 2019
@@ -35,6 +35,3 @@ With Visual Studio 2019
 ## All Customer Appointsments Page
 ![# All Customer Appointsments Page](img/allcustomerappointsmentspage.png "All Customer Appointsments Page")
 ***
-
-## File Management and MVC Model
-//
